@@ -5,7 +5,7 @@
 [![Language](https://img.shields.io/static/v1?label=language&message=English&color=limegreen)](https://github.com/Argent77/A7-Achievements)
 
 # Achievements!
-*A mod for BG:EE, <abbr title="Siege of Dragonspear">SoD</abbr>, BG2:EE, <abbr title="Enhanced Edition Trilogy">EET</abbr>, IWD:EE and PST:EE that makes Steam Achievements available as regular journal entries for everyone.*
+*A mod for BG:EE, SoD, BG2:EE, EET, IWD:EE and PST:EE that makes Steam Achievements available as regular journal entries for everyone.*
 
 <!--- [![Beamdog Forums](https://img.shields.io/static/v1?label=Discussion&message=Beamdog%20Forums&color=444&labelColor=eee&style=for-the-badge)](https://forums.beamdog.com/ "Beamdog Forums")
 &nbsp;&nbsp;
@@ -17,11 +17,11 @@ Enhanced Edition games provide a feature to unlock numerous achievements in the 
 
 This mod detects unlocked achievements and makes them available as regular journal entries for anyone playing the game without the need to use the Steam client.
 
-The mod support all available Enhanced Edition games patched to version 2.0 or later, which includes BG:EE with or without <abbr title="Siege of Dragonspear">SoD</abbr>, BG2:EE, <abbr title="Enhanced Edition Trilogy">EET</abbr>, IWD:EE and PST:EE.
+The mod support all available Enhanced Edition games patched to version 2.0 or later, which includes BG:EE with or without SoD, BG2:EE, EET, IWD:EE and PST:EE.
 
 ## Components
 
-### Install Steam Achievements as Journal Entries *(for BG:EE, <abbr title="Siege of Dragonspear">SoD</abbr>, BG2:EE, <abbr title="Enhanced Edition Trilogy">EET</abbr>, IWD:EE and PST:EE)*
+### Install Steam Achievements as Journal Entries *(for BG:EE, SoD, BG2:EE, EET, IWD:EE and PST:EE)*
 
 This component provides unlocked achievements are quest journal entries under the "Achievements" category.
 
@@ -31,4 +31,4 @@ In PST:EE the journal entries are added as "completed quests" to avoid clutterin
 
 The component can be installed at any time. It is not needed to start a new game. Achievements that have already been unlocked before the mod was installed will be detected and added to the journal.
 
-In addition to the official Steam Achievements the mod also unlocks a small number of unused achievements for <abbr title="Siege of Dragonspear">SoD</abbr> which are implemented in the game but not registered by Steam.
+In addition to the official Steam Achievements the mod also unlocks a small number of unused achievements for SoD which are implemented in the game but not registered by Steam.
