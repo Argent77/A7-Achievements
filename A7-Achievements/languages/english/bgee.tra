@@ -1,0 +1,184 @@
+// -*- coding: utf-8 -*-
+
+@1000 = ~On My Own~
+@1001 = ~Unlocked upon leaving Candlekeep and the subsequent in-game cutscene.~
+
+@1010 = ~Victory is Mine~
+@1011 = ~Unlocked upon defeating Mulahey within the lowest level of the Nashkel Mines and taking the letters off of his body.~
+
+@1020 = ~Bandits Banished~
+@1021 = ~Unlocked upon locating the Bandit Camp, entering Tazok's tent and taking the letters from the chest.~
+
+@1030 = ~Water, Water Everywhere~
+@1031 = ~Unlocked upon finding the mines in the Cloakwood, reaching the lowest level and defeating Davaeorn.~
+
+@1040 = ~On the Trail~
+@1041 = ~Unlocked upon entering the Iron Throne building in Baldur's Gate, going to the top floor to find the letters containing the whereabouts of the Iron Throne's leaders and presenting them to Duke Eltan who sent me back to Candlekeep.~
+
+@1050 = ~On My Own... Again~
+@1051 = ~Unlocked upon escaping from the Candlekeep Catacombs.~
+
+@1060 = ~Hero of Baldur's Gate~
+@1061 = ~Unlocked upon killing Sarevok in the Undercity.~
+
+@1070 = ~Foreshadowing?~
+@1071 = ~Completed the side quest, "A Book for Firebead."~
+
+@1080 = ~Mercenary of the Month~
+@1081 = ~Found Garrick in Beregost, agreed to do his quest, then talked to Silke after I was brought to her. Agreed to kill the men, then talked to Silke once the deed was done.~
+
+@1090 = ~Worst Bodyguard Ever~
+@1091 = ~Found Garrick in Beregost, agreed to do his quest, then talked to Silke after I was brought to her. Refused to kill the men, and killed Silke when she turned hostile.~
+
+@1100 = ~Only Mostly Dead~
+@1101 = ~Completed the side quest, "Drienne's Cat".~
+
+@1110 = ~The Written Word~
+@1111 = ~Completed the side quest, "Tomes of Magic".~
+
+@1120 = ~Scent of a Kobold~
+@1121 = ~Completed the side quest, "The Firewine Ruins".~
+
+@1130 = ~Fishermen's Friend~
+@1131 = ~Completed the side quest, "The Fishermen and the Priestess", by siding with Sonner.~
+
+@1140 = ~Fishermen's Foe~
+@1141 = ~Completed the side quest, "The Fishermen and the Priestess", by siding with Tenya.~
+
+@1150 = ~A Work of Art~
+@1151 = ~Completed the side quest, "Prism the Sculptor", by defeating Greycloak and helping Prism to finish his work.~
+
+@1160 = ~Philistine~
+@1161 = ~Completed the side quest, "Prism the Sculptor", by returning the emeralds back to Oublek in Nashkel.~
+
+@1170 = ~Witch Slayer~
+@1171 = ~Found Dynaheir at the Gnoll Stronghold and killed her per Edwin's request.~
+
+@1180 = ~Witch Savior~
+@1181 = ~Found Dynaheir at the Gnoll Stronghold and rescued her from the gnolls.~
+
+@1190 = ~Judge, Jury, Executioner~
+@1191 = ~Completed the side quest, "The Tale of Captain Brage", by defeating Brage.~
+
+@1200 = ~Second Chance~
+@1201 = ~Completed the side quest, "The Tale of Captain Brage", by taking Brage back to the Temple of Helm.~
+
+@1210 = ~Sobering News~
+@1211 = ~Completed the side quest, "Joseph's Wife".~
+
+@1220 = ~Forest Friend~
+@1221 = ~Unlocked upon siding with Seniyad and his druids of the Cloakwood Forest, and defeating Aldeth Sashenstar.~
+
+@1230 = ~Noble Assistant~
+@1231 = ~Unlocked upon siding with Aldeth Sashenstar, and defeating Seniyad and his druids of the Cloakwood Forest.~
+
+@1240 = ~Damsel Out of Distress~
+@1241 = ~Completed the side quest, "The Captive Nymph", by freeing the nymph Abela.~
+
+@1250 = ~Master Thief~
+@1251 = ~Completed the side quest, "Larceny at the Hall of Wonders".~
+
+@1260 = ~Reunion~
+@1261 = ~Completed the side quest, "Tremain's Son".~
+
+@1270 = ~Lover's Sacrifice~
+@1271 = ~Unlocked upon killing Tamoko outside the Temple of Bhaal in the Undercity.~
+
+@1280 = ~Lover's Redemption~
+@1281 = ~Unlocked upon sparing Tamoko's life outside the Temple of Bhaal in the Undercity.~
+
+@1290 = ~The Legend of Durlag's Tower~
+@1291 = ~Unlocked upon defeating the Demon Knight in Durlag's Tower.~
+
+@1300 = ~An Ancient Evil~
+@1301 = ~Unlocked upon defeating the demon Aec'Letec in Ulgoth's Beard after returning from Durlag's Tower with the dagger Soultaker.~
+
+@1310 = ~Friend of Volo~
+@1311 = ~Completed the whole game on Story Mode difficulty.~
+
+@1320 = ~Lord of Murder~
+@1321 = ~Completed the whole game on Legacy of Bhaal difficulty.~
+
+@1330 = ~Flying Solo~
+@1331 = ~Completed the game without anyone else in the party.~
+
+@1340 = ~Leave No Friend Behind~
+@1341 = ~Completed the game without anyone in the party getting killed.~
+
+@1350 = ~Sacrifices Must Be Made~
+@1351 = ~Completed the game with everyone in the party dead except me.~
+
+@1360 = ~Juggernaut~
+@1361 = ~The protagonist reached the following statistics: 150 HP or more.~
+
+@1370 = ~Godlike~
+@1371 = ~The protagonist reached the following statistics: 25 in any given attribute score.~
+
+@1380 = ~Untouchable~
+@1381 = ~The protagonist reached the following statistics: Armor Class -15 or lower.~
+
+@1390 = ~Loremaster~
+@1391 = ~The protagonist reached the following statistics: Lore skill of 100 or higher.~
+
+@1400 = ~Grand Master~
+@1401 = ~The protagonist reached the following statistics: Grandmaster level in any given weapon proficiency.~
+
+@1410 = ~Hero~
+@1411 = ~The party reached the following statistics: "Heroic" reputation.~
+
+@1420 = ~Villain~
+@1421 = ~The party reached the following statistics: "Despised" reputation.~
+
+@1430 = ~Murder Incarnate~
+@1431 = ~The party killed at least 1,000 creatures.~
+
+@1440 = ~Friendly Faces at the Friendly Arm~
+@1441 = ~Unlocked upon visiting the Friendly Arm Inn and talking to Jaheira and Khalid.~
+
+@1450 = ~All the Options~
+@1451 = ~Unlocked when Neera, Dorn and Rasaad were party members at the same time.~
+
+@1460 = ~Entertained~
+@1461 = ~Unlocked upon inviting Baeloth into the party.~
+
+@1470 = ~Back to Basics~
+@1471 = ~Unlocked upon talking to all the tutors in Candlekeep during the Prologue.~
+
+@1480 = ~Completionist~
+@1481 = ~Unlocked upon completing all available side quests during the Prologue.~
+
+@1490 = ~Safe For Now~
+@1491 = ~Unlocked upon killing Carbos and Shanks in Candlekeep during the Prologue.~
+
+@1500 = ~He Started It~
+@1501 = ~Unlocked upon killing Marl in the Feldepost's Inn in Beregost.~
+
+@1510 = ~Use Your Words~
+@1511 = ~Unlocked upon pacifying Marl in the Feldepost's Inn in Beregost.~
+
+@1520 = ~The Stone Cleric~
+@1521 = ~Unlocked upon removing the petrification curse from Branwen at the Nashkel Carnival.~
+
+@1530 = ~This Belongs in a Museum~
+@1531 = ~Unlocked upon helping Charlston at the archaeological site.~
+
+@1540 = ~Gallors Plot~
+@1541 = ~Unlocked upon killing Charlston and retrieving the idol for Gallor at the archaeological site.~
+
+@1550 = ~Faerûnian Idol~
+@1551 = ~Unlocked upon refusing Gallor's request to kill Charlston at the archaeological site and retrieving the idol for myself.~
+
+@1560 = ~Unpetrified~
+@1561 = ~Unlocked upon removing the petrification curse from the victim at Mutamin's Garden.~
+
+@1570 = ~Oathbreaker~
+@1571 = ~Unlocked upon the protagonist becoming a Fallen Paladin or Fallen Ranger.~
+
+@1580 = ~Best Day Ever~
+@1581 = ~Unlocked upon experiencing the following effects at the same time: Bless, Luck and Chant.~
+
+@1590 = ~Worst Day Ever~
+@1591 = ~Unlocked upon suffering the following effects at the same time: Fatigue, Poison and Disease.~
+
+@1600 = ~Save the Cow!~
+@1601 = ~Completed the side quest, "Xvart Raids", by rescuing the cow Arabelle from attacking xvarts.~

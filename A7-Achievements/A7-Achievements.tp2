@@ -1,0 +1,75 @@
+BACKUP ~weidu_external/backup/A7-Achievements~
+SUPPORT ~https://~
+VERSION ~0.9-beta1~
+
+ALWAYS
+  // required because of non-standard BACKUP path
+  OUTER_TEXT_SPRINT MOD_FOLDER ~A7-Achievements~
+  // root folder for mutable data
+  OUTER_TEXT_SPRINT WORK_FOLDER ~weidu_external~
+
+  ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
+    FAIL @101 // DLC Merger is required before mods can be installed on this game. Check the readme for more information and a link to download DLC Merger.
+  END
+END
+
+
+README ~A7-Achievements/readme/readme-%LANGUAGE%.txt~
+       ~A7-Achievements/readme/readme.txt~
+
+LANGUAGE ~English~
+         ~english~
+         ~A7-Achievements/languages/english/setup.tra~
+         ~A7-Achievements/languages/english/common.tra~
+
+
+BEGIN @1  // Steam Achievements as Journal Entries
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee pstee~ &&
+                   FILE_EXISTS_IN_GAME ~ACHIEVEM.2DA~ &&
+                   VALID_SCRIPT_ACTIONS ~ChangeAIScript("",0)~) @100 // Enhanced Edition game required.
+DESIGNATED 0
+LABEL ~A7-ACHIEVEMENTS-MAIN~
+
+// adding BGEE and SoD achievements in EET installation
+ACTION_IF (GAME_IS ~eet~) BEGIN
+  EXTEND_BOTTOM ~achievem.bcs~ ~%MOD_FOLDER%/scripts/achievem-eet.baf~
+END
+
+// installing journal entries
+INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
+
+ACTION_IF (GAME_IS ~eet~) BEGIN
+  // EET
+  WITH_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/bgee.tra~
+           ~%MOD_FOLDER%/languages/%LANGUAGE%/sod.tra~
+           ~%MOD_FOLDER%/languages/%LANGUAGE%/bg2ee.tra~ BEGIN
+    LAF INSTALL_ACHIEVEMENTS STR_VAR games = ~bgee sod bg2ee~ END
+  END
+END ELSE ACTION_IF (GAME_IS ~bgee~) BEGIN
+  // BGEE (with or without SoD)
+  ACTION_IF (GAME_INCLUDES ~sod~) BEGIN
+    WITH_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/bgee.tra~
+             ~%MOD_FOLDER%/languages/%LANGUAGE%/sod.tra~ BEGIN
+      LAF INSTALL_ACHIEVEMENTS STR_VAR games = ~bgee sod~ END
+    END
+  END ELSE BEGIN
+    WITH_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/bgee.tra~ BEGIN
+      LAF INSTALL_ACHIEVEMENTS STR_VAR games = ~bgee~ END
+    END
+  END
+END ELSE ACTION_IF (GAME_IS ~bg2ee~) BEGIN
+  // BG2EE
+  WITH_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/bg2ee.tra~ BEGIN
+    LAF INSTALL_ACHIEVEMENTS STR_VAR games = ~bg2ee~ END
+  END
+END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
+  // IWDEE
+  WITH_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/iwdee.tra~ BEGIN
+    LAF INSTALL_ACHIEVEMENTS STR_VAR games = ~iwdee~ END
+  END
+END ELSE ACTION_IF (GAME_IS ~pstee~) BEGIN
+  // PSTEE
+  WITH_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/pstee.tra~ BEGIN
+    LAF INSTALL_ACHIEVEMENTS STR_VAR games = ~pstee~ END
+  END
+END

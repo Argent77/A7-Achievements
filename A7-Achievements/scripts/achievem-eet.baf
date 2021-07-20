@@ -1,0 +1,1075 @@
+// BG1 and SoD achievements for EET
+
+// *** BG1 achievements ***
+
+IF
+  Global("ACH_FLYING_BG1","GLOBAL",0)
+  AreaCheck("BG0125")
+  Dead("Sarevok")  // Sarevok
+  Global("BD_ACH_PARTY","GLOBAL",1)
+  !NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FLYING_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_FRIEND_OF_BG1","GLOBAL",0)
+  Global("bd_ach_difficulty","global",1)
+  AreaCheck("BG0125")
+  Dead("Sarevok")  // Sarevok
+  StoryModeOn()
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FRIEND_OF_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_LORD_OF_BG1","GLOBAL",0)
+  Global("bd_ach_difficulty","global",2)
+  AreaCheck("BG0125")
+  Dead("Sarevok")  // Sarevok
+  NightmareModeOn()
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LORD_OF_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_SACRIFICES_MUST_BG1","GLOBAL",0)
+  AreaCheck("BG0125")
+  Dead("Sarevok")  // Sarevok
+  StateCheck(Player2,STATE_REALLY_DEAD)
+  StateCheck(Player3,STATE_REALLY_DEAD)
+  StateCheck(Player4,STATE_REALLY_DEAD)
+  StateCheck(Player5,STATE_REALLY_DEAD)
+  StateCheck(Player6,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SACRIFICES_MUST_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_LEAVE_NO_BG1","GLOBAL",0)
+  AreaCheck("BG0125")
+  Dead("Sarevok")  // Sarevok
+  NumInPartyAlive(6)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LEAVE_NO_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_FOREST_FRIEND_BG1","GLOBAL",0)
+  Global("SeniyadXP","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FOREST_FRIEND_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_NOBLE_ASSISTANT_BG1","GLOBAL",0)
+  Global("AldethMove","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_NOBLE_ASSISTANT_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_HE_STARTED_BG1","GLOBAL",0)
+  !Global("ACH_USE_YOUR_BG1","GLOBAL",1)
+  Dead("Marl")  // ~Marl~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HE_STARTED_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_REUNION_BG1","GLOBAL",0)
+  OR(2)
+    Global("TremainMove","GLOBAL",3)
+    Global("TremainMove","GLOBAL",4)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_REUNION_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_PHILISTINE_BG1","GLOBAL",0)
+  Dead("Prism")  // ~Prism~
+  Global("OublekBounty2","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_PHILISTINE_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_A_WORK_OF_ART_BG1","GLOBAL",0)
+  Global("prism_work_is_complete","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_A_WORK_OF_ART_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_FISHERMENS_FRIEND_BG1","GLOBAL",0)
+  Dead("Tenya")  // ~Tenya~
+  Global("killed_tenya_fishermen","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FISHERMENS_FRIEND_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_SAVE_THE_COW_BG1","GLOBAL",0)
+  !Dead("HulriksCow")  // HulriksCow
+  Global("XvartsDead","GLOBAL",8)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SAVE_THE_COW_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_UNPETRIFIED_BG1","GLOBAL",0)
+  Global("Tamah_Freed","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_UNPETRIFIED_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_ONLY_MOSTLY_DEAD_BG1","GLOBAL",0)
+  Global("HelpDrienne","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ONLY_MOSTLY_DEAD_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_THE_LEGEND_BG1","GLOBAL",0)
+  Dead("DeathK")  // ~Demon Knight~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_LEGEND_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_THE_STONE_CLERIC_BG1","GLOBAL",0)
+  Global("Branwen_Freed","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_STONE_CLERIC_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_AN_ANCIENT_EVIL_BG1","GLOBAL",0)
+  OR(2)
+    Dead("TANAR")  // ~Aec'Letec~
+    Dead("Tanar2")  // ~Aec'Letec~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_AN_ANCIENT_EVIL_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_BACK_TO_BASICS_BG1","GLOBAL",0)
+  Global("learn_all_the_things","GLOBAL",14)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_BACK_TO_BASICS_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_ENTERTAINED_BG1","GLOBAL",0)
+  Global("BD_HAVE_SOD","GLOBAL",0)
+  InPartyAllowDead("baeloth")  // ~Baeloth~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ENTERTAINED_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_ALL_THE_OPTIONS_BG1","GLOBAL",0)
+  Global("BD_HAVE_SOD","GLOBAL",0)
+  InPartyAllowDead("neera")  // ~Neera~
+  InPartyAllowDead("rasaad")  // ~Rasaad~
+  InPartyAllowDead("dorn")  // ~Dorn~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ALL_THE_OPTIONS_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_SAFE_FOR_NOW_BG1","GLOBAL",0)
+  Dead("carbos")  // ~Carbos~
+  Dead("shank")  // ~Shank~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SAFE_FOR_NOW_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_FORESHADOWING_BG1","GLOBAL",0)
+  Global("FirebeadDone","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FORESHADOWING_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_COMPLETIONIST_BG1","GLOBAL",0)
+  Global("HelpFirebead","GLOBAL",2)
+  Global("HelpHull","GLOBAL",1)
+  Global("HelpPhlydia","GLOBAL",1)
+  Global("HelpFuller","GLOBAL",1)
+  Global("SPRITE_IS_DEADREVRAT","GLOBAL",6)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_COMPLETIONIST_BG1","GLOBAL",1)
+END
+
+IF
+  Global("ACH_MASTER_THIEF_BG1","GLOBAL",0)
+  PartyHasItem("misc64")  // ~Telescope~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_MASTER_THIEF_BG1","GLOBAL",1)
+END
+
+IF
+  AreaCheck("bg2700")
+  Global("CHAPTER","GLOBAL",1)
+  Global("ACH_ON_MY_OWN_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ON_MY_OWN_BG1","GLOBAL",1)
+END
+
+IF
+  Global("SpokeToKhalid","GLOBAL",1)
+  Global("ACH_FRIENDLY_FACES_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FRIENDLY_FACES_BG1","GLOBAL",1)
+END
+
+IF
+  Global("CHAPTER","GLOBAL",3)
+  Global("ACH_VICTORY_IS_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_VICTORY_IS_BG1","GLOBAL",1)
+END
+
+IF
+  Global("CHAPTER","GLOBAL",4)
+  Global("ACH_BANDITS_BANISHED_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_BANDITS_BANISHED_BG1","GLOBAL",1)
+END
+
+IF
+  Global("CHAPTER","GLOBAL",5)
+  GlobalGT("FLOODED","GLOBAL",0)
+  Global("ACH_WATER_WATER_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WATER_WATER_BG1","GLOBAL",1)
+END
+
+IF
+  Global("CHAPTER","GLOBAL",6)
+  Global("ACH_ON_THE_TRAIL_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ON_THE_TRAIL_BG1","GLOBAL",1)
+END
+
+IF
+  Global("CHAPTER","GLOBAL",7)
+  AreaCheck("bg2626")
+  Global("ACH_ON_MY_OWN_AGAIN_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ON_MY_OWN_AGAIN_BG1","GLOBAL",1)
+END
+
+IF
+  Dead("Sarevok")  // Sarevok
+  Global("ACH_HERO_OF_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HERO_OF_BG1","GLOBAL",1)
+END
+
+IF
+  Global("AttackedSilke","GLOBAL",0)
+  Dead("Merchant1")  // Merchant1
+  Dead("Merchant2")  // Merchant2
+  Dead("Merchant3")  // Merchant3
+  Global("ACH_MERCENARY_OF_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_MERCENARY_OF_BG1","GLOBAL",1)
+END
+
+IF
+  Global("AttackedSilke","GLOBAL",1)
+  Dead("Silke")  // ~Silke~
+  Global("ACH_WORST_BODYGUARD_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WORST_BODYGUARD_BG1","GLOBAL",1)
+END
+
+IF
+  Global("TamokoMove","GLOBAL",4)
+  Global("ACH_LOVERS_REDEMPTION_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LOVERS_REDEMPTION_BG1","GLOBAL",1)
+END
+
+IF
+  Dead("Tamoko")  // ~Tamoko~
+  !Global("TamokoMove","GLOBAL",4)
+  Global("ACH_LOVERS_SACRIFICE_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LOVERS_SACRIFICE_BG1","GLOBAL",1)
+END
+
+IF
+  Global("HelpMinsc","GLOBAL",2)
+  Global("ACH_WITCH_SAVIOUR_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WITCH_SAVIOUR_BG1","GLOBAL",1)
+END
+
+IF
+  Dead("dynaheir")  // dynaheir
+  Global("edwin_killing_dynaheir","GLOBAL",1)
+  Global("ACH_WITCH_SLAYER_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WITCH_SLAYER_BG1","GLOBAL",1)
+END
+
+IF
+  Global("AbelaNotExists","GLOBAL",1)
+  Global("ACH_DAMSEL_OUT_OF_DISTRESS_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DAMSEL_OUT_OF_DISTRESS","GLOBAL",1)
+END
+
+IF
+  Dead("Brage")  // ~Brage~
+  !Global("BrageRiddle","GLOBAL",2)
+  Global("ACH_JUDGE_JURY_EXECUTIONER_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_JUDGE_JURY_EXECUTIONER_BG1","GLOBAL",1)
+END
+
+IF
+  Global("BrageRiddle","GLOBAL",2)
+  Global("ACH_SECOND_CHANCE_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SECOND_CHANCE_BG1","GLOBAL",1)
+END
+
+IF
+  Global("HelpTenya","GLOBAL",2)
+  Global("ACH_FISHERMENS_FOE_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FISHERMENS_FOE_BG1","GLOBAL",1)
+END
+
+IF
+  Global("HelpGallor","GLOBAL",2)
+  Global("ACH_GALLORS_PLOT_BG1","GLOBAL",0)
+  !Global("ACH_FAERUNIAN_IDOL_BG1","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GALLORS_PLOT_BG1","GLOBAL",1)
+END
+
+IF
+  Global("TalkedToCharleston","GLOBAL",2)
+  Global("ACH_THIS_BELONGS_IN_A_MUSEUM_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THIS_BELONGS_IN_A_MUSEUM_BG1","GLOBAL",1)
+END
+
+IF
+  !Global("HelpGallor","GLOBAL",2)
+  PartyHasItem("MISC48")  // ~Idol~
+  Dead("Doomsayer")  // Doomsayer
+  Global("ACH_FAERUNIAN_IDOL_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FAERUNIAN_IDOL_BG1","GLOBAL",1)
+END
+
+IF
+  Global("HelpNashkellWoman","GLOBAL",3)
+  Global("ACH_SOBERING_NEWS_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SOBERING_NEWS_BG1","GLOBAL",1)
+END
+
+IF
+  Global("jenkal_letting_in_kobolds","GLOBAL",1)
+  Global("ACH_SCENT_OF_A_KOBOLD_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SCENT_OF_A_KOBOLD_BG1","GLOBAL",1)
+END
+
+
+// *** SoD achievements ***
+
+IF
+  Global("ACH_THE_END_SOD","GLOBAL",0)
+  Global("BD_Korlasz_Fight","BD0130",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_END_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_A_LONG_SOD","GLOBAL",0)
+  GlobalGT("BD_PLOT","GLOBAL",57)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_A_LONG_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_YOUR_FATHERS_SOD","GLOBAL",0)
+  Global("bd_plot","global",295)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_YOUR_FATHERS_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_THE_KEY_SOD","GLOBAL",0)
+  PartyHasItem("BDMISC51")  // ~Wardstone~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_KEY_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_A_CRITICAL_SOD","GLOBAL",0)
+  GlobalGT("BD_PLOT","GLOBAL",292)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_A_CRITICAL_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_DARK_PLACES_SOD","GLOBAL",0)
+  AreaCheckObject("BD5100",Player1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DARK_PLACES_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_HASTY_RETREAT_SOD","GLOBAL",0)
+  Global("bd_plot","global",370)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HASTY_RETREAT_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_DEFENDER_SOD","GLOBAL",0)
+  GlobalGT("bd_plot","global",399)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DEFENDER_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_THE_DEVIL_SOD","GLOBAL",0)
+  Global("bd_plot","global",570)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_DEVIL_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_GRIM_DEEDS_SOD","GLOBAL",0)
+  Global("bd_plot","global",690)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GRIM_DEEDS_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_KNOW_THYSELF_SOD","GLOBAL",0)
+  Global("BD_SDD120_PLAY","BD0120",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_KNOW_THYSELF_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_FAMILY_SECRETS_SOD","GLOBAL",0)
+  Global("bd_sarevok_secret","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FAMILY_SECRETS_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_FAR_OUT_SOD","GLOBAL",0)
+  Global("BD_SPECT","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FAR_OUT_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_DRAGON_SLAYER_SOD","GLOBAL",0)
+  Dead("bdmorent")  // ~Morentherene~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DRAGON_SLAYER_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_REMOTE_CONTROL_SOD","GLOBAL",0)
+  Global("bd_125_bought_golem","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_REMOTE_CONTROL_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_DIFFUSION_SOD","GLOBAL",0)
+  Global("BD_SDD200","GLOBAL",4)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DIFFUSION_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_NOT_THE_SOD","GLOBAL",0)
+  Global("bd_bridgefort_plot","GLOBAL",10)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_NOT_THE_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_GIVE_THE_SOD","GLOBAL",0)
+  Global("bd_plot","GLOBAL",280)
+  Global("bd_enemy_gone_hostile","bd2000",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GIVE_THE_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_STRANGE_BED_SOD","GLOBAL",0)
+  Global("BD_DOD_QUEST_DONE","GLOBAL",1)
+  OR(2)
+    PartyHasItem("BDHAMM06")  // ~Dread Hammer +2~
+    Global("BD_DOD_DSC_SUPPORT","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_STRANGE_BED_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_DUMATHOINS_SOD","GLOBAL",0)
+  Global("BD_DOD_PHYLACTERY_DESTROYED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DUMATHOINS_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_STRING_CUTTER_SOD","GLOBAL",0)
+  Dead("BDDARSKH")  // ~Darskhelin~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_STRING_CUTTER_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_BLESSED_BY_SOD","GLOBAL",0)
+  OR(2)
+    Global("bd_poisoned_food","global",1)
+    Global("bd_poisoned_water","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_BLESSED_BY_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_DIVINE_PACT_SOD","GLOBAL",0)
+  Global("bd_caelar_fate","global",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DIVINE_PACT_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_ATONEMENT_SOD","GLOBAL",0)
+  Global("bd_plot","global",586)
+  !Dead("bdcaelar")  // ~Caelar Argent~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ATONEMENT_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_THE_LAST_SOD","GLOBAL",0)
+  Global("bd_plot","global",586)
+  Dead("bdcaelar")  // ~Caelar Argent~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_LAST_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_STAND_ALONE_SOD","GLOBAL",0)
+  Dead("bdashati")  // ~Ashatiel~
+  Global("bd_asha_duel","global",3)
+  Global("bd_duel_cheat","bd4000",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_STAND_ALONE_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_REVERED_SOD","GLOBAL",0)
+  Dead("bdhepher")  // ~Hephernaan~
+  AreaCheckObject("BD4700",Player1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_REVERED_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_A_REUNION_SOD","GLOBAL",0)
+  Global("bd_daeros_freed","GLOBAL",1)
+  Global("bd_halata_freed","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_A_REUNION_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_THOROUGH_SOD","GLOBAL",0)
+  Dead("bdchal01")  // ~Axe Poet~
+  Dead("bdchal02")  // ~Thasz~
+  Dead("bdchal03")  // ~Alexandria~
+  Dead("bdchal04")  // ~Dram~
+  Dead("bdchal05")  // ~Chloe~
+  Dead("bdchal06")  // ~Bluebeard~
+  Dead("bdbarghe")  // ~The Barghest~
+  Dead("bdolonei")  // ~Oloneiros~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THOROUGH_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_KANAGLYM_SOD","GLOBAL",0)
+  Global("BD_HALATA_RELEASED","GLOBAL",2)
+  Dead("BDKHERR")  // ~Kherriun~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_KANAGLYM_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_PAINFUL_SOD","GLOBAL",0)
+  Global("bd_ach_menhir","global",6)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_PAINFUL_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_NATURE_SOD","GLOBAL",0)
+  Global("BD_SDD307","GLOBAL",5)
+  Global("BD_ROOT","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_NATURE_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_DARK_ALLY_SOD","GLOBAL",0)
+  Global("BD_SDD307","GLOBAL",6)
+  Dead("BDJAMVEN")  // ~Jamven~
+  Dead("BDCHORST")  // ~Chorster~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DARK_ALLY_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_WELL_DONE_SOD","GLOBAL",0)
+  Global("BD_WELL_WEAPON","BD2000",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WELL_DONE_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_WHIPPED_INTO_SOD","GLOBAL",0)
+  GlobalGT("BD_FIGHTERS_SKILL","BD3000",9)
+  Global("BD_TROOP_TRAIN","BD3000",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WHIPPED_INTO_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_APPEAL_TO_SOD","GLOBAL",0)
+  Global("BD_SDD330","BD5000",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_APPEAL_TO_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_BREAKING_SOD","GLOBAL",0)
+  Global("BD_SDD330","BD5000",2)
+  Global("BD_DISCOURAGE_RIGAH","BD5000",1)
+  Dead("BDJULANN")  // ~Julann~
+  !Allegiance("BDRIGAH",ENEMY)  // ~Rigah~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_BREAKING_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_FOUR_ON_ONE_SOD","GLOBAL",0)
+  Global("bd_ach_killed_solo","global",4)
+  Global("BD_CAPER_QUEST","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FOUR_ON_ONE_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_HES_JUST_MISUNDERSTOOD_SOD","GLOBAL",0)
+  Global("bd_123_sided_with_tsolak","global",1)
+  Dead("bdikros")  // ~Ikros~
+  Dead("bdisabel")  // ~Isabella~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HES_JUST_MISUNDERSTOOD_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_SEEKER_OF_SECRETS_SOD","GLOBAL",0)
+  Global("BD_BHALL_ACHIEVEM","BD7230",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SEEKER_OF_SECRETS_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_IT_WASNT_ME_SOD","GLOBAL",0)
+  Global("bd_trial_Innocent","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_IT_WASNT_ME_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_IN_THE_NAME_OF_THE_FATHE_SOD","GLOBAL",0)
+  Global("bd_madelemurderspree","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_IN_THE_NAME_OF_THE_FATHE_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_AMENDMENTS_SOD","GLOBAL",0)
+  Global("bd_mdd420_morale","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_AMENDMENTS_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_STONE_TO_FLESH_SOD","GLOBAL",0)
+  Global("bd_ach_released_from_stone","GLOBAL",5)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_STONE_TO_FLESH_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_A_COMPLETE_SET_SOD","GLOBAL",0)
+  Global("bd_ach_halfling_treasures","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_A_COMPLETE_SET_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_GRUB_DOUBLED_SOD","GLOBAL",0)
+  GlobalGT("bd_SDD221e","global",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GRUB_DOUBLED_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_FAMILY_REUNION_SOD","GLOBAL",0)
+  GlobalGT("BD_SDD215_HOACH_GLINT","GLOBAL",0)
+  Global("bd_glint_pritchard","global",1)
+  GlobalGT("BD_SDD215_RHONDA","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FAMILY_REUNION_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_I_DONT_SOD","GLOBAL",0)
+  Global("bd_MDD1725_corwin","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_I_DONT_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_GET_OUT_SOD","GLOBAL",0)
+  GlobalGT("bd_neera_plot","global",11)
+  GlobalGT("bd_neera_items","global",4)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GET_OUT_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_DETAILED_SOD","GLOBAL",0)
+  GlobalGT("sdd303_seal_found","bd3000",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DETAILED_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_HARPERS_SOD","GLOBAL",0)
+  Global("BD_SDD223","GLOBAL",6)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HARPERS_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_SCALES_OF_THE_BEAST_SOD","GLOBAL",0)
+  Global("bd_205_forge_dragonscale","global",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SCALES_OF_THE_BEAST_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_TRAPPED_INTO_THE_VOID_SOD","GLOBAL",0)
+  Global("bd_205_forge_voidstones","global",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_TRAPPED_INTO_THE_VOID_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_TIAX_COMMANDS_SOD","GLOBAL",0)
+  GlobalGT("BD_Spoken_Tiax","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_TIAX_COMMANDS_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_WELL_ITS_SOD","GLOBAL",0)
+  PartyHasItem("bdmisc57")  // ~Gold Bust~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WELL_ITS_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_UNPOPULAR_SOD","GLOBAL",0)
+  GlobalGT("chapter","GLOBAL",7)
+  GlobalLT("chapter","GLOBAL",12)
+  InParty("BAELOTH")  // ~Baeloth~
+  InParty("VICONIA")  // VICONIA
+  InParty("MKHIIN")  // MKHIIN
+  InParty("DORN")  // ~Dorn~
+  InParty("EDWIN")  // ~Edwin~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_UNPOPULAR_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_THATS_EVIL_SOD","GLOBAL",0)
+  Global("bd_sdd201_missing_keherram_lever","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THATS_EVIL_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_TRIVIUM_SOD","GLOBAL",0)
+  Global("bd_sdd311_moving_crates","GLOBAL",4)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_TRIVIUM_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_NEWER_SOD","GLOBAL",0)
+  GlobalGT("chapter","GLOBAL",7)
+  GlobalLT("chapter","GLOBAL",12)
+  InParty("CORWIN")  // CORWIN
+  InParty("GLINT")  // GLINT
+  InParty("MKHIIN")  // MKHIIN
+  InParty("VOGHILN")  // VOGHILN
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_NEWER_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_YOU_CHOSE_SOD","GLOBAL",0)
+  Global("bd_thrix_won","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_YOU_CHOSE_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_DARKSEER_SOD","GLOBAL",0)
+  OR(2)
+    Global("BD_Pool","MYAREA",2)
+    Global("BD_Infra","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DARKSEER_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_PROUD_OF_YOURSELF_SOD","GLOBAL",0)
+  Global("BD_Proud_of_Yourself","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_PROUD_OF_YOURSELF_SOD","GLOBAL",1)
+END
+
+IF
+  GlobalGT("bd_plot","global",399)
+  Global("bd_achievement_option","global",0)
+  Global("ACH_THE_HARD_WAY_SOD","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_HARD_WAY_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_RIDDLEMASTER_SOD","GLOBAL",0)
+  Global("BD_Thrix_riddle_won","global",1)
+  Global("bd_vidyadlar_riddle_won","global",1)
+  Global("bd_menhir_riddle_won","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_RIDDLEMASTER_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_EXPLORER_SOD","GLOBAL",0)
+  Global("BD_URE1","GLOBAL",2)
+  Global("BD_URE2","GLOBAL",2)
+  Global("BD_URE3","GLOBAL",2)
+  Global("BD_URE4","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EXPLORER_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_URGE_TO_SOD","GLOBAL",0)
+  Dead("bdnuber")  // ~Nüber~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_URGE_TO_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_ALL_THE_ALLIES_SOD","GLOBAL",0)
+  AreaCheck("bd4000")
+  Global("bd_plot","global",410)
+  Global("BD_OgreReinforcements","GLOBAL",1)
+  !Dead("bdslug")  // ~Slug~
+  !Dead("bdmurs")  // ~Murs~
+  Global("bd_125_bought_golem","global",1)
+  !Dead("bdsorali")  // ~Soralis~
+  !Dead("bdpetsg2")  // ~Lesser Stone Golem~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ALL_THE_ALLIES_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_ALL_THE_ENEMIES_SOD","GLOBAL",0)
+  AreaCheck("bd4000")
+  Global("bd_ach_enemies","global",3)
+  Dead("bdstrunk")  // ~Strunk~
+  Dead("bdmunsch")  // ~Delgar Munsch~
+  Dead("bdjulann")  // ~Julann~
+  Dead("bdrigah")  // ~Rigah~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ALL_THE_ENEMIES_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_THE_OG_SOD","GLOBAL",0)
+  Global("BD_HAVE_SOD","GLOBAL",1)
+  GlobalLT("chapter","GLOBAL",12)
+  InParty("Minsc")  // ~Minsc~
+  InParty("Dynaheir")  // Dynaheir
+  InParty("Jaheira")  // Jaheira
+  InParty("Khalid")  // ~Khalid~
+  InParty("Safana")  // ~Safana~
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_OG_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_IM_A_WIZARD_SOD","GLOBAL",0)
+  Global("bd_sdd201_missing_keherram","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_IM_A_WIZARD_SOD","GLOBAL",1)
+END
+
+IF
+  Global("ACH_INSIDE_JOB_SOD","GLOBAL",0)
+  Global("bd_sabotaged_drawbridge","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_INSIDE_JOB_SOD","GLOBAL",1)
+END

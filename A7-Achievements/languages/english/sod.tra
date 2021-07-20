@@ -1,0 +1,217 @@
+// -*- coding: utf-8 -*-
+
+@3000 = ~A Long Journey~
+@3001 = ~Unlocked upon starting the journey to Dragonspear Castle.~
+
+@3010 = ~Give The Enemy No Quarter~
+@3011 = ~Unlocked upon pushing back the crusade across Boareskyr Bridge.~
+
+@3020 = ~Not The Battle We Came For~
+@3021 = ~Unlocked upon peacefully surrendering Bridgefort to the crusade.~
+
+@3030 = ~Inside Job~
+@3031 = ~Unlocked upon sabotaging the drawbridge at Bridgefort and letting the crusaders in.~
+
+@3040 = ~A Critical Moment~
+@3041 = ~Unlocked upon saving Boareskyr Bridge from destruction at the hands of the crusade.~
+
+@3050 = ~Your Father's Grave~
+@3051 = ~Unlocked upon reaching Boareskyr Bridge, the site of Bhaal's death.~
+
+@3060 = ~Dark Places~
+@3061 = ~Unlocked upon entering the caverns beneath Dragonspear Castle.~
+
+@3070 = ~Defender~
+@3071 = ~Unlocked upon successfully defending the coalition camp from attack.~
+
+@3080 = ~The Hard Way~
+@3081 = ~Unlocked upon picking the least suitable units to fight the crusaders at the coalition camp.~
+
+@3090 = ~Stand Alone~
+@3091 = ~Unlocked upon defeating the elite crusader Ashatiel in a one on one battle.~
+
+@3100 = ~Thorough~
+@3101 = ~Unlocked upon defeating the elite crusaders guarding the rear of Dragonspear Castle.~
+
+@3110 = ~You Chose... Poorly~
+@3111 = ~Unlocked upon Thrix claiming a party member's soul in Avernus.~
+
+@3120 = ~Divine Pact~
+@3121 = ~Unlocked upon convincing Caelar Argent to fight at your side against the devil Belhifet.~
+
+@3130 = ~The Devil You Know~
+@3131 = ~Unlocked upon destroying the devil Belhifet.~
+
+@3140 = ~Atonement~
+@3141 = ~Unlocked upon leaving Caelar Argent behind to guard the portal to the Prime Material Plane.~
+
+@3150 = ~The Last Duty~
+@3151 = ~Unlocked upon leaving Aun Argent behind to guard the portal to the Prime Material Plane.~
+
+@3160 = ~It Wasn't Me!~
+@3161 = ~Unlocked upon convincing Duke Belt that you weren't responsible for Skie's murder.~
+
+@3170 = ~I Don't Care~
+@3171 = ~Unlocked upon convincing Corwin that you did not commit murder.~
+
+@3180 = ~Grim Deeds to Come...~
+@3181 = ~Unlocked upon falling to cloaked attackers outside Baldur's Gate.~
+
+@3190 = ~The O.G.~
+@3191 = ~Unlocked upon reuniting with old friends from Baldur's Gate: Minsc, Dynaheir, Safana, Jaheira and Khalid.~
+
+@3200 = ~Newer Kids on the Block~
+@3201 = ~Unlocked upon having Corwin, Glint, M'Khiin and Voghiln in the same party.~
+
+@3210 = ~Unpopular~
+@3211 = ~Unlocked upon having Baeloth, Viconia, M'Khiin, Dorn and Edwin in the same party.~
+
+@3220 = ~Get Out!~
+@3221 = ~Unlocked upon solving Neera's personal quest to get rid of Adoy.~
+
+@3230 = ~Family Reunion~
+@3231 = ~Unlocked upon tracking down all of Glint's family members.~
+
+@3240 = ~Harper's Gift~
+@3241 = ~Unlocked upon aiding Khalid with his romantic request.~
+
+@3250 = ~Grub... Doubled~
+@3251 = ~Unlocked upon helping M'Khiin to find her path.~
+
+@3260 = ~Family Secrets~
+@3261 = ~Unlocked upon discovering a secret hidden away in the Korlasz family tomb.~
+
+@3270 = ~Know Thyself~
+@3271 = ~Unlocked upon helping Ammon in the Korlasz family tomb.~
+
+@3280 = ~Four on One~
+@3281 = ~Unlocked upon defeating the burglars in Sorcerous Sundries just by yourself.~
+
+@3290 = ~Well, It's Heavy~
+@3291 = ~Unlocked upon aquiring a gold bust of yourself from Ophyllis.~
+
+@3300 = ~Painful Recital~
+@3301 = ~Unlocked upon failing to impress the ancient menhirs with your singing ability.~
+
+@3310 = ~A Complete Set~
+@3311 = ~Completed the side quest, "Halfling Treasures", by finding all of Takos's missing family heirlooms.~
+
+@3320 = ~Stone to Flesh~
+@3321 = ~Completed the side quest, "The Vanished", by saving all missing refugees in the Coast Way forest.~
+
+@3330 = ~Remote Control~
+@3331 = ~Unlocked upon talking Teleria into selling her golem.~
+
+@3340 = ~Dumathoin's Disappointment~
+@3341 = ~Unlocked upon destroying the lich Coldhearth and his phylactery.~
+
+@3350 = ~Strange Bedfellow~
+@3351 = ~Unlocked upon delivering the amulets of his former companions to the lich Coldhearth.~
+
+@3360 = ~He's Just Misunderstood~
+@3361 = ~Unlocked upon siding with Tsolak the vampire.~
+
+@3370 = ~Darkseer~
+@3371 = ~Unlocked upon using infravision to navigate an area of darkness.~
+
+@3380 = ~Dragon Slayer~
+@3381 = ~Unlocked upon slaying the green dragon, Morentherene.~
+
+@3390 = ~Amendments~
+@3391 = ~Unlocked upon ordering the faithful of Bhaal, Madele, to amend her murderous misdeeds.~
+
+@3400 = ~In the Name of the Father~
+@3401 = ~Unlocked upon commanding Madele to murder in the name of Bhaal.~
+
+@3410 = ~I'm A Wizard and That Looks...~
+@3411 = ~Unlocked upon murdering the trapped crusaders in the Temple of Cyric.~
+
+@3420 = ~The Key Forward~
+@3421 = ~Unlocked upon aquiring the wardstone from the Temple of Cyric.~
+
+@3430 = ~Seeker of Secrets~
+@3431 = ~Unlocked upon discovering a secret chamber in the Temple of Cyric and the treasure hidden within.~
+
+@3440 = ~String Cutter~
+@3441 = ~Unlocked upon destroying the mind flayer Darskhelin in the Temple of Cyric.~
+
+@3450 = ~Diffusion~
+@3451 = ~Unlocked upon stopping the sickening energy emanating from the spellstone at Bridgefort.~
+
+@3460 = ~Tapped into the Void~
+@3461 = ~Unlocked upon forging a void weapon.~
+
+@3470 = ~Scales of the Beast~
+@3471 = ~Unlocked upon forging a dragonscale item.~
+
+@3480 = ~Proud of Yourself~
+@3481 = ~Unlocked upon revealing your identity to the crusaders at Boareskyr Bridge.~
+
+@3490 = ~Well Done~
+@3491 = ~Unlocked upon dealing with an angry water elemental near Boareskyr Bridge.~
+
+@3500 = ~Detailed Investigation~
+@3501 = ~Unlocked upon finding the traitor within the coalition camp.~
+
+@3510 = ~Whipped Into Shape~
+@3511 = ~Unlocked upon training all of Vigilant Hasalan's recruits properly.~
+
+@3520 = ~Urge to Kill~
+@3521 = ~Unlocked upon killing Nüber.~
+
+@3530 = ~Appeal to Reason~
+@3531 = ~Unlocked upon presenting evidence of the crusader's crimes to Julann at the Underground River Entrance.~
+
+@3540 = ~Breaking Point~
+@3541 = ~Unlocked upon persuading Rigah to turn against Julann.~
+
+@3550 = ~Nature Lover~
+@3551 = ~Unlocked upon siding with the surface druids at the Underground River entrance.~
+
+@3560 = ~Dark Ally~
+@3561 = ~Unlocked upon siding with Ferrusk at the dark druid circle at the Underground River.~
+
+@3570 = ~Trivium~
+@3571 = ~Unlocked upon performing a task worthy of the Terrible Trivium by wasting your time with an utterly meaningless task.~
+
+@3580 = ~A Reunion of Friends~
+@3581 = ~Unlocked upon reuniting the spirits of Daeros Dragonspear and Halatathlaer.~
+
+@3590 = ~Kanaglym Cleansed~
+@3591 = ~Unlocked upon defeating the cabal of wizards hiding within lost Kanaglym.~
+
+@3600 = ~Blessed By Talona~
+@3601 = ~Unlocked upon poisoning supplies within Dragonspear Castle.~
+
+@3610 = ~Hasty Retreat~
+@3611 = ~Unlocked upon discovering Hephernaan within the Dragonspear Castle basement.~
+
+@3620 = ~Explorer~
+@3621 = ~Unlocked upon exploring all unique encounters.~
+
+@3630 = ~Far Out~
+@3631 = ~Unlocked upon summoning three creatures to the Prime Material Plane using the Spectacles of Spectacle.~
+
+@3640 = ~All the Allies~
+@3641 = ~Unlocked upon recruiting all the bonus allies possible for the final battle.~
+
+@3650 = ~All the Enemies~
+@3651 = ~Unlocked upon fighting all the bonus enemies possible at the final battle.~
+
+@3660 = ~Riddlemaster~
+@3661 = ~Unlocked upon answering the menhir's riddle, Vidyadhar's riddle and Thrix's riddle correctly.~
+
+@3670 = ~The End of Korlasz~
+@3671 = ~Unlocked upon successfully dealing with Korlasz.~
+
+
+// *** List of possibly unimplemented Steam achievements ***
+
+@3680 = ~Revered Brother Hephernaan~
+@3681 = ~Unlocked upon defeating Hephernaan in Avernus.~
+
+@3690 = ~Tiax commands~
+@3691 = ~Unlocked upon talking to Tiax in the Flaming Fist headquarters.~
+
+@3700 = ~That's evil~
+@3701 = ~Unlocked upon killing the caged crusaders in the Temple of Cyric by triggering the spike trap.~

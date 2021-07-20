@@ -1,0 +1,151 @@
+// -*- coding: utf-8 -*-
+
+@9000 = ~Call of the Blade~
+@9001 = ~Unlocked upon switching back to Fighter class over the course of the game.~
+
+@9010 = ~Call of the Art~
+@9011 = ~Unlocked upon training to become a Mage.~
+
+@9020 = ~Call of the Shadows~
+@9021 = ~Unlocked upon training to become a Thief.~
+
+@9030 = ~Master of Blades~
+@9031 = ~Unlocked upon reaching level 12 in Fighter class before any other class.~
+
+@9040 = ~Master of the Art~
+@9041 = ~Unlocked upon reaching level 12 in Mage class before any other class.~
+
+@9050 = ~One-With-Shadows~
+@9051 = ~Unlocked upon reaching level 12 in Thief class before any other class.~
+
+@9060 = ~...yourself in your full glory.~
+@9061 = ~Unlocked upon advancing an attribute score to 25.~
+
+@9070 = ~Chaos Bringer~
+@9071 = ~Unlocked upon reaching any chaotic alignment.~
+
+@9080 = ~Deva's Heart~
+@9081 = ~Unlocked upon reaching any lawful alignment.~
+
+@9090 = ~Noble Spirit~
+@9091 = ~Unlocked upon reaching any good alignment.~
+
+@9100 = ~Dark Intent~
+@9101 = ~Unlocked upon reaching any evil alignment.~
+
+@9110 = ~Balance in All Things~
+@9111 = ~Unlocked upon maintaining True Neutral Alignment until the end of the game.~
+
+@9120 = ~Lady's Gaze~
+@9121 = ~Unlocked upon drawing the Lady's Gaze and getting mazed.~
+
+@9130 = ~Cagebreaker~
+@9131 = ~Unlocked upon escaping the Lady's Maze - this time.~
+
+@9140 = ~All too Real~
+@9141 = ~Unlocked upon giving birth to Adahn through belief.~
+
+@9150 = ~Creative Die-Rector~
+@9151 = ~Unlocked upon defeating the Evil Wizard Construct of the Modron Maze.~
+
+@9160 = ~Anarch Agenda~
+@9161 = ~Unlocked upon joining the Anarchists.~
+
+@9170 = ~The True Death~
+@9171 = ~Unlocked upon joining the Dustmen.~
+
+@9180 = ~Society of Sensation~
+@9181 = ~Unlocked upon joining the Sensates.~
+
+@9190 = ~N'joi Ts'Cai'Sotex~
+@9191 = ~Unlocked upon joining the Xaositects.~
+
+@9200 = ~Friends, Indeed~
+@9201 = ~Unlocked upon rescuing Morte from Lothar.~
+
+@9210 = ~Annah, Rose of my Eye~
+@9211 = ~Unlocked upon gaining Annah as a companion.~
+
+@9220 = ~Priestess of no Goddess~
+@9221 = ~Unlocked upon gaining Fall-From-Grace as a companion.~
+
+@9230 = ~Through Justice, Perfection~
+@9231 = ~Unlocked upon gaining Vhailor as a companion.~
+
+@9240 = ~Endure. In enduring, grow strong.~
+@9241 = ~Unlocked upon gaining Dak'kon as a companion.~
+
+@9250 = ~The Sssmoldering Corpssse~
+@9251 = ~Unlocked upon gaining Ignus as a companion.~
+
+@9260 = ~Backwards Modron~
+@9261 = ~Unlocked upon gaining Nordom as a companion.~
+
+@9270 = ~Trust the Skull~
+@9271 = ~Unlocked upon discovering the truth of why Morte is with you.~
+
+@9280 = ~What the Flames Teach~
+@9281 = ~Unlocked upon discovering your connection to Ignus.~
+
+@9290 = ~No Longer = Total Logic~
+@9291 = ~Unlocked upon helping Nordom resolve his issue.~
+
+@9300 = ~Enchained Blade~
+@9301 = ~Unlocked upon advancing Dak'kon's karach blade to the highest neutral point.~
+
+@9310 = ~Kin-Stealer~
+@9311 = ~Unlocked upon advancing Dak'kon's karach blade to the highest evil point.~
+
+@9320 = ~Streaming Blade~
+@9321 = ~Unlocked upon advancing Dak'kon's karach blade to the highest honor point.~
+
+@9330 = ~Two Deaths As One~
+@9331 = ~Unlocked upon issuing the Pronouncement of Two Deaths of One at the Fortress of Regrets.~
+
+@9340 = ~Shattered Circle~
+@9341 = ~Unlocked upon discovering why Dak'kon's faith is shattered.~
+
+@9350 = ~Closing the Circle~
+@9351 = ~Unlocked upon restoring Dak'kon's faith.~
+
+@9360 = ~Mortuary Gate~
+@9361 = ~Unlocked upon escaping the Mortuary.~
+
+@9370 = ~Unity of Rings~
+@9371 = ~Unlocked upon returning to Mebbeth and restoring the Unity of Rings.~
+
+@9380 = ~Unraveling~
+@9381 = ~Unlocked upon dealing with Ravel Puzzlewell.~
+
+@9390 = ~Branchings~
+@9391 = ~Unlocked upon meeting all of Ravel's branching incarnations in Sigil.~
+
+@9400 = ~Crossing Over~
+@9401 = ~Unlocked upon shifting Curst back to the Outlands.~
+
+@9410 = ~Strength in Betrayal~
+@9411 = ~Unlocked upon dealing with Trias the Betrayer.~
+
+@9420 = ~Ol' Stuttercrutch's Horde~
+@9421 = ~Unlocked upon finding Pharod's Vault. It smells in there.~
+
+@9430 = ~The Bronze Sphere~
+@9431 = ~Unlocked upon recovering the Bronze Sphere.~
+
+@9440 = ~The Named One~
+@9441 = ~Unlocked upon discovering your name, at last.~
+
+@9450 = ~Nameless ONE~
+@9451 = ~Unlocked upon entering the Fortress of Regrets on your own.~
+
+@9460 = ~Deincarnation~
+@9461 = ~Unlocked upon killing all three incarnations in the Fortress of Regrets.~
+
+@9470 = ~Triincarnation~
+@9471 = ~Unlocked upon absorbing all three incarnations in the Fortress of Regrets.~
+
+@9480 = ~Parting Sorrows~
+@9481 = ~Unlocked upon defeating your adversary.~
+
+@9490 = ~To Every Question, An Answer~
+@9491 = ~Unlocked upon giving the Transcendent One an answer to the question "What can change the nature of a man?"~

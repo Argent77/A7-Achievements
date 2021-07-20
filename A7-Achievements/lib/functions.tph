@@ -1,0 +1,333 @@
+// Blank file for general use
+<<<<<<<< .../inlined/A7-Achievements/blank
+>>>>>>>>
+
+// Script block added to global game scripts
+<<<<<<<< .../inlined/A7-Achievements/a7-global-achv-call.baf
+IF
+  OR(2)
+    OnCreation()
+    !GlobalTimerNotExpired("A7-ACHIEVEMENTS-TIMER","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",60)
+    ChangeAIScript("A7-ACHV",SPECIFICS)
+    Continue()
+END
+>>>>>>>>
+
+// Script block template for adding individual achievement checks (non-PSTEE)
+<<<<<<<< .../inlined/A7-Achievements/a7-achv-block.baf
+IF
+  !Global("%ach_var%","GLOBAL",0)
+  Global("%ach_var_guard%","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("%ach_var_guard%","GLOBAL",1)
+    AddJournalEntry(%ach_strref%,QUEST)
+    Continue()
+END
+>>>>>>>>
+
+// Script block template for adding individual achievement checks (PSTEE-specific)
+<<<<<<<< .../inlined/A7-Achievements/a7-achv-block-pstee.baf
+IF
+  !Global("%ach_var%","GLOBAL",0)
+  Global("%ach_var_guard%","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("%ach_var_guard%","GLOBAL",1)
+    Continue()
+END
+>>>>>>>>
+
+// Script for checking achievements
+<<<<<<<< .../inlined/A7-Achievements/a7-achv.baf
+IF
+  True()
+THEN
+  RESPONSE #100
+    ChangeAIScript("",SPECIFICS)
+END
+>>>>>>>>
+
+
+// Returns an indexed array of games.
+DEFINE_ACTION_FUNCTION SPLIT_GAMES
+STR_VAR games = ~~
+RET game_list
+RET_ARRAY game_list
+BEGIN
+  OUTER_SET game_list = 0
+  ACTION_CLEAR_ARRAY ~game_list~
+
+  OUTER_PATCH ~%games%~ BEGIN
+    REPLACE_EVALUATE
+      ~\([^ %TAB%%WNL%]+\)~
+      BEGIN
+        TEXT_SPRINT $game_list(~%game_list%~) ~%MATCH1%~
+        SET game_list += 1
+      END
+      ~~
+  END
+END
+
+
+// Returns a valid variable name based on the specified parameters. Returns empty name if global is not available.
+DEFINE_DIMORPHIC_FUNCTION FORMAT_GLOBAL
+STR_VAR
+  global = ~~ // name of the global variable
+  game   = ~~ // may be blank
+RET
+  global  // resulting variable name, or empty if not available
+BEGIN
+  ACTION_IF (NOT ~%global%~ STR_EQ ~~) BEGIN
+    ACTION_IF (GAME_IS ~eet~) BEGIN
+      ACTION_TO_LOWER ~game~
+      ACTION_MATCH ~%game%~ WITH
+        ~bgee~  BEGIN OUTER_TEXT_SPRINT suffix ~_BG1~ END
+        ~sod~   BEGIN OUTER_TEXT_SPRINT suffix ~_SOD~ END
+        ~iwdee~ BEGIN OUTER_TEXT_SPRINT suffix ~_IWD~ END
+        DEFAULT       OUTER_TEXT_SPRINT suffix ~~
+      END
+    END ELSE BEGIN
+      OUTER_TEXT_SPRINT suffix ~~
+    END
+
+    OUTER_SET len_diff = (STRING_LENGTH ~%global%%suffix%~) - 32
+    ACTION_IF (len_diff > 0) BEGIN
+      LAF SUBSTRING
+        INT_VAR
+          start = 0
+          length = STRING_LENGTH ~%global%~ - len_diff
+        STR_VAR
+          string = EVAL ~%global%~
+        RET
+          global = substring
+      END
+    END
+    OUTER_TEXT_SPRINT global ~%global%%suffix%~
+
+    ACTION_IF (NOT ~%suffix%~ STR_EQ ~~ &&
+               NOT FILE_CONTAINS_EVALUATED(~%MOD_FOLDER%/scripts/achievem-eet.baf~ ~"%global%"~)) BEGIN
+      OUTER_TEXT_SPRINT global ~~
+    END
+  END
+END
+
+
+// Creates a properly formatted journal entry title and content.
+DEFINE_PATCH_FUNCTION CREATE_JOURNAL_ENTRY
+INT_VAR
+  tra_ref = "-1"  // tra reference of achievement name
+RET
+  title_strref    // strref of the journal title
+  content_strref  // strref of the formatted journal text
+BEGIN
+  SET title_strref = "-1"
+  SET content_strref = "-1"
+
+  PATCH_IF (tra_ref >= 0) BEGIN
+    SET heading_ref = tra_ref
+    SET body_ref = heading_ref + 1
+
+    SPRINT title_text @500
+    SPRINT heading_text (AT ~heading_ref~)
+    SPRINT body_text (AT ~body_ref~)
+    PATCH_IF (GAME_IS ~bg2ee eet iwdee~) BEGIN
+      SET title_strref = RESOLVE_STR_REF(~%title_text%~)
+      TEXT_SPRINT entry_text ~%heading_text%%LNL%%LNL%%body_text%~
+    END ELSE PATCH_IF (GAME_IS ~pstee~) BEGIN
+      SET title_strref = RESOLVE_STR_REF(~%title_text% (%heading_text%)~)
+      TEXT_SPRINT entry_text ~%body_text%~
+    END ELSE BEGIN
+      SET title_strref = RESOLVE_STR_REF(~%title_text%~)
+      TEXT_SPRINT entry_text ~%title_text%%LNL%%LNL%%heading_text%%LNL%%LNL%%body_text%~
+    END
+
+    SET content_strref = RESOLVE_STR_REF(~%entry_text%~)
+  END
+END
+
+
+// Retrieves a list of achievement definitions for the specified games.
+DEFINE_ACTION_FUNCTION COLLECT_ACHIEVEMENTS
+STR_VAR
+  games = ~~
+RET
+  achievements    // number of stored elements in achievements array
+  journal_titles  // number of stored elements in journal_titles array
+RET_ARRAY
+  achievements    // associative array: name_of_global => journal_strref
+  journal_titles  // associative array: name_of_global => title_strref
+BEGIN
+  OUTER_SET achievements = 0
+  OUTER_SET journal_titles = 0
+  ACTION_CLEAR_ARRAY ~achievements~
+  ACTION_CLEAR_ARRAY ~journal_titles~
+
+  // preparations
+  LAF SPLIT_GAMES STR_VAR games RET game_list RET_ARRAY game_list END
+
+  COPY ~%MOD_FOLDER%/tables/achievements.2da~ ~%MOD_FOLDER%/tables/achievements.2da~
+    READ_2DA_ENTRIES_NOW table 1
+    READ_2DA_ENTRY_FORMER table 1 0 def_value
+
+    // Wildcards are supported
+    TEXT_SPRINT $game_list(~%game_list%~) ~%def_value%~
+    SET game_list += 1
+
+    FOR (i = 0; i < game_list; ++i) BEGIN
+      TEXT_SPRINT game $game_list(~%i%~)
+      FOR (row = 3; row < table; ++row) BEGIN
+        READ_2DA_ENTRY_FORMER table row 1 col_game
+        PATCH_IF (~%col_game%~ STR_EQ ~%game%~) BEGIN
+          READ_2DA_ENTRY_FORMER table row 2 row_global
+          READ_2DA_ENTRY_FORMER table row 3 row_tra
+          PATCH_IF (NOT ~%row_global%~ STR_EQ ~%def_value%~ && IS_AN_INT ~row_tra~) BEGIN
+            LPF FORMAT_GLOBAL STR_VAR global = EVAL ~%row_global%~ game RET global END
+            PATCH_IF (NOT ~%global%~ STR_EQ ~~ && NOT VARIABLE_IS_SET $achievements(~%global%~)) BEGIN
+              LPF CREATE_JOURNAL_ENTRY INT_VAR tra_ref = row_tra RET title_strref content_strref END
+              SET $achievements(~%global%~) = content_strref
+              SET achievements += 1
+              SET $journal_titles(~%global%~) = title_strref
+              SET journal_titles += 1
+            END
+          END
+        END
+      END
+    END
+  BUT_ONLY
+END
+
+
+// Patches the global game scripts to execute the achievement checks in regular intervals
+DEFINE_ACTION_FUNCTION PATCH_GAME_SCRIPTS
+BEGIN
+  // Collecting available global game scripts
+  OUTER_SET $scripts(~BALDUR~) = 1
+  ACTION_IF (FILE_EXISTS_IN_GAME ~BALDUR25.BCS~) BEGIN
+    OUTER_SET $scripts(~BALDUR25~) = 1
+  END
+  COPY_EXISTING ~campaign.2da~ ~override~
+    READ_2DA_ENTRIES_NOW campaign 1
+    FOR (row = 3; row < campaign; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER campaign row 1 resref
+      TO_UPPER ~resref~
+      PATCH_IF (NOT VARIABLE_IS_SET $scripts(~%resref%~)) BEGIN
+        SET $scripts(~%resref%~) = 1
+      END
+    END
+  BUT_ONLY IF_EXISTS
+
+  // Patching global scripts
+  ACTION_PHP_EACH scripts AS resref => _ BEGIN
+    ACTION_IF (FILE_EXISTS_IN_GAME ~%resref%.BCS~ &&
+               NOT FILE_CONTAINS_EVALUATED (~%resref%.BCS~ ~A7-ACHIEVEMENTS-TIMER~)) BEGIN
+      EXTEND_TOP ~%resref%.BCS~ ~.../inlined/A7-Achievements/a7-global-achv-call.baf~
+    END
+  END
+END
+
+
+// Add a journal trigger command to the bgee.lua file. (PSTEE only)
+DEFINE_PATCH_FUNCTION INSTALL_JOURNAL_TRIGGER
+INT_VAR strref = "-1"
+STR_VAR global = ~~
+BEGIN
+  TEXT_SPRINT ws ~ %TAB%~
+  SET pos = INDEX_BUFFER(~^[%ws%]*if[%ws%]*([%ws%]*sv[%ws%]*("[^"]+"[%ws%]*)~)
+  PATCH_IF (pos >= 0) BEGIN
+    TEXT_SPRINT line ~%TAB%if( sv("%global%") > 0 ) then setEntryDone(%strref%) end%WNL%~
+    SET strlen = STRING_LENGTH ~%line%~
+    INSERT_BYTES pos strlen
+    WRITE_ASCIIE pos ~%line%~ (strlen)
+  END
+END
+
+
+// Main routine for installing achievement journal entries
+DEFINE_ACTION_FUNCTION INSTALL_ACHIEVEMENTS
+STR_VAR
+  games = ~~ // list of space-separated games (bgee, sod, bg2ee, iwdee, pstee)
+BEGIN
+  // collecting achievement definitions
+  LAF COLLECT_ACHIEVEMENTS STR_VAR games RET achievements journal_titles RET_ARRAY achievements journal_titles END
+
+  ACTION_IF (achievements > 0) BEGIN
+    OUTER_SET journal = 0
+
+    // Installing achievements script
+    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~a7-achv.bcs~) BEGIN
+      COMPILE ~.../inlined/A7-Achievements/a7-achv.baf~
+    END
+
+    ACTION_PHP_EACH achievements AS ach_var => ach_strref BEGIN
+      // ensure variable length doesn't exceed 32 characters
+      LAF FORMAT_GLOBAL STR_VAR global = EVAL ~A7-%ach_var%~ game = ~~ RET ach_var_guard = global END
+      ACTION_IF (GAME_IS ~pstee~) BEGIN
+        EXTEND_TOP ~a7-achv.bcs~ ~.../inlined/A7-Achievements/a7-achv-block-pstee.baf~ EVAL
+      END ELSE BEGIN
+        EXTEND_TOP ~a7-achv.bcs~ ~.../inlined/A7-Achievements/a7-achv-block.baf~ EVAL
+      END
+
+      // processing journal entry
+      OUTER_SET ach_title_strref = $journal_titles(~%ach_var%~)
+      OUTER_SET $journal_title(~%journal%~) = ach_title_strref
+      OUTER_SET $journal(~%journal%~) = ach_strref
+      OUTER_SET journal += 1
+    END
+
+    // registering journal entries
+    ACTION_IF (journal > 0) BEGIN
+      OUTER_SET title_old = "-1"
+      OUTER_TEXT_SPRINT command ~~
+      
+      OUTER_FOR (i = 0; i < journal; ++i) BEGIN
+        OUTER_SET title_strref = $journal_title(~%i%~)
+        ACTION_IF (title_strref != title_old) BEGIN
+          // closing current journal entry
+          ACTION_IF (NOT ~%command%~ STR_EQ ~~) BEGIN
+            COPY - ~.../inlined/A7-Achievements/blank~ ~.../inlined/A7-Achievements/journal.tph~
+            APPEND_OUTER - ~.../inlined/A7-Achievements/journal.tph~ ~%command%~
+            REINCLUDE ~.../inlined/A7-Achievements/journal.tph~
+            OUTER_TEXT_SPRINT command ~~
+          END
+
+          // starting new journal entry
+          OUTER_SET title_old = title_strref
+          OUTER_TEXT_SPRINT command ~ADD_JOURNAL TITLE (#%title_strref%)~
+        END
+
+        OUTER_SET strref = $journal(~%i%~)
+        ACTION_IF (NOT VARIABLE_IS_SET $cache(~%title_strref%~ ~%strref%~)) BEGIN
+          OUTER_SET $cache(~%title_strref%~ ~%strref%~) = 1
+          OUTER_TEXT_SPRINT command ~%command% #%strref%~
+        END
+      END
+
+      // closing current journal entry
+      ACTION_IF (NOT ~%command%~ STR_EQ ~~) BEGIN
+        COPY - ~.../inlined/A7-Achievements/blank~ ~.../inlined/A7-Achievements/journal.tph~
+        APPEND_OUTER - ~.../inlined/A7-Achievements/journal.tph~ ~%command%~
+        REINCLUDE ~.../inlined/A7-Achievements/journal.tph~
+      END
+    END
+
+    // patching global game scripts
+    LAF PATCH_GAME_SCRIPTS END
+
+    // adding journal triggers (PSTEE only)
+    ACTION_IF (GAME_IS ~pstee~) BEGIN
+      COPY_EXISTING ~bgee.lua~ ~override~
+        PHP_EACH achievements AS ach_var => ach_strref BEGIN
+          LPF FORMAT_GLOBAL STR_VAR global = EVAL ~A7-%ach_var%~ game = ~~ RET global END
+          LPF INSTALL_JOURNAL_TRIGGER
+            INT_VAR strref = ach_strref
+            STR_VAR global
+          END
+        END
+      BUT_ONLY IF_EXISTS
+    END
+  END
+END

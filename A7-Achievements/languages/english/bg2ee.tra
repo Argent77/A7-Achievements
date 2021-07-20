@@ -1,0 +1,283 @@
+// -*- coding: utf-8 -*-
+
+@5000 = ~Godlike~
+@5001 = ~The protagonist reached the following statistics: 25 in any given attribute score.~
+
+@5010 = ~Untouchable~
+@5011 = ~The protagonist reached the following statistics: Armor Class -15 or lower.~
+
+@5020 = ~Loremaster~
+@5021 = ~The protagonist reached the following statistics: Lore skill of 100 or higher.~
+
+@5030 = ~Grand Master~
+@5031 = ~The protagonist reached the following statistics: Grandmaster level in any given weapon proficiency.~
+
+@5040 = ~Flying Solo~
+@5041 = ~Completed the game without anyone else in the party.~
+
+@5050 = ~Lord of Murder~
+@5051 = ~Completed the whole game on Legacy of Bhaal difficulty.~
+
+@5060 = ~Friend of Volo~
+@5061 = ~Completed the whole game on Story Mode difficulty.~
+
+@5070 = ~Leave No Friend Behind~
+@5071 = ~Completed the game without anyone in the party getting killed.~
+
+@5080 = ~Sacrifices Must Be Made~
+@5081 = ~Completed the game with everyone in the party dead except me.~
+
+@5090 = ~Juggernaut~
+@5091 = ~The protagonist reached the following statistics: 150 HP or more.~
+
+@5100 = ~Hero~
+@5101 = ~The party reached the following statistics: "Heroic" reputation.~
+
+@5110 = ~Villain~
+@5111 = ~The party reached the following statistics: "Despised" reputation.~
+
+@5120 = ~Murder Incarnate~
+@5121 = ~The party killed at least 1,000 creatures.~
+
+@5130 = ~Oathbreaker~
+@5131 = ~Unlocked upon the protagonist becoming a Fallen Paladin or Fallen Ranger.~
+
+@5140 = ~Best Day Ever~
+@5141 = ~Unlocked upon experiencing the following effects at the same time: Bless, Luck and Chant.~
+
+@5150 = ~Worst Day Ever~
+@5151 = ~Unlocked upon suffering the following effects at the same time: Fatigue, Poison and Disease.~
+
+@5160 = ~Picking Sides~
+@5161 = ~Unlocked upon raising enough gold to hire assistance.~
+
+@5170 = ~I'll Keep This~
+@5171 = ~Unlocked upon acquiring the warrior stronghold.~
+
+@5180 = ~Spherical Stronghold~
+@5181 = ~Unlocked upon acquiring the wizard stronghold.~
+
+@5190 = ~Guild Times~
+@5191 = ~Unlocked upon acquiring the thief stronghold.~
+
+@5200 = ~Divine Domain~
+@5201 = ~Unlocked upon acquiring the cleric stronghold.~
+
+@5210 = ~Orderly Surroundings~
+@5211 = ~Unlocked upon acquiring the paladin stronghold.~
+
+@5220 = ~Cabin In the Woods~
+@5221 = ~Unlocked upon acquiring the ranger stronghold.~
+
+@5230 = ~Home Grove~
+@5231 = ~Unlocked upon acquiring the druid stronghold.~
+
+@5240 = ~The Play's the Thing~
+@5241 = ~Unlocked upon acquiring the bard stronghold.~
+
+@5250 = ~Epic Mage~
+@5251 = ~Unlocked upon reaching level 30 as a mage or sorcerer.~
+
+@5260 = ~Epic Rogue~
+@5261 = ~Unlocked upon reaching level 30 as a thief or bard.~
+
+@5270 = ~Epic Warrior~
+@5271 = ~Unlocked upon reaching level 30 as a fighter, ranger, paladin, monk or barbarian.~
+
+@5280 = ~Epic Priest~
+@5281 = ~Unlocked upon reaching level 30 as a cleric, druid or shaman.~
+
+@5290 = ~A Daring Escape~
+@5291 = ~Unlocked upon escaping from the wizard's dungeon beneath the Promenade of Athkatla.~
+
+@5300 = ~Across the Sea~
+@5301 = ~Unlocked upon setting sail for Spellhold.~
+
+@5310 = ~Inmates Running the Asylum~
+@5311 = ~Unlocked upon rescuing Imoen from Spellhold.~
+
+@5320 = ~Return to the Surface~
+@5321 = ~Unlocked upon surviving the perils of the Underdark.~
+
+@5330 = ~Staked~
+@5331 = ~Unlocked upon defeating the vampire queen Bodhi once and for all.~
+
+@5340 = ~To Hell and Back~
+@5341 = ~Unlocked upon strucking down Jon Irenicus and reclaiming your soul.~
+
+@5350 = ~Shadow Ally~
+@5351 = ~Unlocked upon allying yourself with the Shadow Thieves.~
+
+@5360 = ~Friend of Darkness~
+@5361 = ~Unlocked upon allying yourself with Athkatla's vampire guild.~
+
+@5370 = ~Unknown Risks~
+@5371 = ~Unlocked upon using the mysterious portal in Spellhold.~
+
+@5380 = ~Took a Chance~
+@5381 = ~Unlocked upon taking up Saemon Havarian's offer to leave Spellhold.~
+
+@5390 = ~Hell's Pocket~
+@5391 = ~Unlocked upon finding your way to the pocket plane in Hell.~
+
+@5400 = ~Felling the Giant~
+@5401 = ~Unlocked upon defeating the fire giant Bhaalspawn Yaga-Shura.~
+
+@5410 = ~Dragon's Demise~
+@5411 = ~Unlocked upon slaying the blue dragon Bhaalspawn Abazigal.~
+
+@5420 = ~The Seven Statues~
+@5421 = ~Unlocked upon overpowering the drow Bhaalspawn Sendai.~
+
+@5430 = ~Solar Supremacy~
+@5431 = ~Unlocked upon defeating the monk Bhaalspawn Balthazar.~
+
+@5440 = ~Seize the Throne~
+@5441 = ~Unlocked upon destroying Amelyssan the Blackhearted and taking your place as a god.~
+
+@5450 = ~Heavy Is the Head~
+@5451 = ~Unlocked upon destroying Amelyssan the Blackhearted and refusing the power of Bhaal.~
+
+@5460 = ~The First Challenge~
+@5461 = ~Unlocked upon facing the first challenge in the pocket plane in Hell.~
+
+@5470 = ~The Second Challenge~
+@5471 = ~Unlocked upon encountering your alternate self.~
+
+@5480 = ~The Third Challenge~
+@5481 = ~Unlocked upon confronting your own innocence and defeating the Slayer.~
+
+@5490 = ~The Fourth Challenge~
+@5491 = ~Unlocked upon discussing your fate with Cyric and facing his champions.~
+
+@5500 = ~The Fifth Challenge~
+@5501 = ~Unlocked upon strucking down the Ravager.~
+
+@5510 = ~Wand Collector~
+@5511 = ~Unlocked upon disarming the traps in the lower level of the wizard's dungeon.~
+
+@5520 = ~The Great Detective~
+@5521 = ~Unlocked upon solving the "skinner" murders.~
+
+@5530 = ~Best Friends~
+@5531 = ~Unlocked upon returning Wellyn's missing bear.~
+
+@5540 = ~New Ownership~
+@5541 = ~Unlocked upon putting Hendak in charge of the Copper Coronet.~
+
+@5550 = ~Heart of the Abyss~
+@5551 = ~Unlocked upon discovering the secrets of the planar sphere.~
+
+@5560 = ~Close the Eye~
+@5561 = ~Unlocked upon destroying the cult of the Unseeing Eye.~
+
+@5570 = ~Trade Must Flow~
+@5571 = ~Unlocked upon breaking the trade monopoly of the genies in Trademeet.~
+
+@5580 = ~Fang and Claw~
+@5581 = ~Unlocked upon putting a stop to the strange animal attacks at Trademeet.~
+
+@5590 = ~Light in Darkness~
+@5591 = ~Unlocked upon finding the source of evil in the temple ruins outside the Umar Hills.~
+
+@5600 = ~No Child Left Behind~
+@5601 = ~Unlocked upon finding and returning Garren Windspear's missing child.~
+
+@5610 = ~Freedom~
+@5611 = ~Unlocked upon freeing the mage Vithal in the Underdark.~
+
+@5620 = ~A Battle for the Ages~
+@5621 = ~Unlocked upon defeating Kangaxx the demilich.~
+
+@5630 = ~Twisted Victory~
+@5631 = ~Unlocked upon finding and defeating the members of the Twisted Rune.~
+
+@5640 = ~Double Cross~
+@5641 = ~Unlocked upon double-crossing Matron Mother Ardulace in Ust Natha.~
+
+@5650 = ~Triple Cross~
+@5651 = ~Unlocked upon double-crossing both Matron Mother Ardulace and Phaere in Ust Natha.~
+
+@5660 = ~Don't Mind Us~
+@5661 = ~Unlocked upon finding a hidden mind flayer lair.~
+
+@5670 = ~To the Limit~
+@5671 = ~Unlocked upon casting Limited Wish and dealing with the results.~
+
+@5680 = ~I Dub Thee~
+@5681 = ~Unlocked upon completing Anomen's personal quest by getting him knighted.~
+
+@5690 = ~Reunited~
+@5691 = ~Unlocked upon completing Cernd's personal quest by reuniting him with his estranged family.~
+
+@5700 = ~The Nether Scroll~
+@5701 = ~Unlocked upon completing Edwin's personal quest by tracking down the Nether Scrolls.~
+
+@5710 = ~Planehopper~
+@5711 = ~Unlocked upon completing Haer'Dalis's personal quest by rescuing him from the Planar Prison.~
+
+@5720 = ~Restored~
+@5721 = ~Unlocked upon completing one of Jaheira's personal quests by breaking Baron Ployer's curse.~
+
+@5730 = ~Homecoming~
+@5731 = ~Unlocked upon completing Jan's personal quest by helping out his lost love Lissa.~
+
+@5740 = ~Family Matters~
+@5741 = ~Unlocked upon completing Keldorn's personal quest by settling matters with his family.~
+
+@5750 = ~The Book of Kaza~
+@5751 = ~Unlocked upon completing Korgan's personal quest by tracking down the Book of Kaza.~
+
+@5760 = ~Sisters~
+@5761 = ~Unlocked upon completing Mazzy's personal quest by helping her sister, Pala.~
+
+@5770 = ~Absolute Power~
+@5771 = ~Unlocked upon completing Nalia's personal quest by dealing with the Roenall family.~
+
+@5780 = ~Friends Like These~
+@5781 = ~Unlocked upon discovering that Yoshimo double-crossed you.~
+
+@5790 = ~Peace At Last~
+@5791 = ~Unlocked upon putting Yoshimo's soul to rest.~
+
+@5800 = ~Welcome, Brother~
+@5801 = ~Unlocked upon recruiting Sarevok in the pocket plane in Hell.~
+
+@5810 = ~A Sister's Sacrifice~
+@5811 = ~Unlocked upon convincing Imoen to restore Sarevok with her soul.~
+
+@5820 = ~Fury of the Heavens~
+@5821 = ~Unlocked upon acquiring the Celestial Fury blade.~
+
+@5830 = ~The Holy Sword~
+@5831 = ~Unlocked upon recovering Carsomyr, the Holy Avenger.~
+
+@5840 = ~Legendary Relic~
+@5841 = ~Unlocked upon constructing Crom Faeyr.~
+
+@5850 = ~Ancient Power~
+@5851 = ~Unlocked upon acquiring the Robe of Vecna.~
+
+@5860 = ~In Balduran's Image~
+@5861 = ~Unlocked upon equipping Balduran's sword, helmet and plate.~
+
+@5870 = ~Time to Slay~
+@5871 = ~Unlocked upon turning into the Slayer.~
+
+@5880 = ~Red Dragon Slayer~
+@5881 = ~Unlocked upon slaying the red dragon Firkraag.~
+
+@5890 = ~Shadow Dragon Slayer~
+@5891 = ~Unlocked upon slaying the shadow dragon Thaxll'ssillyia.~
+
+@5900 = ~Black Dragon Slayer~
+@5901 = ~Unlocked upon slaying the black dragon Nizidramanii'yt.~
+
+@5910 = ~Silver Dragon Slayer~
+@5911 = ~Unlocked upon slaying the silver dragon Adalon.~
+
+@5920 = ~Green Dragon Saviour~
+@5921 = ~Unlocked upon using the Scroll of Reversal to free the green dragon Fll'Yissetat.~
+
+@5930 = ~Urge to Kill~
+@5931 = ~Unlocked upon killing Neeber.~
