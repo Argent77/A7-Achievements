@@ -253,18 +253,36 @@ BEGIN
 END
 
 
-// Add a journal trigger command to the bgee.lua file. (PSTEE only)
-DEFINE_PATCH_FUNCTION INSTALL_JOURNAL_TRIGGER
-INT_VAR strref = "-1"
-STR_VAR global = ~~
+// Adds a journal trigger command to the bgee.lua file. (PSTEE only)
+DEFINE_PATCH_FUNCTION ADD_JOURNAL_TRIGGER
+INT_VAR
+  strref  = "-1"  // strref of journal entry
+  done    = 1     // boolean: whether quest is marked as completed
+STR_VAR
+  global  = ~~    // name of global to check for nonzero
 BEGIN
-  TEXT_SPRINT ws ~ %TAB%~
-  SET pos = INDEX_BUFFER(~^[%ws%]*if[%ws%]*([%ws%]*sv[%ws%]*("[^"]+"[%ws%]*)~)
-  PATCH_IF (pos >= 0) BEGIN
-    TEXT_SPRINT line ~%TAB%if( sv("%global%") > 0 ) then setEntryDone(%strref%) end%WNL%~
-    SET strlen = STRING_LENGTH ~%line%~
-    INSERT_BYTES pos strlen
-    WRITE_ASCIIE pos ~%line%~ (strlen)
+  PATCH_IF (GAME_IS ~pstee~ && strref >= 0 && NOT ~%global%~ STR_EQ ~~) BEGIN
+    PATCH_IF (done) BEGIN
+      TEXT_SPRINT journal ~setEntryDone~
+    END ELSE BEGIN
+      TEXT_SPRINT journal ~setEntryActive~
+    END
+    TEXT_SPRINT ws ~ %TAB%~
+    TEXT_SPRINT op "~=<>"
+    TEXT_SPRINT num ~-?[0-9]+~
+    // finding last existing journal trigger
+    SET pos = RINDEX_BUFFER(~if[%ws%]*([%ws%]*sv[%ws%]*([%ws%]*"[^"]*"[%ws%]*)[%ws%]*[%op%]+[%ws%]*%num%~ BUFFER_LENGTH)
+    PATCH_IF (pos >= 0) BEGIN
+      SET pos = INDEX_BUFFER(~%LNL%~ pos)
+      PATCH_IF (pos >= 0) BEGIN
+        // adding new journal trigger
+        SET pos += 1
+        TEXT_SPRINT line ~%TAB%if( sv("%global%") > 0 ) then %journal%(%strref%) end%WNL%~
+        SET strlen = STRING_LENGTH ~%line%~
+        INSERT_BYTES pos strlen
+        WRITE_ASCIIE pos ~%line%~ (strlen)
+      END
+    END
   END
 END
 
@@ -345,7 +363,7 @@ BEGIN
       COPY_EXISTING ~bgee.lua~ ~override~
         PHP_EACH achievements AS ach_var => ach_strref BEGIN
           LPF FORMAT_GLOBAL STR_VAR global = EVAL ~A7-%ach_var%~ game = ~~ RET global END
-          LPF INSTALL_JOURNAL_TRIGGER
+          LPF ADD_JOURNAL_TRIGGER
             INT_VAR strref = ach_strref
             STR_VAR global
           END
