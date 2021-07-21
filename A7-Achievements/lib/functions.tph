@@ -14,6 +14,15 @@ THEN
     ChangeAIScript("A7-ACHV",SPECIFICS)
     Continue()
 END
+
+IF
+  !Global("A7_ACH_UNLOCKED","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",0)
+    %display_string%
+    Continue()
+END
 >>>>>>>>
 
 // Script block template for adding individual achievement checks (non-PSTEE)
@@ -24,6 +33,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("%ach_var_guard%","GLOBAL",1)
+    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",1)
+    IncrementGlobal("A7_ACH_COUNT","GLOBAL",1)
     AddJournalEntry(%ach_strref%,QUEST)
     Continue()
 END
@@ -37,6 +48,8 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("%ach_var_guard%","GLOBAL",1)
+    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",1)
+    IncrementGlobal("A7_ACH_COUNT","GLOBAL",1)
     Continue()
 END
 >>>>>>>>
@@ -47,6 +60,7 @@ IF
   True()
 THEN
   RESPONSE #100
+    SetTokenGlobal("A7_ACH_COUNT","GLOBAL","A7_ACH")
     ChangeAIScript("",SPECIFICS)
 END
 >>>>>>>>
@@ -204,7 +218,16 @@ END
 // Patches the global game scripts to execute the achievement checks in regular intervals
 DEFINE_ACTION_FUNCTION PATCH_GAME_SCRIPTS
 BEGIN
+  // Preparations
+  OUTER_SET strref = RESOLVE_STR_REF(@510)
+  ACTION_IF (GAME_IS ~pstee~) BEGIN
+    OUTER_TEXT_SPRINT display_string ~DisplayStringNoNameHead(Player1,%strref%)~
+  END ELSE BEGIN
+    OUTER_TEXT_SPRINT display_string ~DisplayStringNoName(Myself,%strref%)~
+  END
+
   // Collecting available global game scripts
+  ACTION_CLEAR_ARRAY ~scripts~
   OUTER_SET $scripts(~BALDUR~) = 1
   ACTION_IF (FILE_EXISTS_IN_GAME ~BALDUR25.BCS~) BEGIN
     OUTER_SET $scripts(~BALDUR25~) = 1
@@ -224,7 +247,7 @@ BEGIN
   ACTION_PHP_EACH scripts AS resref => _ BEGIN
     ACTION_IF (FILE_EXISTS_IN_GAME ~%resref%.BCS~ &&
                NOT FILE_CONTAINS_EVALUATED (~%resref%.BCS~ ~A7-ACHIEVEMENTS-TIMER~)) BEGIN
-      EXTEND_TOP ~%resref%.BCS~ ~.../inlined/A7-Achievements/a7-global-achv-call.baf~
+      EXTEND_TOP ~%resref%.BCS~ ~.../inlined/A7-Achievements/a7-global-achv-call.baf~ EVAL
     END
   END
 END
