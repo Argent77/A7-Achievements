@@ -4,8 +4,9 @@ Achievements!
 Version:    0.9-beta1
 Author:     Argent77
 
-Download:   https://
+Download:   https://github.com/Argent77/A7-Achievements/releases
 Discussion: https://
+            https://
 
 
 Overview

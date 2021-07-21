@@ -17,7 +17,7 @@ Enhanced Edition games provide a feature to unlock numerous achievements in the 
 
 This mod detects unlocked achievements and makes them available as regular journal entries for anyone playing the game without the need to use the Steam client.
 
-The mod support all available Enhanced Edition games patched to version 2.0 or later, which includes BG:EE with or without SoD, BG2:EE, EET, IWD:EE and PST:EE.
+The mod support all available Enhanced Edition games patched to version 2.0 or later, which includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE and PST:EE.
 
 ## Components
 
