@@ -6,7 +6,6 @@ Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-Achievements/releases
 Discussion: https://
-            https://
 
 
 Overview
@@ -20,7 +19,7 @@ This mod detects unlocked achievements and makes them available as regular journ
 anyone playing the game without the need to use the Steam client.
 
 The mod support all available Enhanced Edition games patched to version 2.0 or later, which
-includes BGEE with or without SoD, BG2EE, EET, IWDEE and PSTEE.
+includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE and PST:EE.
 
 
 Installation
@@ -53,13 +52,13 @@ Components
 1. Install Steam Achievements as Journal Entries (for BG:EE, SoD, BG2:EE, EET, IWD:EE and PST:EE)
 
 This component provides unlocked achievements are quest journal entries under the "Achievements"
-category.
+category. Additionally, the total number of unlocked achievements will be printed to the game log
+window whenever a new achievement is added.
 
-In EET the mod will include detection of BG:EE and SoD achievements even though they are not
-covered by the underlying BG2:EE base installation.
+In EET the mod will also track BG:EE and SoD achievements in addition to the BG2:EE achievements.
 
-In PST:EE the journal entries are added as "completed quests" to avoid cluttering the list of
-active quests.
+In PST:EE journal entries are added as "completed quests" to avoid cluttering the list of active
+quests. The total number of unlocked achievements is shown as overhead message for the protagonist.
 
 The component can be installed at any time. It is not needed to start a new game. Achievements that
 have already been unlocked before the mod was installed will be detected and added to the journal.
