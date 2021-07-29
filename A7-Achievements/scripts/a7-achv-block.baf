@@ -1,0 +1,13 @@
+// Script template for adding individual achievement checks (non-PSTEE)
+
+IF
+  !Global("%ach_var%","GLOBAL",0)
+  Global("%ach_var_guard%","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("%ach_var_guard%","GLOBAL",1)
+    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",1)
+    IncrementGlobal("A7_ACH_COUNT","GLOBAL",1)
+    AddJournalEntry(%ach_strref%,QUEST)
+    Continue()
+END

@@ -1,0 +1,9 @@
+// Script for checking achievements
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    SetTokenGlobal("A7_ACH_COUNT","GLOBAL","A7_ACH")
+    ChangeAIScript("",SPECIFICS)
+END

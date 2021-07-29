@@ -2,70 +2,6 @@
 <<<<<<<< .../inlined/A7-Achievements/blank
 >>>>>>>>
 
-// Script block added to global game scripts
-<<<<<<<< .../inlined/A7-Achievements/a7-global-achv-call.baf
-IF
-  OR(2)
-    OnCreation()
-    !GlobalTimerNotExpired("A7-ACHIEVEMENTS-TIMER","GLOBAL")
-THEN
-  RESPONSE #100
-    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",60)
-    ChangeAIScript("A7-ACHV",SPECIFICS)
-    Continue()
-END
-
-IF
-  !Global("A7_ACH_UNLOCKED","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",0)
-    %display_string%
-    Continue()
-END
->>>>>>>>
-
-// Script block template for adding individual achievement checks (non-PSTEE)
-<<<<<<<< .../inlined/A7-Achievements/a7-achv-block.baf
-IF
-  !Global("%ach_var%","GLOBAL",0)
-  Global("%ach_var_guard%","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("%ach_var_guard%","GLOBAL",1)
-    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",1)
-    IncrementGlobal("A7_ACH_COUNT","GLOBAL",1)
-    AddJournalEntry(%ach_strref%,QUEST)
-    Continue()
-END
->>>>>>>>
-
-// Script block template for adding individual achievement checks (PSTEE-specific)
-<<<<<<<< .../inlined/A7-Achievements/a7-achv-block-pstee.baf
-IF
-  !Global("%ach_var%","GLOBAL",0)
-  Global("%ach_var_guard%","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("%ach_var_guard%","GLOBAL",1)
-    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",1)
-    IncrementGlobal("A7_ACH_COUNT","GLOBAL",1)
-    Continue()
-END
->>>>>>>>
-
-// Script for checking achievements
-<<<<<<<< .../inlined/A7-Achievements/a7-achv.baf
-IF
-  True()
-THEN
-  RESPONSE #100
-    SetTokenGlobal("A7_ACH_COUNT","GLOBAL","A7_ACH")
-    ChangeAIScript("",SPECIFICS)
-END
->>>>>>>>
-
-
 // Returns an indexed array of games.
 DEFINE_ACTION_FUNCTION SPLIT_GAMES
 STR_VAR games = ~~
@@ -247,7 +183,7 @@ BEGIN
   ACTION_PHP_EACH scripts AS resref => _ BEGIN
     ACTION_IF (FILE_EXISTS_IN_GAME ~%resref%.BCS~ &&
                NOT FILE_CONTAINS_EVALUATED (~%resref%.BCS~ ~A7-ACHIEVEMENTS-TIMER~)) BEGIN
-      EXTEND_TOP ~%resref%.BCS~ ~.../inlined/A7-Achievements/a7-global-achv-call.baf~ EVAL
+      EXTEND_TOP ~%resref%.BCS~ ~%MOD_FOLDER%/scripts/a7-global-achv-call.baf~ EVAL
     END
   END
 END
@@ -300,16 +236,16 @@ BEGIN
 
     // Installing achievements script
     ACTION_IF (NOT FILE_EXISTS_IN_GAME ~a7-achv.bcs~) BEGIN
-      COMPILE ~.../inlined/A7-Achievements/a7-achv.baf~
+      COMPILE ~%MOD_FOLDER%/scripts/a7-achv.baf~
     END
 
     ACTION_PHP_EACH achievements AS ach_var => ach_strref BEGIN
       // ensure variable length doesn't exceed 32 characters
       LAF FORMAT_GLOBAL STR_VAR global = EVAL ~A7-%ach_var%~ game = ~~ RET ach_var_guard = global END
       ACTION_IF (GAME_IS ~pstee~) BEGIN
-        EXTEND_TOP ~a7-achv.bcs~ ~.../inlined/A7-Achievements/a7-achv-block-pstee.baf~ EVAL
+        EXTEND_TOP ~a7-achv.bcs~ ~%MOD_FOLDER%/scripts/a7-achv-block-pstee.baf~ EVAL
       END ELSE BEGIN
-        EXTEND_TOP ~a7-achv.bcs~ ~.../inlined/A7-Achievements/a7-achv-block.baf~ EVAL
+        EXTEND_TOP ~a7-achv.bcs~ ~%MOD_FOLDER%/scripts/a7-achv-block.baf~ EVAL
       END
 
       // processing journal entry

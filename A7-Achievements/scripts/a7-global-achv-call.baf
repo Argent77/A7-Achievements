@@ -1,0 +1,21 @@
+// Added to all global game scripts
+
+IF
+  OR(2)
+    OnCreation()
+    !GlobalTimerNotExpired("A7-ACHIEVEMENTS-TIMER","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",60)
+    ChangeAIScript("A7-ACHV",SPECIFICS)
+    Continue()
+END
+
+IF
+  !Global("A7_ACH_UNLOCKED","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",0)
+    %display_string%
+    Continue()
+END
