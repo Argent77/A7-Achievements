@@ -153,6 +153,8 @@ END
 
 // Patches the global game scripts to execute the achievement checks in regular intervals
 DEFINE_ACTION_FUNCTION PATCH_GAME_SCRIPTS
+INT_VAR
+  prefer_achievements = 1 // whether ACHIEVEM.BCS should be patched if available
 BEGIN
   // Preparations
   OUTER_SET strref = RESOLVE_STR_REF(@510)
@@ -164,20 +166,31 @@ BEGIN
 
   // Collecting available global game scripts
   ACTION_CLEAR_ARRAY ~scripts~
-  OUTER_SET $scripts(~BALDUR~) = 1
-  ACTION_IF (FILE_EXISTS_IN_GAME ~BALDUR25.BCS~) BEGIN
-    OUTER_SET $scripts(~BALDUR25~) = 1
+  OUTER_SET script_set = 0
+
+  ACTION_IF (prefer_achievements && FILE_EXISTS_IN_GAME ~ACHIEVEM.BCS~) BEGIN
+    // using special achievement script
+    OUTER_SET $scripts(~ACHIEVEM~) = 1
+    OUTER_SET script_set = 1
   END
-  COPY_EXISTING ~campaign.2da~ ~override~
-    READ_2DA_ENTRIES_NOW campaign 1
-    FOR (row = 3; row < campaign; ++row) BEGIN
-      READ_2DA_ENTRY_FORMER campaign row 1 resref
-      TO_UPPER ~resref~
-      PATCH_IF (NOT VARIABLE_IS_SET $scripts(~%resref%~)) BEGIN
-        SET $scripts(~%resref%~) = 1
-      END
+
+  ACTION_IF (script_set = 0) BEGIN
+    // falling back to regular global scripts
+    OUTER_SET $scripts(~BALDUR~) = 1
+    ACTION_IF (FILE_EXISTS_IN_GAME ~BALDUR25.BCS~) BEGIN
+      OUTER_SET $scripts(~BALDUR25~) = 1
     END
-  BUT_ONLY IF_EXISTS
+    COPY_EXISTING ~campaign.2da~ ~override~
+      READ_2DA_ENTRIES_NOW campaign 1
+      FOR (row = 3; row < campaign; ++row) BEGIN
+        READ_2DA_ENTRY_FORMER campaign row 1 resref
+        TO_UPPER ~resref~
+        PATCH_IF (NOT VARIABLE_IS_SET $scripts(~%resref%~)) BEGIN
+          SET $scripts(~%resref%~) = 1
+        END
+      END
+    BUT_ONLY IF_EXISTS
+  END
 
   // Patching global scripts
   ACTION_PHP_EACH scripts AS resref => _ BEGIN

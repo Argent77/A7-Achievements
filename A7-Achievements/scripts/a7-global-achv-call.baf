@@ -1,4 +1,4 @@
-// Added to all global game scripts
+// Added to global game scripts
 
 IF
   OR(2)
@@ -6,7 +6,7 @@ IF
     !GlobalTimerNotExpired("A7-ACHIEVEMENTS-TIMER","GLOBAL")
 THEN
   RESPONSE #100
-    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",60)
+    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",30)
     ChangeAIScript("A7-ACHV",SPECIFICS)
     Continue()
 END
