@@ -2,3 +2,14 @@
 
 @500 = ~Achievements~
 @510 = ~^DAchievements unlocked: <A7_ACH>^-~
+
+@600 = ~Achievements Trophy~
+@601 = ~This shining trophy has been enchanted to track all the achievements unlocked by <CHARNAME> so far.
+
+– %ach_string%
+
+Unlocked achievements: <A7_ACH>
+
+STATISTICS:
+
+Weight: 1~

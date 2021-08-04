@@ -19,7 +19,8 @@ This mod detects unlocked achievements and makes them available as regular journ
 anyone playing the game without the need to use the Steam client.
 
 The mod support all available Enhanced Edition games patched to version 2.0 or later, which
-includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE and PST:EE.
+includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE and PST:EE. Project Infinity is supported
+as well.
 
 
 Installation
@@ -60,8 +61,22 @@ In EET the mod will also track BG:EE and SoD achievements in addition to the BG2
 In PST:EE journal entries are added as "completed quests" to avoid cluttering the list of active
 quests. The total number of unlocked achievements is shown as overhead message for the protagonist.
 
-The component can be installed at any time. It is not needed to start a new game. Achievements that
-have already been unlocked before the mod was installed will be detected and added to the journal.
+This component also provides the means to purchase a special Achievements Trophy from selected
+stores all over the games and campaigns which lists the currently unlocked achievements in the
+trophy's item description.
+BG1: Sold by Bentley Mirrorshade at the Friendly Arm Inn.
+SoD: Sold by the Quartermaster Belegarm of the Flaming Fist.
+BG2: (SoA) Sold by the Adventurer's Mart at Waukeen's Promenade in Athkatla.
+     (ToB) Sold by Karthis al-Hezzar, the travelling merchant in the Wilderness between Saradush
+           and the Forst of Mir.
+IWD: Sold by Gerth's Equipment Shoppe in Kuldahar.
+     Sold by Kieran Nye in Lonelywood (HoW campaign only).
+PST: Sold at Fell's Tattoo Studio in the Hive.
+
+The component can be installed at any time. It is not required to start a new game. Achievements
+that have already been unlocked before the mod was installed will be detected and added to the
+journal. However, the Achievements Trophy may not be available for sale if you already visited the
+respective stores before.
 
 In addition to the official Steam Achievements the mod also unlocks a small number of unused
 achievements for SoD which are implemented in the game but not registered by Steam.

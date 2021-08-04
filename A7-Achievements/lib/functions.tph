@@ -73,9 +73,11 @@ INT_VAR
 RET
   title_strref    // strref of the journal title
   content_strref  // strref of the formatted journal text
+  heading_strref  // strref of the achievement title
 BEGIN
   SET title_strref = "-1"
   SET content_strref = "-1"
+  SET heading_strref = "-1"
 
   PATCH_IF (tra_ref >= 0) BEGIN
     SET heading_ref = tra_ref
@@ -94,6 +96,7 @@ BEGIN
       SET title_strref = RESOLVE_STR_REF(~%title_text%~)
       TEXT_SPRINT entry_text ~%title_text%%LNL%%LNL%%heading_text%%LNL%%LNL%%body_text%~
     END
+    SET heading_strref = RESOLVE_STR_REF(~%heading_text%~)
 
     SET content_strref = RESOLVE_STR_REF(~%entry_text%~)
   END
@@ -107,14 +110,18 @@ STR_VAR
 RET
   achievements    // number of stored elements in achievements array
   journal_titles  // number of stored elements in journal_titles array
+  achievement_labels  // number of stored elements in achievement_labels array
 RET_ARRAY
   achievements    // associative array: name_of_global => journal_strref
   journal_titles  // associative array: name_of_global => title_strref
+  achievement_labels  // associative array: name_of_global => achievement_label_strref
 BEGIN
   OUTER_SET achievements = 0
   OUTER_SET journal_titles = 0
+  OUTER_SET achievement_labels = 0
   ACTION_CLEAR_ARRAY ~achievements~
   ACTION_CLEAR_ARRAY ~journal_titles~
+  ACTION_CLEAR_ARRAY ~achievement_labels~
 
   // preparations
   LAF SPLIT_GAMES STR_VAR games RET game_list RET_ARRAY game_list END
@@ -137,11 +144,13 @@ BEGIN
           PATCH_IF (NOT ~%row_global%~ STR_EQ ~%def_value%~ && IS_AN_INT ~row_tra~) BEGIN
             LPF FORMAT_GLOBAL STR_VAR global = EVAL ~%row_global%~ game RET global END
             PATCH_IF (NOT ~%global%~ STR_EQ ~~ && NOT VARIABLE_IS_SET $achievements(~%global%~)) BEGIN
-              LPF CREATE_JOURNAL_ENTRY INT_VAR tra_ref = row_tra RET title_strref content_strref END
+              LPF CREATE_JOURNAL_ENTRY INT_VAR tra_ref = row_tra RET title_strref content_strref heading_strref END
               SET $achievements(~%global%~) = content_strref
               SET achievements += 1
               SET $journal_titles(~%global%~) = title_strref
               SET journal_titles += 1
+              SET $achievement_labels(~%global%~) = heading_strref
+              SET achievement_labels += 1
             END
           END
         END
@@ -236,13 +245,137 @@ BEGIN
 END
 
 
+// Installs the "Achievements Trophy" item.
+DEFINE_ACTION_FUNCTION INSTALL_ITEM
+INT_VAR
+  count = 0 // number of tokens to add
+BEGIN
+  ACTION_IF (count > 0) BEGIN
+    COPY ~%MOD_FOLDER%/items/a7achtr1.itm~ ~override~
+      // generating item description
+      TEXT_SPRINT ach_string ~~
+      FOR (i = 0; i < count; ++i) BEGIN
+        TEXT_SPRINT ach_string ~%ach_string%<A7_ACH_%i%>~
+      END
+      SET strref = RESOLVE_STR_REF(@601)
+
+      SAY NAME1 @600  // Achievements Trophy
+      SAY NAME2 @600  // Achievements Trophy
+      WRITE_LONG UNIDENTIFIED_DESC strref
+      WRITE_LONG IDENTIFIED_DESC strref
+
+      PATCH_IF (GAME_IS ~iwdee pstee~) BEGIN
+        // description image not needed
+        WRITE_ASCII 0x58 ~~ (8)
+      END
+
+    ACTION_IF (GAME_IS ~bgee~ && GAME_INCLUDES ~sod~) BEGIN
+      COPY ~%MOD_FOLDER%/items/sod/a7cachtr.bam~ ~override~
+      // COPY ~%MOD_FOLDER%/items/a7cachtr.bam~ ~override~
+    END ELSE ACTION_IF (NOT GAME_IS ~iwdee pstee~) BEGIN
+      COPY ~%MOD_FOLDER%/items/a7cachtr.bam~ ~override~
+    END
+
+    ACTION_IF (GAME_INCLUDES ~pst~) BEGIN
+      COPY ~%MOD_FOLDER%/items/pstee/a7iachtr.bam~ ~override~
+    END ELSE BEGIN
+      COPY ~%MOD_FOLDER%/items/a7iachtr.bam~ ~override~
+    END
+
+    // Adding trophy to stores
+    ACTION_IF (GAME_INCLUDES ~bg1~) BEGIN
+      COPY_EXISTING ~friend.sto~ ~override~
+        LPF ADD_STORE_ITEM_EX
+          STR_VAR
+            item_name = ~a7achtr1~
+            position  = ~LAST~
+            flags     = ~identified~
+        END
+      BUT_ONLY IF_EXISTS
+    END
+
+    ACTION_IF (GAME_INCLUDES ~sod~) BEGIN
+      COPY_EXISTING ~bdbeleg4.sto~ ~override~
+        LPF ADD_STORE_ITEM_EX
+          STR_VAR
+            item_name = ~a7achtr1~
+            position  = ~LAST~
+            flags     = ~identified~
+        END
+      BUT_ONLY IF_EXISTS
+    END
+
+    ACTION_IF (GAME_INCLUDES ~bg2~) BEGIN
+      COPY_EXISTING ~ribald.sto~ ~override~
+        LPF ADD_STORE_ITEM_EX
+          STR_VAR
+            item_name = ~a7achtr1~
+            position  = ~LAST~
+            flags     = ~identified~
+        END
+      BUT_ONLY IF_EXISTS
+    END
+
+    ACTION_IF (GAME_INCLUDES ~tob~) BEGIN
+      COPY_EXISTING ~hgkar01.sto~ ~override~
+        LPF ADD_STORE_ITEM_EX
+          STR_VAR
+            item_name = ~a7achtr1~
+            position  = ~LAST~
+            flags     = ~identified~
+        END
+      BUT_ONLY IF_EXISTS
+    END
+
+    ACTION_IF (GAME_INCLUDES ~iwd~) BEGIN
+      COPY_EXISTING ~kugerth.sto~ ~override~
+        LPF ADD_STORE_ITEM_EX
+          STR_VAR
+            item_name = ~a7achtr1~
+            position  = ~LAST~
+            flags     = ~identified~
+        END
+      BUT_ONLY IF_EXISTS
+    END
+
+    ACTION_IF (GAME_INCLUDES ~how~) BEGIN
+<<<<<<<< .../inlined/A7-Achievements/iwdhow_store.baf
+IF
+  GlobalGT("Chapter","GLOBAL",6)
+  Global("A7_ACH_TROPHY_STORE","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("A7_ACH_TROPHY_STORE","MYAREA",1)
+    AddStoreItem("kieran2","a7achtr1",1,1)
+    Continue()
+END
+>>>>>>>>
+      EXTEND_TOP ~AR9101.BCS~ ~.../inlined/A7-Achievements/iwdhow_store.baf~
+    END
+
+    ACTION_IF (GAME_INCLUDES ~pst~) BEGIN
+      COPY_EXISTING ~fell.sto~ ~override~
+        LPF ADD_STORE_ITEM_EX
+          STR_VAR
+            item_name = ~a7achtr1~
+            position  = ~LAST~
+            flags     = ~identified~
+            sale_trigger = ~GlobalGT("A7_ACH_COUNT","GLOBAL",0)~
+        END
+      BUT_ONLY IF_EXISTS
+    END
+
+  END
+END
+
+
 // Main routine for installing achievement journal entries
 DEFINE_ACTION_FUNCTION INSTALL_ACHIEVEMENTS
 STR_VAR
   games = ~~ // list of space-separated games (bgee, sod, bg2ee, iwdee, pstee)
 BEGIN
   // collecting achievement definitions
-  LAF COLLECT_ACHIEVEMENTS STR_VAR games RET achievements journal_titles RET_ARRAY achievements journal_titles END
+  LAF COLLECT_ACHIEVEMENTS STR_VAR games RET achievements journal_titles achievement_labels RET_ARRAY achievements journal_titles achievement_labels END
 
   ACTION_IF (achievements > 0) BEGIN
     OUTER_SET journal = 0
@@ -255,6 +388,13 @@ BEGIN
     ACTION_PHP_EACH achievements AS ach_var => ach_strref BEGIN
       // ensure variable length doesn't exceed 32 characters
       LAF FORMAT_GLOBAL STR_VAR global = EVAL ~A7-%ach_var%~ game = ~~ RET ach_var_guard = global END
+
+      // handling tokens
+      OUTER_TEXT_SPRINT ach_token_name ~A7_ACH_%journal%~
+      ACTION_GET_STRREF $achievement_labels(~%ach_var%~) line
+      OUTER_TEXT_SPRINT line ~"%line%" – ~
+      OUTER_SET ach_token_strref = RESOLVE_STR_REF(~%line%~)
+
       ACTION_IF (GAME_IS ~pstee~) BEGIN
         EXTEND_TOP ~a7-achv.bcs~ ~%MOD_FOLDER%/scripts/a7-achv-block-pstee.baf~ EVAL
       END ELSE BEGIN
@@ -318,6 +458,11 @@ BEGIN
           END
         END
       BUT_ONLY IF_EXISTS
+    END
+
+    // installing item "Achievements Trophy"
+    LAF INSTALL_ITEM
+      INT_VAR count = journal
     END
   END
 END

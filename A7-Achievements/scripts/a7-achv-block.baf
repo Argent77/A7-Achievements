@@ -11,3 +11,12 @@ THEN
     AddJournalEntry(%ach_strref%,QUEST)
     Continue()
 END
+
+// Update token
+IF
+  !Global("%ach_var_guard%","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetToken("%ach_token_name%",%ach_token_strref%)
+    Continue()
+END
