@@ -205,7 +205,11 @@ BEGIN
   ACTION_PHP_EACH scripts AS resref => _ BEGIN
     ACTION_IF (FILE_EXISTS_IN_GAME ~%resref%.BCS~ &&
                NOT FILE_CONTAINS_EVALUATED (~%resref%.BCS~ ~A7-ACHIEVEMENTS-TIMER~)) BEGIN
-      EXTEND_TOP ~%resref%.BCS~ ~%MOD_FOLDER%/scripts/a7-global-achv-call.baf~ EVAL
+      ACTION_IF (GAME_IS ~pstee~) BEGIN
+        EXTEND_TOP ~%resref%.BCS~ ~%MOD_FOLDER%/scripts/a7-global-achv-call-pstee.baf~ EVAL
+      END ELSE BEGIN
+        EXTEND_TOP ~%resref%.BCS~ ~%MOD_FOLDER%/scripts/a7-global-achv-call.baf~ EVAL
+      END
     END
   END
 END
@@ -269,15 +273,17 @@ BEGIN
       END
       SET ach_count_total = count
       PATCH_IF (GAME_IS ~pstee~) BEGIN
-        SET strref = RESOLVE_STR_REF(@602)
+        SET strref1 = RESOLVE_STR_REF(@604)
+        SET strref2 = RESOLVE_STR_REF(@605)
       END ELSE BEGIN
-        SET strref = RESOLVE_STR_REF(@601)
+        SET strref1 = RESOLVE_STR_REF(@602)
+        SET strref2 = RESOLVE_STR_REF(@603)
       END
 
       SAY NAME1 @600  // Achievements Trophy
       SAY NAME2 @600  // Achievements Trophy
-      WRITE_LONG UNIDENTIFIED_DESC strref
-      WRITE_LONG IDENTIFIED_DESC strref
+      WRITE_LONG UNIDENTIFIED_DESC strref1
+      WRITE_LONG IDENTIFIED_DESC strref2
 
       PATCH_IF (GAME_IS ~iwdee pstee~) BEGIN
         // description image not needed
@@ -303,7 +309,6 @@ BEGIN
           STR_VAR
             item_name = ~a7achtr1~
             position  = ~LAST~
-            flags     = ~identified~
         END
       BUT_ONLY IF_EXISTS
     END
@@ -314,7 +319,6 @@ BEGIN
           STR_VAR
             item_name = ~a7achtr1~
             position  = ~LAST~
-            flags     = ~identified~
         END
       BUT_ONLY IF_EXISTS
     END
@@ -325,7 +329,6 @@ BEGIN
           STR_VAR
             item_name = ~a7achtr1~
             position  = ~LAST~
-            flags     = ~identified~
         END
       BUT_ONLY IF_EXISTS
     END
@@ -336,7 +339,6 @@ BEGIN
           STR_VAR
             item_name = ~a7achtr1~
             position  = ~LAST~
-            flags     = ~identified~
         END
       BUT_ONLY IF_EXISTS
     END
@@ -347,7 +349,6 @@ BEGIN
           STR_VAR
             item_name = ~a7achtr1~
             position  = ~LAST~
-            flags     = ~identified~
         END
       BUT_ONLY IF_EXISTS
     END
@@ -360,7 +361,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("A7_ACH_TROPHY_STORE","MYAREA",1)
-    AddStoreItem("kieran2","a7achtr1",1,1)
+    AddStoreItem("kieran2","a7achtr1",1,0)
     Continue()
 END
 >>>>>>>>
@@ -373,7 +374,6 @@ END
           STR_VAR
             item_name = ~a7achtr1~
             position  = ~LAST~
-            flags     = ~identified~
             sale_trigger = ~GlobalGT("A7_ACH_COUNT","GLOBAL",0)~
         END
       BUT_ONLY IF_EXISTS
@@ -479,7 +479,7 @@ BEGIN
     // patching global game scripts
     LAF PATCH_GAME_SCRIPTS
       INT_VAR
-        prefer_achievements = 0
+        prefer_achievements = GAME_IS ~pstee~
     END
 
     // adding journal triggers (PSTEE only)

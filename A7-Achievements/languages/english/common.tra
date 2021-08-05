@@ -10,7 +10,12 @@
 @600 = ~Achievements Trophy~
 
 // Item description (BG1/BG2/IWD)
-@601 = ~This shining trophy has been enchanted to track all the achievements unlocked by <CHARNAME> so far.
+@602 = ~This shining trophy appears to be made out of gold and other precious metals.
+
+STATISTICS:
+
+Weight: 1~
+@603 = ~This shining trophy has been enchanted to track all the achievements unlocked by <CHARNAME> so far.
 
 Unlocked achievements: <A7_ACH> of %ach_count_total%
 
@@ -20,7 +25,11 @@ STATISTICS:
 Weight: 1~
 
 // Item description (PST)
-@602 = ~ACHIEVEMENTS TROPHY
+@604 = ~ACHIEVEMENTS TROPHY
+Weight: 1
+
+This shining trophy appears to be made out of gold and other precious metals.~
+@605 = ~ACHIEVEMENTS TROPHY
 Weight: 1
 
 This shining trophy has been enchanted to track all the achievements unlocked by the Nameless One so far.

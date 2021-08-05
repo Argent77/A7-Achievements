@@ -1,4 +1,4 @@
-// Added to global game scripts
+// Added to global game scripts (non-PSTEE)
 
 IF
   OnCreation()

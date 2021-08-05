@@ -1,0 +1,20 @@
+// Added to global game scripts (PSTEE-specific)
+
+IF
+  !ActuallyInCombat()
+  Delay(30)
+THEN
+  RESPONSE #100
+    ChangeAIScript("A7-ACHV",SPECIFICS)
+    Continue()
+END
+
+IF
+  !Global("A7_ACH_UNLOCKED","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",0)
+    %display_string%
+    ChangeAIScript("A7-ACHV",SPECIFICS)
+    Continue()
+END
