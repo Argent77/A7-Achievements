@@ -17,13 +17,20 @@ Enhanced Edition games provide a feature to unlock numerous achievements in the 
 
 This mod detects unlocked achievements and makes them available as regular journal entries for anyone playing the game without the need to use the Steam client.
 
-The mod supports all available Enhanced Edition games patched to version 2.0 or later, which includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE and PST:EE.
+The mod supports all available Enhanced Edition games patched to version 2.0 or later, which includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE and PST:EE. Project Infinity is supported as well.
 
 ## Components
 
 ### Install Steam Achievements as Journal Entries *(for BG:EE, SoD, BG2:EE, EET, IWD:EE and PST:EE)*
 
-This component provides unlocked achievements are quest journal entries under the "Achievements" category.
+This component provides unlocked achievements are quest journal entries under the "Achievements" category. Additionally it is possible to purchase an Achievements Trophy which tracks the state of unlocked achievements.
+
+The component provides two install options:
+
+1. Compact Statistics
+2. Detailed Statistics
+
+Both options refer to the presentation of achievements statistics provided by the Achievements Trophy.
 
 In EET the mod will also track BG:EE and SoD achievements in addition to the BG2:EE achievements.
 
