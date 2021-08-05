@@ -1,15 +1,37 @@
 // -*- coding: utf-8 -*-
 
+// Journal title
 @500 = ~Achievements~
+
+// Colored log message
 @510 = ~^DAchievements unlocked: <A7_ACH>^-~
 
+// Item name
 @600 = ~Achievements Trophy~
+
+// Item description (BG1/BG2/IWD)
 @601 = ~This shining trophy has been enchanted to track all the achievements unlocked by <CHARNAME> so far.
 
-– %ach_string%
+Unlocked achievements: <A7_ACH> of %ach_count_total%
 
-Unlocked achievements: <A7_ACH>
-
+%ach_string%
 STATISTICS:
 
 Weight: 1~
+
+// Item description (PST)
+@602 = ~ACHIEVEMENTS TROPHY
+Weight: 1
+
+This shining trophy has been enchanted to track all the achievements unlocked by the Nameless One so far.
+
+Unlocked achievements: <A7_ACH> of %ach_count_total%
+
+%ach_string%~
+
+@610 = ~"~  // opening quotation mark
+@611 = ~"~  // closing quotation mark
+@612 = ~: ^0xFF004000unlocked^-~  // achievement state "unlocked", dark green color (BG1/BG2/IWD)
+@613 = ~: ^0xFF000080locked^-~    // achievement state "locked", dark red color (BG1/BG2/IWD)
+@614 = ~: ^0xFF00AF00unlocked^-~  // achievement state "unlocked", bright green color (PST)
+@615 = ~: ^0xFF0000FFlocked^-~    // achievement state "locked", bright red color (PST)

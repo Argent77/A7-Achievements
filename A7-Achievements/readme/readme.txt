@@ -44,7 +44,7 @@ Installation order & mod compatibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The mod can be installed in any order. There are no known compatibility issues with other mods.
-It is not needed to start a new game after installing the mod.
+It is not necessary but recommended to start a new game after installing the mod.
 
 
 Components
@@ -71,12 +71,27 @@ BG2: (SoA) Sold by the Adventurer's Mart at Waukeen's Promenade in Athkatla.
            and the Forst of Mir.
 IWD: Sold by Gerth's Equipment Shoppe in Kuldahar.
      Sold by Kieran Nye in Lonelywood (HoW campaign only).
-PST: Sold at Fell's Tattoo Studio in the Hive.
+PST: Sold at Fell's Tattoo Parlor in the Hive.
 
-The component can be installed at any time. It is not required to start a new game. Achievements
-that have already been unlocked before the mod was installed will be detected and added to the
-journal. However, the Achievements Trophy may not be available for sale if you already visited the
-respective stores before.
+The component comes in two flavors:
+
+1) Compact Statistics
+
+This option installs the Achievements Trophy with an item description that lists only the currently
+unlocked achievements. Choose this if you prefer a quick overview and don't want to be spoiled by
+the titles of not-yet-unlocked achievements.
+
+2) Detailed Statistics
+
+This option installs the Achievements Trophy with an item description that lists all achievements
+individually, along with their current activation state. Choose this if you wish to browse the
+complete list of available achievements.
+
+
+Either of the subcomponents can be installed at any time. It is not required to start a new game.
+Achievements that have already been unlocked before the mod was installed will be detected and
+added to the journal when you first load the game. However, the Achievements Trophy may not be
+available for sale if you already visited the respective stores before.
 
 In addition to the official Steam Achievements the mod also unlocks a small number of unused
 achievements for SoD which are implemented in the game but not registered by Steam.

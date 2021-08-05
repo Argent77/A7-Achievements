@@ -1,9 +1,17 @@
 // Added to global game scripts
 
 IF
-  OR(2)
-    OnCreation()
-    !GlobalTimerNotExpired("A7-ACHIEVEMENTS-TIMER","GLOBAL")
+  OnCreation()
+THEN
+  RESPONSE #100
+    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",30)
+    ChangeAIScript("A7-ACHV",SPECIFICS)
+    Continue()
+END
+
+IF
+  !ActuallyInCombat()
+  GlobalTimerExpired("A7-ACHIEVEMENTS-TIMER","GLOBAL")
 THEN
   RESPONSE #100
     SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",30)
@@ -16,6 +24,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("A7_ACH_UNLOCKED","GLOBAL",0)
+    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",3)
     %display_string%
     Continue()
 END

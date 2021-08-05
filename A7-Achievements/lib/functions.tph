@@ -163,7 +163,7 @@ END
 // Patches the global game scripts to execute the achievement checks in regular intervals
 DEFINE_ACTION_FUNCTION PATCH_GAME_SCRIPTS
 INT_VAR
-  prefer_achievements = 1 // whether ACHIEVEM.BCS should be patched if available
+  prefer_achievements = 0 // whether ACHIEVEM.BCS should be patched if available
 BEGIN
   // Preparations
   OUTER_SET strref = RESOLVE_STR_REF(@510)
@@ -249,15 +249,30 @@ END
 DEFINE_ACTION_FUNCTION INSTALL_ITEM
 INT_VAR
   count = 0 // number of tokens to add
+  show_compact = 1
 BEGIN
   ACTION_IF (count > 0) BEGIN
     COPY ~%MOD_FOLDER%/items/a7achtr1.itm~ ~override~
       // generating item description
-      TEXT_SPRINT ach_string ~~
-      FOR (i = 0; i < count; ++i) BEGIN
-        TEXT_SPRINT ach_string ~%ach_string%<A7_ACH_%i%>~
+      PATCH_IF (show_compact) BEGIN
+        TEXT_SPRINT ach_string ~– ~
+        TEXT_SPRINT nl ~~
+      END ELSE BEGIN
+        TEXT_SPRINT ach_string ~~
+        TEXT_SPRINT nl ~%LNL%~
       END
-      SET strref = RESOLVE_STR_REF(@601)
+      FOR (i = 0; i < count; ++i) BEGIN
+        TEXT_SPRINT ach_string ~%ach_string%<A7_ACH_%i%>%nl%~
+      END
+      PATCH_IF (show_compact) BEGIN
+        TEXT_SPRINT ach_string ~%ach_string%%LNL%~
+      END
+      SET ach_count_total = count
+      PATCH_IF (GAME_IS ~pstee~) BEGIN
+        SET strref = RESOLVE_STR_REF(@602)
+      END ELSE BEGIN
+        SET strref = RESOLVE_STR_REF(@601)
+      END
 
       SAY NAME1 @600  // Achievements Trophy
       SAY NAME2 @600  // Achievements Trophy
@@ -271,7 +286,6 @@ BEGIN
 
     ACTION_IF (GAME_IS ~bgee~ && GAME_INCLUDES ~sod~) BEGIN
       COPY ~%MOD_FOLDER%/items/sod/a7cachtr.bam~ ~override~
-      // COPY ~%MOD_FOLDER%/items/a7cachtr.bam~ ~override~
     END ELSE ACTION_IF (NOT GAME_IS ~iwdee pstee~) BEGIN
       COPY ~%MOD_FOLDER%/items/a7cachtr.bam~ ~override~
     END
@@ -371,6 +385,10 @@ END
 
 // Main routine for installing achievement journal entries
 DEFINE_ACTION_FUNCTION INSTALL_ACHIEVEMENTS
+INT_VAR
+  show_compact = 1  // How to present achievements in trophy item?
+                    // 0: list all achievements individually with current status
+                    // 1: list only unlocked achievements
 STR_VAR
   games = ~~ // list of space-separated games (bgee, sod, bg2ee, iwdee, pstee)
 BEGIN
@@ -379,6 +397,15 @@ BEGIN
 
   ACTION_IF (achievements > 0) BEGIN
     OUTER_SET journal = 0
+    OUTER_SPRINT quot_open @610
+    OUTER_SPRINT quot_close @611
+    ACTION_IF (GAME_IS ~pstee~) BEGIN
+      OUTER_SPRINT ach_unlocked @614
+      OUTER_SPRINT ach_locked @615
+    END ELSE BEGIN
+      OUTER_SPRINT ach_unlocked @612
+      OUTER_SPRINT ach_locked @613
+    END
 
     // Installing achievements script
     ACTION_IF (NOT FILE_EXISTS_IN_GAME ~a7-achv.bcs~) BEGIN
@@ -391,9 +418,14 @@ BEGIN
 
       // handling tokens
       OUTER_TEXT_SPRINT ach_token_name ~A7_ACH_%journal%~
-      ACTION_GET_STRREF $achievement_labels(~%ach_var%~) line
-      OUTER_TEXT_SPRINT line ~"%line%" – ~
-      OUTER_SET ach_token_strref = RESOLVE_STR_REF(~%line%~)
+      ACTION_GET_STRREF $achievement_labels(~%ach_var%~) label
+      ACTION_IF (show_compact) BEGIN
+        OUTER_SET ach_token_on_strref = RESOLVE_STR_REF(~%quot_open%%label%%quot_close% – ~)
+        OUTER_SET ach_token_off_strref = "-1"
+      END ELSE BEGIN
+        OUTER_SET ach_token_on_strref = RESOLVE_STR_REF(~%label%%ach_unlocked%~)
+        OUTER_SET ach_token_off_strref = RESOLVE_STR_REF(~%label%%ach_locked%~)
+      END
 
       ACTION_IF (GAME_IS ~pstee~) BEGIN
         EXTEND_TOP ~a7-achv.bcs~ ~%MOD_FOLDER%/scripts/a7-achv-block-pstee.baf~ EVAL
@@ -445,7 +477,10 @@ BEGIN
     END
 
     // patching global game scripts
-    LAF PATCH_GAME_SCRIPTS END
+    LAF PATCH_GAME_SCRIPTS
+      INT_VAR
+        prefer_achievements = 0
+    END
 
     // adding journal triggers (PSTEE only)
     ACTION_IF (GAME_IS ~pstee~) BEGIN
@@ -462,7 +497,9 @@ BEGIN
 
     // installing item "Achievements Trophy"
     LAF INSTALL_ITEM
-      INT_VAR count = journal
+      INT_VAR
+        count = journal
+        show_compact
     END
   END
 END
