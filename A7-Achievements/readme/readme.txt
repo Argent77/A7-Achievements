@@ -1,11 +1,12 @@
 Achievements!
 ~~~~~~~~~~~~~
 
-Version:    0.9-beta1
+Version:    1.0
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-Achievements/releases
-Discussion: https://
+Discussion: https://www.gibberlings3.net/forums/topic/33035-achievements-for-everyone/
+            https://forums.beamdog.com/discussion/82630/mod-achievements-for-everyone
 
 
 Overview
