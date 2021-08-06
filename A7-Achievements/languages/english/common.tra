@@ -4,7 +4,7 @@
 @500 = ~Achievements~
 
 // Colored log message
-@510 = ~^DAchievements unlocked: <A7_ACH>^-~
+@510 = ~^DAchievements unlocked: <A7_ACH> of %ach_count_total%^-~
 
 // Item name
 @600 = ~Achievements Trophy~

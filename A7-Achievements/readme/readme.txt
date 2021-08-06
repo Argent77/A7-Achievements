@@ -44,7 +44,7 @@ Installation order & mod compatibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The mod can be installed in any order. There are no known compatibility issues with other mods.
-It is not necessary but recommended to start a new game after installing the mod.
+It is recommended but not necessary to start a new game after installing the mod.
 
 
 Components

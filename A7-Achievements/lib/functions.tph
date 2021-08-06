@@ -163,9 +163,11 @@ END
 // Patches the global game scripts to execute the achievement checks in regular intervals
 DEFINE_ACTION_FUNCTION PATCH_GAME_SCRIPTS
 INT_VAR
+  ach_count = 0 // number of tokens to add
   prefer_achievements = 0 // whether ACHIEVEM.BCS should be patched if available
 BEGIN
   // Preparations
+  OUTER_SET ach_count_total = ach_count
   OUTER_SET strref = RESOLVE_STR_REF(@510)
   ACTION_IF (GAME_IS ~pstee~) BEGIN
     OUTER_TEXT_SPRINT display_string ~DisplayStringNoNameHead(Player1,%strref%)~
@@ -252,10 +254,10 @@ END
 // Installs the "Achievements Trophy" item.
 DEFINE_ACTION_FUNCTION INSTALL_ITEM
 INT_VAR
-  count = 0 // number of tokens to add
+  ach_count = 0 // number of tokens to add
   show_compact = 1
 BEGIN
-  ACTION_IF (count > 0) BEGIN
+  ACTION_IF (ach_count > 0) BEGIN
     COPY ~%MOD_FOLDER%/items/a7achtr1.itm~ ~override~
       // generating item description
       PATCH_IF (show_compact) BEGIN
@@ -265,13 +267,13 @@ BEGIN
         TEXT_SPRINT ach_string ~~
         TEXT_SPRINT nl ~%LNL%~
       END
-      FOR (i = 0; i < count; ++i) BEGIN
+      FOR (i = 0; i < ach_count; ++i) BEGIN
         TEXT_SPRINT ach_string ~%ach_string%<A7_ACH_%i%>%nl%~
       END
       PATCH_IF (show_compact) BEGIN
         TEXT_SPRINT ach_string ~%ach_string%%LNL%~
       END
-      SET ach_count_total = count
+      SET ach_count_total = ach_count
       PATCH_IF (GAME_IS ~pstee~) BEGIN
         SET strref1 = RESOLVE_STR_REF(@604)
         SET strref2 = RESOLVE_STR_REF(@605)
@@ -479,6 +481,7 @@ BEGIN
     // patching global game scripts
     LAF PATCH_GAME_SCRIPTS
       INT_VAR
+        ach_count = journal
         prefer_achievements = GAME_IS ~pstee~
     END
 
@@ -498,7 +501,7 @@ BEGIN
     // installing item "Achievements Trophy"
     LAF INSTALL_ITEM
       INT_VAR
-        count = journal
+        ach_count = journal
         show_compact
     END
   END
