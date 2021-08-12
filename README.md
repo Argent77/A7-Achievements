@@ -7,9 +7,9 @@
 # Achievements!
 *A mod for BG:EE, SoD, BG2:EE, EET, IWD:EE and PST:EE that makes Steam Achievements available as regular journal entries for everyone.*
 
-<!--- [![Beamdog Forums](https://img.shields.io/static/v1?label=Discussion&message=Beamdog%20Forums&color=444&labelColor=eee&style=for-the-badge)](https://forums.beamdog.com/ "Beamdog Forums")
+[![Beamdog Forums](https://img.shields.io/static/v1?label=Discussion&message=Beamdog%20Forums&color=444&labelColor=eee&style=for-the-badge)](https://forums.beamdog.com/discussion/82630/mod-achievements-for-everyone "Beamdog Forums")
 &nbsp;&nbsp;
-[![G3 Forums](https://img.shields.io/static/v1?label=Discussion&message=G3%20Forums&color=3b45a3&labelColor=eee&style=for-the-badge)](https://www.gibberlings3.net/forums/ "The Gibberlings Three Forums") -->
+[![G3 Forums](https://img.shields.io/static/v1?label=Discussion&message=G3%20Forums&color=3b45a3&labelColor=eee&style=for-the-badge)](https://www.gibberlings3.net/forums/topic/33035-achievements-for-everyone/ "The Gibberlings Three Forums")
 
 ## Overview
 
