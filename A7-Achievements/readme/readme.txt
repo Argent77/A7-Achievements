@@ -72,7 +72,7 @@ BG2: (SoA) Sold by the Adventurer's Mart at Waukeen's Promenade in Athkatla.
            and the Forst of Mir.
 IWD: Sold by Gerth's Equipment Shoppe in Kuldahar.
      Sold by Kieran Nye in Lonelywood (HoW campaign only).
-PST: Sold at Fell's Tattoo Parlor in the Hive.
+PST: Sold at Fell's Tattoo Parlor in the Hive after unlocking the first achievement.
 
 The component comes in two flavors:
 
@@ -88,7 +88,7 @@ This option installs the Achievements Trophy with an item description that lists
 individually, along with their current activation state. Choose this if you wish to browse the
 complete list of available achievements.
 
-
+Note:
 Either of the subcomponents can be installed at any time. It is not required to start a new game.
 Achievements that have already been unlocked before the mod was installed will be detected and
 added to the journal when you first load the game. However, the Achievements Trophy may not be
@@ -96,6 +96,18 @@ available for sale if you already visited the respective stores before.
 
 In addition to the official Steam Achievements the mod also unlocks a small number of unused
 achievements for SoD which are implemented in the game but not registered by Steam.
+
+
+2. Install Achievements reward (requires the main component to be installed)
+
+This optional component rewards you with various bonuses after unlocking 25, 50 and 75 percent of
+all available achievements.
+
+In PST:EE the rewards are automatically available as additional tattoos which can be purchased in
+Fell's Tattoo Parlor.
+
+In all other games you can press the "Inspect" button available on the item description screen of
+the Achievements Trophy. It triggers a conversation where you can redeem your rewards.
 
 
 Credits
@@ -113,6 +125,10 @@ ShareAlike 4.0 International License" (https://creativecommons.org/licenses/by-n
 
 History
 ~~~~~~~
+
+2.0
+- Added component "Achievements reward"
+- Minor text fixes
 
 1.0
 - Initial release

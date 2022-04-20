@@ -4,5 +4,8 @@
 @2 = ~Compact Statistics~
 @3 = ~Detailed Statistics~
 
+@10 = ~Achievements reward~
+
 @100 = ~Enhanced Edition game required.~
 @101 = ~DLC Merger is required before mods can be installed on this game. Check the readme for more information and a link to download DLC Merger.~
+@102 = ~Requires the main component of the mod to be installed.~

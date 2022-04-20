@@ -39,3 +39,11 @@ In PST:EE journal entries are added as "completed quests" to avoid cluttering th
 The component can be installed at any time. It is not needed to start a new game. Achievements that have already been unlocked before the mod was installed will be detected and added to the journal.
 
 In addition to the official Steam Achievements the mod also unlocks a small number of unused achievements for SoD which are implemented in the game but not registered by Steam.
+
+### Install Achievements reward *(requires the main component to be installed)*
+
+This optional component rewards you with various bonuses after unlocking 25, 50 and 75 percent of all available achievements.
+
+In PST:EE the rewards are automatically available as additional tattoos which can be purchased in Fell's Tattoo Parlor.
+
+In all other games you can press the "Inspect" button available on the item description screen of the Achievements Trophy. It triggers a conversation where you can redeem your rewards.

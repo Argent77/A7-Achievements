@@ -44,3 +44,87 @@ Unlocked achievements: <A7_ACH> of %ach_count_total%
 @613 = ~: ^0xFF000080locked^-~    // achievement state "locked", dark red color (BG1/BG2/IWD)
 @614 = ~: ^0xFF00AF00unlocked^-~  // achievement state "unlocked", bright green color (PST)
 @615 = ~: ^0xFF0000FFlocked^-~    // achievement state "locked", bright red color (PST)
+
+@620 = ~inspect~  // button label for item
+
+// Item: Cornucopia (non-PST)
+@630 = ~Horn~
+@631 = ~Cornucopia~
+@632 = ~This is a small horn. Horns are typically made of bone or metal and can produce a large variety of sounds.
+
+STATISTICS:
+
+Weight: 1~
+@633 = ~The cornucopia, also called the Horn of Plenty, is a legendary artifact known for granting the owner an abundance of gold, food and other riches.
+
+It is shaped like a large horn, and blowing it will awaken its innate magic. The magic is spent in a single charge and causes a sizable amount of gold to appear.
+
+STATISTICS:
+
+Charge abilities:
+– Increases party gold by 10 percent
+
+Weight: 1~
+
+@634 = ~The cornucopia, also called the Horn of Plenty, is a legendary artifact known for granting the owner an abundance of gold, food and other riches.
+
+It is shaped like a large horn, and appears to be made of gold and other precious materials. It might be worth quite a few coins to a local merchant.
+
+STATISTICS:
+
+Weight: 1~
+
+// Item: Tattoo of Apprenticeship (PST)
+@640 = ~Tattoo of Apprenticeship~
+@641 = ~TATTOO OF APPRENTICESHIP
+Special:
+   Grants Experience Points when invoked
+Weight: 0
+
+This tattoo symbolizes your progress in the game. By unlocking 25 percent of all available achievements you have already experienced more of Sigil than most other townsfolk.
+
+Its power can be invoked to recap the sights and wonders of the city, and maybe learn about details you might have missed when you experienced them the first time.~
+
+// Item: Tattoo of Mastery (PST)
+@650 = ~Tattoo of Mastery~
+@651 = ~TATTOO OF MASTERY
+Special:
+   Grands +1 bonus to unspent weapon proficiency points when invoked
+Weight: 0
+
+This tattoo tells of the long journey you have already traveled as well as the journey still before you when you unlocked half of all available achievements.
+
+Invoking the power of the tattoo improves your potential to become more skilled in the weapon of your choice.~
+
+// Item: Tattoo of Accomplishment (PST)
+@660 = ~Tattoo of Accomplishment~
+@661 = ~TATTOO OF ACCOMPLISHMENT
+Special:
+   Fighter:
+      +2 to Strength
+      +2 to Armor Class
+      +2 to THAC0
+   Thief:
+      +2 to Dexterity
+      +2 to Armor Class
+      +1 to Luck
+   Mage:
+      +2 to Intelligence
+      +2 to all Saving Throws
+Weight: 0
+Usable only by the Nameless One
+
+This tattoo represents your grandmastery over the sights of Sigil and the surrounding planes. You have left no stone unturned, no plead unheard, and explored corners even the Lady wouldn't grace her presence with.
+
+When worn the tattoo enhances the primary skills and attributes of the Nameless One's active class, which can be either of Fighter, Thief or Mage.~
+
+@700 = ~Gold has been added~
+@701 = ~+1 THAC0 bonus~
+@702 = ~+1 AC bonus~
+@703 = ~+1 Save vs. Spell bonus~
+@704 = ~+1 strength bonus~
+@705 = ~+1 dexterity bonus~
+@706 = ~+1 constitution bonus~
+@707 = ~+1 intelligence bonus~
+@708 = ~+1 wisdom bonus~
+@709 = ~+1 charisma bonus~
