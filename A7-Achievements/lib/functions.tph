@@ -235,7 +235,14 @@ BEGIN
       FOR (row = 3; row < table; ++row) BEGIN
         READ_2DA_ENTRY_FORMER table row 1 col_game
         PATCH_IF (~%col_game%~ STR_EQ ~%game%~) BEGIN
-          SET count += 1
+          READ_2DA_ENTRY_FORMER table row 2 row_global
+          READ_2DA_ENTRY_FORMER table row 3 row_tra
+          PATCH_IF (NOT ~%row_global%~ STR_EQ ~%def_value%~ && IS_AN_INT ~row_tra~) BEGIN
+            LPF FORMAT_GLOBAL STR_VAR global = EVAL ~%row_global%~ game RET global END
+            PATCH_IF (NOT ~%global%~ STR_EQ ~~ && NOT VARIABLE_IS_SET $achievements(~%global%~)) BEGIN
+              SET count += 1
+            END
+          END
         END
       END
     END
@@ -600,7 +607,7 @@ END
       SAY NAME2 @631  // Cornucopia
       SAY UNIDENTIFIED_DESC @634  // This is a small horn...
 
-    ACTION_IF (GAME_INCLUDES ~sod~) BEGIN
+    ACTION_IF (GAME_INCLUDES ~sod~ && NOT GAME_IS ~eet~) BEGIN
       COPY ~%MOD_FOLDER%/items/sod/a7cachl1.bam~ ~override~
     END ELSE BEGIN
       COPY ~%MOD_FOLDER%/items/a7cachl1.bam~ ~override~
