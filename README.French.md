@@ -39,3 +39,11 @@ Dans PST:EE, les entrées du journal sont ajoutées en tant que "quêtes termin�
 Le composant peut être installé à tout moment. Il n'est pas nécessaire de commencer une nouvelle partie. Les réalisations qui ont déjà été débloquées avant l'installation du mod seront détectées et ajoutées au journal.
 
 En plus des réalisations officielles de Steam, le mod débloque également un petit nombre de réalisations non utilisées pour SoD qui sont implémentées dans le jeu mais non reconnues par Steam.
+
+### Installer les récompenses pour les Réalisations *(nécessite l'installation du composant principal)*
+
+Ce composant optionnel vous récompense avec divers bonus après avoir débloqué 25, 50 et 75 % des Réalisations disponibles.
+
+Dans PST:EE, les récompenses sont automatiquement disponibles sous forme de tatouages supplémentaires qui peuvent être achetés au Fell's Tattoo Parlor.
+
+Dans tous les autres jeux, vous pouvez appuyer sur le bouton "Inspecter" disponible sur l'écran de description de du trophée des Réalisations. Cela déclenche un dialogue au cours duquel vous pouvez échanger vos récompenses.

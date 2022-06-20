@@ -4,7 +4,7 @@
 @500 = ~Réalisations~
 
 // Colored log message
-@510 = ~^DRéalisations accomplies : <A7_ACH> of %ach_count_total%^-~
+@510 = ~^DRéalisations accomplies : <A7_ACH> sur %ach_count_total%^-~
 
 // Item name
 @600 = ~Le Trophée des Réalisations~
@@ -17,7 +17,7 @@ PARAMÈTRES :
 Poids : 1~
 @603 = ~Ce trophée flamboyant a été enchanté pour retracer toutes les Réalisations accomplies par <CHARNAME>.
 
-Réalisations accomplies : <A7_ACH> of %ach_count_total%
+Réalisations accomplies : <A7_ACH> sur %ach_count_total%
 
 %ach_string%
 PARAMÈTRES :
@@ -34,7 +34,7 @@ Poids : 1
 
 Ce trophée flamboyant a été enchanté pour retracer toutes les Réalisations accomplies par le Sans-nom.
 
-Réalisations accomplies : <A7_ACH> of %ach_count_total%
+Réalisations accomplies : <A7_ACH> sur %ach_count_total%
 
 %ach_string%~
 
@@ -44,3 +44,87 @@ Réalisations accomplies : <A7_ACH> of %ach_count_total%
 @613 = ~: ^0xFF000080incomplet^-~    // achievement state "locked", dark red color (BG1/BG2/IWD)
 @614 = ~: ^0xFF00AF00accomplie^-~  // achievement state "unlocked", bright green color (PST)
 @615 = ~: ^0xFF0000FFincomplet^-~    // achievement state "locked", bright red color (PST)
+
+@620 = ~inspecter~  // button label for item
+
+// Item: Cornucopia (non-PST)
+@630 = ~Corne~
+@631 = ~Cornucopia~
+@632 = ~Il s'agit d'une petite corne. Elles sont généralement faites d'os ou de métal et peuvent produire une grande variété de sons.
+
+PARAMÈTRES :
+
+Poids : 1~
+@633 = ~La Cornucopia, également appelée Corne d'Abondance, est un artefact légendaire connu pour offrir à son propriétaire de l'or, de la nourriture et de nombreuses autres richesses en abondance.
+
+Elle a la forme d'une énorme corne, et souffler dedans réveillera sa magie. Elle dispose d'une seule charge et fait apparaître une appréciable quantité d'or.
+
+PARAMÈTRES :
+
+Capacités de charge :
+– Accroît de 10 % l'or du groupe.
+
+Poids : 1~
+
+@634 = ~La Cornucopia, également appelée Corne d'Abondance, est un artefact légendaire connu pour offrir à son propriétaire de l'or, de la nourriture et de nombreuses autres richesses en abondance.
+
+Elle a la forme d'une énorme corne, et semble être composée d'or et autres matériaux précieux. Elle doit avoir une valeur considérable pour les marchands du coin.
+
+PARAMÈTRES :
+
+Poids : 1~
+
+// Item: Tattoo of Apprenticeship (PST)
+@640 = ~Tatouage du connaisseur~
+@641 = ~TATOUAGE  DU CONNAISSEUR
+Spéciale :
+   Accorde des points d'expérience lorsqu'il est invoqué
+Poids : 0
+
+Ce tatouage symbolise votre progression dans le jeu. En débloquant 25 % des Réalisations disponibles, vous avez déjà vu et vécu plus de choses à Sigil que la plupart des autres habitants de la ville.
+
+Vous pouvez invoquer son pouvoir pour revoir les curiosités et les merveilles de la ville, et peut-être apprendre un détail ou deux qui vous auraient échappé lors de votre premier passage.~
+
+// Item: Tattoo of Mastery (PST)
+@650 = ~Tatouage du maître~
+@651 = ~TATOUAGE DU MAÎTRE
+Spéciale :
+   Donne +1 aux points de compétence non utilisés, pour les armes, lorsqu'il est invoqué.
+Poids : 0
+
+Ce tatouage raconte le vaste voyage que vous avez entrepris, mais aussi le chemin qu'il vous reste à parcourir, quand vous avez débloqué 50 % de toutes les réalisations disponibles.
+
+Invoquer le pouvoir de ce tatouage améliore votre aptitude à devenir plus expérimenté dans l'arme de votre choix.~
+
+// Item: Tattoo of Accomplishment (PST)
+@660 = ~Tatouage de l'achèvement~
+@661 = ~TATOUAGE DE L'ACHÈVEMENT
+Spéciale :
+   Guerrier :
+      +2 en Force
+      +2 à la classe d'armure
+      +2 au TAC0
+   Voleur :
+      +2 à la Dextérité
+      +2 à la classe d'armure
+      +1 à la chance
+   Mage :
+      +2 en Intelligence
+      +2 aux jets de sauvegarde
+Poids : 0
+Utilisable uniquement par le Sans-Nom
+
+Ce tatouage symbolise votre grande maîtrise des curiosités de Sigil et des plans alentours. Vous avez retourner toutes les pierres, écouter toutes les histoires, et exploré des recoins où même la Dame ne mettrait pas les pieds.
+
+Lorsqu'il est porté, ce tatouage améliore les compétences et attributs fondamentaux de la classe active de Sans-Nom, guerrier, voleur ou mage.~
+
+@700 = ~De l'or a été ajouté~
+@701 = ~TAC0 : +1~
+@702 = ~CA : +1~
+@703 = ~Jets de sauvegarde contre les sorts : +1~
+@704 = ~Force : +1~
+@705 = ~Dextérité : +1~
+@706 = ~Constitution : +1~
+@707 = ~Intelligence : +1~
+@708 = ~Sagesse : +1~
+@709 = ~Charisme : +1~
