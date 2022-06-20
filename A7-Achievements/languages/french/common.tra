@@ -1,0 +1,46 @@
+// -*- coding: utf-8 -*-
+
+// Journal title
+@500 = ~Réalisations~
+
+// Colored log message
+@510 = ~^DRéalisations accomplies : <A7_ACH> of %ach_count_total%^-~
+
+// Item name
+@600 = ~Le Trophée des Réalisations~
+
+// Item description (BG1/BG2/IWD)
+@602 = ~Ce trophée étincelant semble constitué d'or et autres métaux précieux.
+
+PARAMÈTRES :
+
+Poids : 1~
+@603 = ~Ce trophée flamboyant a été enchanté pour retracer toutes les Réalisations accomplies par <CHARNAME>.
+
+Réalisations accomplies : <A7_ACH> of %ach_count_total%
+
+%ach_string%
+PARAMÈTRES :
+
+Poids : 1~
+
+// Item description (PST)
+@604 = ~LE TROPHÉE DES RÉALISATIONS
+Poids : 1
+
+Ce trophée étincelant semble constitué d'or et autres métaux précieux.~
+@605 = ~LE TROPHÉE DES RÉALISATIONS
+Poids : 1
+
+Ce trophée flamboyant a été enchanté pour retracer toutes les Réalisations accomplies par le Sans-nom.
+
+Réalisations accomplies : <A7_ACH> of %ach_count_total%
+
+%ach_string%~
+
+@610 = ~"~  // opening quotation mark
+@611 = ~"~  // closing quotation mark
+@612 = ~: ^0xFF004000accomplie^-~  // achievement state "unlocked", dark green color (BG1/BG2/IWD)
+@613 = ~: ^0xFF000080incomplet^-~    // achievement state "locked", dark red color (BG1/BG2/IWD)
+@614 = ~: ^0xFF00AF00accomplie^-~  // achievement state "unlocked", bright green color (PST)
+@615 = ~: ^0xFF0000FFincomplet^-~    // achievement state "locked", bright red color (PST)

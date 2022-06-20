@@ -1,0 +1,151 @@
+// -*- coding: utf-8 -*-
+
+@7000 = ~Grand Maître~
+@7001 = ~Atteindre la Grande Maîtrise.~
+
+@7010 = ~Autosuffisant~
+@7011 = ~Finir le jeu sans recruter de compagnon.~
+
+@7020 = ~Master Tactician~
+@7021 = ~Completed the whole game on Heart of Fury difficulty.~
+
+@7030 = ~Storyteller~
+@7031 = ~Completed the whole game on Story Mode difficulty.~
+
+@7040 = ~Digne du pantheon~
+@7041 = ~Atteindre 25 dans un score de caractéristique.~
+
+@7050 = ~Intouchable~
+@7051 = ~Atteindre -15 en Classe d'Armure.~
+
+@7060 = ~Poids Lourd~
+@7061 = ~Le chef du groupe atteint 150 Points de Vie.~
+
+@7070 = ~Destroyer~
+@7071 = ~The party killed at least 1,000 creatures.~
+
+@7080 = ~Savant~
+@7081 = ~Le chef du groupe atteint 100 en score de connaissances.~
+
+@7090 = ~Déchéance~
+@7091 = ~Devenir un Paladin ou Rôdeur déchu.~
+
+@7100 = ~Magicien Épique~
+@7101 = ~Atteindre le niveau 30 avec un Mage ou un Ensorceleur.~
+
+@7110 = ~Roublard Épique~
+@7111 = ~Atteindre le niveau 30 avec un Voleur ou un Barde.~
+
+@7120 = ~Combattant Épique~
+@7121 = ~Atteindre le niveau 30 avec un Guerrier, un Rôdeur, un Paladin, un Moine ou un Barbare.~
+
+@7130 = ~Prêtre Épique~
+@7131 = ~Atteindre le niveau 30 avec un Clerc, un Druide ou un Chaman.~
+
+@7140 = ~Living Legend~
+@7141 = ~Unlocked upon reaching level 30 in two classes with the same character.~
+
+@7150 = ~Ultimate Warrior~
+@7151 = ~Unlocked upon reaching level 30 in three classes with the same character.~
+
+@7160 = ~Company of Champions~
+@7161 = ~Unlocked upon creating a party of six good-aligned characters.~
+
+@7170 = ~Order of Guardians~
+@7171 = ~Unlocked upon creating a party of six neutral-aligned characters.~
+
+@7180 = ~Band of Villains~
+@7181 = ~Unlocked upon creating a party of six evil-aligned characters.~
+
+@7190 = ~The Unseemly Relic~
+@7191 = ~Unlocked upon finding Pale Justice, the Holy Avenger sword.~
+
+@7200 = ~Infernally Vexed~
+@7201 = ~Unlocked upon acquiring the infernal Vexed Armor.~
+
+@7210 = ~Cold Fury~
+@7211 = ~Unlocked upon assisting the dwarven smith Tiernon to forge an ice weapon.~
+
+@7220 = ~Black Swan~
+@7221 = ~Unlocked upon acquiring the Black Swan Armor.~
+
+@7230 = ~The Reborn Blade~
+@7231 = ~Unlocked upon acquiring the Restored Blade of Aihonen.~
+
+@7240 = ~The Singing Blade~
+@7241 = ~Unlocked upon acquiring the Singing Blade of Aihonen.~
+
+@7250 = ~The Raging Mage~
+@7251 = ~Unlocked upon memorizing the spell Malavon's Rage.~
+
+@7260 = ~Song of the Sea~
+@7261 = ~Unlocked upon singing to the Sea Spirit Elisia.~
+
+@7270 = ~The Secret Garden~
+@7271 = ~Unlocked upon restored the Arboretum of the Severed Hand to its former glory.~
+
+@7280 = ~Liberator~
+@7281 = ~Unlocked upon freeing all slaves in the Wyrm's Tooth glacier.~
+
+@7290 = ~Constructed Betrayal~
+@7291 = ~Unlocked upon turning Malavon's Iron Golems against him.~
+
+@7300 = ~The Lone Wolf~
+@7301 = ~Unlocked upon discovering the true identity of the Lonelywood werewolf.~
+
+@7310 = ~Glacial Efflorescence~
+@7311 = ~Unlocked upon bringing a rose of ice to the bard, Murdaugh.~
+
+@7320 = ~Soothing Warmth~
+@7321 = ~Unlocked upon visiting Kuldahar.~
+
+@7330 = ~Eye of the Dragon~
+@7331 = ~Unlocked upon visiting Dragon's Eye.~
+
+@7340 = ~The Towering Ruin~
+@7341 = ~Unlocked upon visiting the Severed Hand.~
+
+@7350 = ~Echoes from the Deep~
+@7351 = ~Unlocked upon visiting Dorn's Deep.~
+
+@7360 = ~The Glistening Glacier~
+@7361 = ~Unlocked upon visiting Wyrm's Tooth Glacier.~
+
+@7370 = ~Coldest Winter~
+@7371 = ~Unlocked upon revisiting Easthaven.~
+
+@7380 = ~The Final Resting Place~
+@7381 = ~Unlocked upon visiting the Burial Isle.~
+
+@7390 = ~The Gloomy Mountain~
+@7391 = ~Unlocked upon visiting Gloomfrost.~
+
+@7400 = ~The Frozen Sea~
+@7401 = ~Unlocked upon visiting the Sea of Moving Ice.~
+
+@7410 = ~Allurement~
+@7411 = ~Unlocked upon visiting the ruined castle in the Anauroch desert.~
+
+@7420 = ~Resisted the Lure~
+@7421 = ~Unlocked uping completing Trials of the Luremaster.~
+
+@7430 = ~Savior of the Ten Towns~
+@7431 = ~Unlocked upon completing Icewind Dale.~
+
+@7440 = ~Hero of the Frozen North~
+@7441 = ~Unlocked upon completing Heart of Winter.~
+
+@7450 = ~Dragon Slayer~
+@7451 = ~Unlocked upon killing Icasaracht, the White Dragon matriarch.~
+
+@7460 = ~Fiend Slayer~
+@7461 = ~Unlocked upon killing Belhifet.~
+
+@7470 = ~Giant Slayer~
+@7471 = ~Unlocked upon killing Joril, the leader of the Frost Giants.~
+
+@7480 = ~Lich Slayer~
+@7481 = ~Unlocked upon killing Terikan, the Lich.~
+
+@7490 = ~Demon Slayer~
+@7491 = ~Unlocked upon killing Yxunomei, the Marilith demoness.~

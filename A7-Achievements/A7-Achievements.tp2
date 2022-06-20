@@ -70,6 +70,10 @@ LANGUAGE ~English~
          ~english~
          ~A7-Achievements/languages/english/setup.tra~
          ~A7-Achievements/languages/english/common.tra~
+LANGUAGE ~French~
+         ~french~
+         ~A7-Achievements/languages/french/setup.tra~
+         ~A7-Achievements/languages/french/common.tra~
 
 
 BEGIN @2  // Compact summary
