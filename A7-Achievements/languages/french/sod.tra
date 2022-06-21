@@ -1,0 +1,217 @@
+// -*- coding: utf-8 -*-
+
+@3000 = ~Un Long Voyage~
+@3001 = ~Se mettre en route vers le Château Paldragon.~
+
+@3010 = ~Pas de Quartier~
+@3011 = ~Repousser la croisade jusqu'au Pont de Boarskyr.~
+
+@3020 = ~Pas Tout à Fait l'Objectif~
+@3021 = ~Faire en sorte que Fort-du-Pont se rende pacifiquement à la croisade.~
+
+@3030 = ~Sabotage~
+@3031 = ~Saboter le pont-levis de Fort-du-Pont et laisser les croisés y entrer.~
+
+@3040 = ~Moment Critique~
+@3041 = ~Empêcher la destruction du Pont de Boareskyr par la croisade.~
+
+@3050 = ~La vie de mon Père~
+@3051 = ~Atteindre le Pont de Boareskyr, témoin de la mort de Bhaal.~
+
+@3060 = ~Dans les Ténèbres~
+@3061 = ~Pénétrer dans les cavernes sous le Château Paldragon.~
+
+@3070 = ~Défenseur~
+@3071 = ~Défendre le camp de la coalition d'un assaut.~
+
+@3080 = ~La Méthode la Plus Difficile~
+@3081 = ~Choisir l'unité la moins adaptée pour combattre les croisés au camp de la coalition.~
+
+@3090 = ~Combat Singulier~
+@3091 = ~Vaincre le croisé d'élite Ashatiel dans un combat singulier.~
+
+@3100 = ~Minutieux~
+@3101 = ~Vaincre les croisés d'élite qui gardent l'entrée arrière du Château Paldragon.~
+
+@3110 = ~Un Choix douteux~
+@3111 = ~Laisser Thrix prendre l'âme d'un membre du groupe.~
+
+@3120 = ~Pacte Divin~
+@3121 = ~Rallier Caelar Argent à votre cause.~
+
+@3130 = ~Transfuge du Val de Bise~
+@3131 = ~Vaincre le demon Belhifet.~
+
+@3140 = ~Expiation~
+@3141 = ~Laisser Caelar Argent défendre le portail vers le Plan Matériel.~
+
+@3150 = ~Dernier Devoir~
+@3151 = ~Laisser Aun Argent défendre le portail vers le Plan Matériel.~
+
+@3160 = ~C'est Pas Moi !~
+@3161 = ~Persuader le Duc Belt que vous n'avez rien à voir avec le meurtre de Skie.~
+
+@3170 = ~Conviction~
+@3171 = ~Persuader Corwin que vous n'avez pas commis un meurtre.~
+
+@3180 = ~Les Ombres à Venir...~
+@3181 = ~Tomber dans un piège près de la Porte de Baldur.~
+
+@3190 = ~Les Vieux de la Vieille~
+@3191 = ~Se retrouver entre vieux amis : Minsc, Dynaheir, Safana, Jaheira and Khalid.~
+
+@3200 = ~Les Petits Nouveaux~
+@3201 = ~Avoir Corwin, Glint, M'Khiin et Voghiln dans le groupe en même temps.~
+
+@3210 = ~Mauvaise réputation~
+@3211 = ~Avoir Baeloth, Viconia, M'Khiin, Dorn et Edwin dans le groupe en même temps.~
+
+@3220 = ~Dehors !~
+@3221 = ~Aider Neera à se débarrasser de l'étrange voix dans sa tête.~
+
+@3230 = ~Réunion de Famille~
+@3231 = ~Retrouver tous les membres de la famille de Glint.~
+
+@3240 = ~Le Cadeau du Ménestrel~
+@3241 = ~Assister Khalid dans sa requête romantique.~
+
+@3250 = ~Peau Verte~
+@3251 = ~Aider M'Khiin à trouver sa voie.~
+
+@3260 = ~Secrets de Famille~
+@3261 = ~Découvrir un secret dans la tombe de la famille Korlasz.~
+
+@3270 = ~Connais-Toi Toi-Même~
+@3271 = ~Aider Ammon dans la tombe de la famille Korlasz.~
+
+@3280 = ~Quatre d'un Coup~
+@3281 = ~Vaincre seul les cambrioleurs du magasin des Marchandises Magiques.~
+
+@3290 = ~Grosse Tête~
+@3291 = ~Acquérir un buste d'or à votre effigie.~
+
+@3300 = ~Représentation Ratée~
+@3301 = ~Échouer à impressionner les anciens menhirs avec votre voix.~
+
+@3310 = ~Ensemble Complet~
+@3311 = ~Retrouver tous trésors de famille disparus de Tako.~
+
+@3320 = ~De Pierre en Chair~
+@3321 = ~Sauver tous les réfugiés disparus dans la Forêt de la Voie Côtière.~
+
+@3330 = ~Télécommande~
+@3331 = ~Persuader Teleria de vendre son golem.~
+
+@3340 = ~La Déception de Dumathoïn~
+@3341 = ~Vaincre Coldhearth la liche et détruire son phylactère.~
+
+@3350 = ~Drôle d'Alliance~
+@3351 = ~Rendre les amulettes de ses anciens compagnons à Coldhearth.~
+
+@3360 = ~Il est Juste Incompris !~
+@3361 = ~Se ranger du côté de Tsolak le vampire.~
+
+@3370 = ~Nyctalope~
+@3371 = ~Avoir recours à l'infravision pour se repérer dans une zone de ténèbres.~
+
+@3380 = ~Tueur de Dragon~
+@3381 = ~Tuer le dragon vert Morentherene.~
+
+@3390 = ~Réformation~
+@3391 = ~Commander à Madele de se racheter pour ses nombreux méfaits.~
+
+@3400 = ~Au Nom du Père~
+@3401 = ~Commander à Madele de tuer au nom de Bhaal.~
+
+@3410 = ~Perfidie...~
+@3411 = ~Tuer les croisés piégés dans le temple de Cyric.~
+
+@3420 = ~Récupérer la Clé~
+@3421 = ~Acquérir la pierre gardienne du temple de Cyric.~
+
+@3430 = ~Secrets révélés~
+@3431 = ~Découvrir une pièce secrète et son trésor caché dans le temple de Cyric.~
+
+@3440 = ~Esprit silencieux~
+@3441 = ~Vaincre Darskhelin le flagelleur mental dans le temple de Cyric.~
+
+@3450 = ~Diffusion~
+@3451 = ~Mettre un terme à l'énergie délétère qui émane de la pierre gardienne de Fort-du-Pont.~
+
+@3460 = ~Emprunter au néant~
+@3461 = ~Forger une arme à partir de rien.~
+
+@3470 = ~Les Écailles de la Bête~
+@3471 = ~Forger un objet en écailles de dragon.~
+
+@3480 = ~Fier de Vous~
+@3481 = ~Révéler son identité aux croisés au Pont de Boarskyr.~
+
+@3490 = ~Le Puits de la Discorde~
+@3491 = ~Traiter avec un élémentaire d'eau mécontent près du Pont de Boarskyr.~
+
+@3500 = ~Investigation~
+@3501 = ~Découvrir qui est le traître au camp de la coalition.~
+
+@3510 = ~Maître d'école~
+@3511 = ~Entraîner correctement toutes les recrues du Vigilant Halasan.~
+
+@3520 = ~Le Coup est Parti Tout Seul...~
+@3521 = ~Tuer Nüber.~
+
+@3530 = ~Appel à la Raison~
+@3531 = ~Apporter la preuve des crimes de la croisade à Julann à l'entrée de la rivière souterraine.~
+
+@3540 = ~Rupture~
+@3541 = ~Persuader Rigah de se retourner contre Julann.~
+
+@3550 = ~Allié de la Nature~
+@3551 = ~Se ranger du côté des druides de la surface à l'entrée de la rivière souterraine.~
+
+@3560 = ~Sombre Alliance~
+@3561 = ~Se ranger du côté de Ferrusk au cercle des druides de l'ombre.~
+
+@3570 = ~Trivium~
+@3571 = ~Accomplir une tâche digne du Terrible Trivium et perdre votre temps.~
+
+@3580 = ~Des Amis Réunis~
+@3581 = ~Réunir les esprits de Daeros Paldragon et Halatathlaer.~
+
+@3590 = ~Grand Ménage~
+@3591 = ~Vaincre la cabale de magiciens qui se cachent dans Kanaglym.~
+
+@3600 = ~Bénédiction de Talona~
+@3601 = ~Empoisonner les vivres du Château Paldragon.~
+
+@3610 = ~Retraite !~
+@3611 = ~Découvrir Hephernaan au sous sol du Château Paldragon.~
+
+@3620 = ~Explorateur~
+@3621 = ~Découvrir toutes les rencontres uniques aléatoires.~
+
+@3630 = ~Venus de Loin~
+@3631 = ~Invoquer trois créatures dans le Plan Matériel en utilisant les Lunettes de Spectacle.~
+
+@3640 = ~Tous les Amis~
+@3641 = ~Recruter tous les alliés possibles pour la bataille finale.~
+
+@3650 = ~Tous les Ennemis~
+@3651 = ~Combattre tous les adversaires possibles lors de la bataille finale.~
+
+@3660 = ~Père Fouras~
+@3661 = ~Répondre correctement aux énigmes du menhir, de Vidyadhar et de Thrix.~
+
+@3670 = ~La Mort de Korlasz~
+@3671 = ~Vaincre Korlasz, le dernier adepte de Sarevok~
+
+
+// *** List of possibly unimplemented Steam achievements ***
+
+@3680 = ~Vénérable Frère Hephernaan~
+@3681 = ~Vaincre Hephernaan en Avernus.~
+
+@3690 = ~Tiax régnera~
+@3691 = ~Parler à Tiax au quartier général du Poing Enflammés.~
+
+@3700 = ~Mal absolu~
+@3701 = ~Tuer les croisés piégés dans le temple de Cyric en déclenchant le piège à piques.~

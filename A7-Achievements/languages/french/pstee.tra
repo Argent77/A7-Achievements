@@ -1,0 +1,151 @@
+// -*- coding: utf-8 -*-
+
+@9000 = ~Appel de la lame~
+@9001 = ~Redevenez Guerrier au cours d'une partie.~
+
+@9010 = ~Appel des arcanes~
+@9011 = ~Devenez Mage.~
+
+@9020 = ~Appel des ombres~
+@9021 = ~Devenez Voleur.~
+
+@9030 = ~Maître des lames~
+@9031 = ~Atteignez le niveau 12 de la classe Guerrier avant toute autre classe.~
+
+@9040 = ~Maître des arcanes~
+@9041 = ~Atteignez le niveau 12 de la classe Mage avant toute autre classe.~
+
+@9050 = ~Au creux des ombres~
+@9051 = ~Atteignez le niveau 12 de la classe Voleur avant toute autre classe.~
+
+@9060 = ~« … dans toute ta gloire »~
+@9061 = ~Augmentez la valeur d'un attribut à 25.~
+
+@9070 = ~Semeur de chaos~
+@9071 = ~Atteignez l'alignement Chaotique (n'importe lequel).~
+
+@9080 = ~Cœur de Deva~
+@9081 = ~Atteignez l'alignement Loyal (n'importe lequel).~
+
+@9090 = ~Esprit noble~
+@9091 = ~Atteignez l'alignement Bon (n'importe lequel).~
+
+@9100 = ~Malveillance~
+@9101 = ~Atteignez l'alignement Mauvais (n'importe lequel).~
+
+@9110 = ~L'Équilibre en toutes circonstances~
+@9111 = ~Conservez l'alignement Neutre strict jusqu'à la fin du jeu.~
+
+@9120 = ~Regard de la Dame~
+@9121 = ~Croisez le regard de la Dame et soyez enfermé dans son dédale.~
+
+@9130 = ~Roi de l'évasion~
+@9131 = ~Évadez-vous du Dédale de la Dame… cette fois-ci.~
+
+@9140 = ~Bien trop réel~
+@9141 = ~Donnez naissance à Adahn par la croyance.~
+
+@9150 = ~Dé-recteur créatif~
+@9151 = ~Vainquez le magicien modron.~
+
+@9160 = ~Ni dieu ni maître~
+@9161 = ~Rejoignez les Anarchistes.~
+
+@9170 = ~La vraie mort~
+@9171 = ~Rejoignez les Hommes-Poussière.~
+
+@9180 = ~Société des Sensations~
+@9181 = ~Rejoignez les Sensats.~
+
+@9190 = ~Gnez'r'joi s'le Teux'os'cha~
+@9191 = ~Rejoignez les Xaositectes.~
+
+@9200 = ~Amis, pour sûr~
+@9201 = ~Sauvez Morte.~
+
+@9210 = ~Annah, rose de mon œil~
+@9211 = ~Ayez Annah dans votre groupe.~
+
+@9220 = ~Prêtresse d’aucune déesse~
+@9221 = ~Ayez Tombée-en-grâce dans votre groupe.~
+
+@9230 = ~Perfection par la justice~
+@9231 = ~Ayez Vhailor dans votre groupe.~
+
+@9240 = ~Celui qui endure construit sa force~
+@9241 = ~Ayez Dak'kon dans votre groupe.~
+
+@9250 = ~Incandessscant~
+@9251 = ~Ayez Ignus dans votre groupe.~
+
+@9260 = ~Modron sens dessus dessous~
+@9261 = ~Ayez Nordom dans votre groupe.~
+
+@9270 = ~Confiance dans le crâne~
+@9271 = ~Découvrez la vraie raison de la présence de Morte à vos côtés.~
+
+@9280 = ~L'enseignement des flammes~
+@9281 = ~Découvrez votre lien avec Ignus.~
+
+@9290 = ~N'est plus = logique totale~
+@9291 = ~Aidez Nordom à résoudre ses problèmes.~
+
+@9300 = ~Lame enchaînée~
+@9301 = ~Augmentez la lame karach de Dak'kon à son plus haut point neutre.~
+
+@9310 = ~Voleuse de proche~
+@9311 = ~Augmentez la lame karach de Dak'kon à son plus haut point maléfique.~
+
+@9320 = ~Lame coulante~
+@9321 = ~Augmentez la lame karach de Dak'kon à son plus haut point d'honneur.~
+
+@9330 = ~Deux morts en une~
+@9331 = ~Prononcez la sentence des Deux morts en une à la Forteresse des regrets.~
+
+@9340 = ~Cercle brisé~
+@9341 = ~Découvrez pourquoi la foi de Dak'kon est brisée.~
+
+@9350 = ~Cercle bouclé~
+@9351 = ~Restaurez la foi de Dak'kon.~
+
+@9360 = ~Porte de la Morgue~
+@9361 = ~Évadez-vous de la Morgue.~
+
+@9370 = ~Unité des anneaux~
+@9371 = ~Retournez à Mebbeth et rétablissez l'Unité des anneaux.~
+
+@9380 = ~Eurêka~
+@9381 = ~Occupez-vous de Ravel Puits-de-Rébus.~
+
+@9390 = ~Embranchements~
+@9391 = ~Rencontrez toutes les incarnations de Ravel dans Sigil.~
+
+@9400 = ~Traversée~
+@9401 = ~Restituez Maudite dans l'Outreterre.~
+
+@9410 = ~Force dans la trahison~
+@9411 = ~Occupez-vous de Trias le traître.~
+
+@9420 = ~Horde de la béquille~
+@9421 = ~Trouvez la réserve de Pharod. Attention à la puanteur.~
+
+@9430 = ~La sphère de bronze~
+@9431 = ~Récupérez la sphère de bronze.~
+
+@9440 = ~Avec-nom~
+@9441 = ~Découvrez enfin votre nom.~
+
+@9450 = ~LE Sans-nom~
+@9451 = ~Entrez seul dans la Forteresse des regrets.~
+
+@9460 = ~Désincarnation~
+@9461 = ~Tuez les 3 incarnations dans la Forteresse des regrets.~
+
+@9470 = ~Triple incarnation~
+@9471 = ~Absorbez les 3 incarnations dans la Forteresse des regrets.~
+
+@9480 = ~Chagrin d'adieu~
+@9481 = ~Vainquez votre adversaire.~
+
+@9490 = ~À chaque question une réponse~
+@9491 = ~Donnez au Transcendant une réponse à la « question vide de sens ».~

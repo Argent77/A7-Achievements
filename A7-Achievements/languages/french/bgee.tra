@@ -1,0 +1,184 @@
+// -*- coding: utf-8 -*-
+
+@1000 = ~Première sortie~
+@1001 = ~Quitter Château-Suif, le seul foyer que vous ayez connu.~
+
+@1010 = ~Une Victoire qui a Bonne Mine~
+@1011 = ~Tuer Mulahey et mettre un terme à la menace des mines de Nashkel.~
+
+@1020 = ~La Chasse aux Bandits~
+@1021 = ~Mettre un terme au problème des bandits de la Côte des Épées.~
+
+@1030 = ~Avec la marée~
+@1031 = ~Tuer Davaëorn et mettre un terme à ses opérations minières.~
+
+@1040 = ~Sur la Piste~
+@1041 = ~Rapporter les activités de Rieltar au Duc Eltan à la Porte de Baldur.~
+
+@1050 = ~Et... Deuxième sortie~
+@1051 = ~Sortir des catacombes de Château-Suif.~
+
+@1060 = ~Héros de la Porte de Baldur~ ~Héroïne de la Porte de Baldur~
+@1061 = ~Tuer Sarevok et mettre un terme à sa menace sur la Porte de Baldur et la Côte des Épées.~
+
+@1070 = ~Présage ?~
+@1071 = ~Rapporter à Perleflamme une copie de l'Histoire de la Pièce Fatidique.~
+
+@1080 = ~Mercenaire du Mois~
+@1081 = ~Se ranger du côté de Silke face aux « mercenaires » à Bérégost~
+
+@1090 = ~Pire Garde du Corps de Tous les Temps~
+@1091 = ~Se ranger du côté des « mercenaires » face à Silke à Bérégost.~
+
+@1100 = ~Mort, Dans une Certaine Mesure~
+@1101 = ~Rapporter son chat à Drienne.~
+
+@1110 = ~Le Pouvoir des Écritures~
+@1111 = ~Apaiser le fantôme dans les ruines d'Ulcaster.~
+
+@1120 = ~Si ça sens comme un Kobold...~
+@1121 = ~Découvrir qui a fait rentrer les kobolds à Gullykin.~
+
+@1130 = ~La Pêche aux Amis~
+@1131 = ~Aider Sonnère et les pêcheurs près de la Porte de Baldur.~
+
+@1140 = ~La Pêche aux Ennemis~
+@1141 = ~Rendre à Tenya l'objet qui lui a été volé.~
+
+@1150 = ~Chef d'Œuvre~
+@1151 = ~Protéger Prisme jusqu'à ce qu'il puisse finir son œuvre d'art.~
+
+@1160 = ~Béotien~
+@1161 = ~Rendre les émeraudes volées à Oublek.~
+
+@1170 = ~Ma Sorcière Mal-Aimée~
+@1171 = ~Tuer la sorcière Dynahéir.~
+
+@1180 = ~Sauver la Sorcière~
+@1181 = ~Délivrer la sorcière Dynahéir de la forteresse Gnoll.~
+
+@1190 = ~Juge, Jury et Bourreau~
+@1191 = ~Mettre un terme à la folie du Capitaine Brage.~
+
+@1200 = ~Seconde Chance~
+@1201 = ~Persuader le Capitaine Brage de se rendre au temple de Heaum.~
+
+@1210 = ~Funeste Nouvelle~
+@1211 = ~Rapporter l'anneau de néphrite de Joseph à son épouse.~
+
+@1220 = ~Ami de la Forêt~
+@1221 = ~Se ranger du côté de Séniyad à la forêt de Bois-Manteau.~
+
+@1230 = ~Royaliste~
+@1231 = ~Se ranger du côté d'Aldeth Sashenstar à la forêt de Bois-Manteau.~
+
+@1240 = ~Demoiselle en Détresse~
+@1241 = ~Aider Abela la nymphe à s'échapper.~
+
+@1250 = ~Maître-Voleur~
+@1251 = ~Voler le télescope à la Maison des Merveilles.~
+
+@1260 = ~Réunion~
+@1261 = ~Rapporter le corps de Casson à Tremain.~
+
+@1270 = ~L'amour Rend Aveugle~
+@1271 = ~Mettre un terme à la vie de Tamoko à Ombre-Ville.~
+
+@1280 = ~Espoir de Rédemption~
+@1281 = ~Persuader Tamoko de vous aider.~
+
+@1290 = ~La Légende de la Tour de Durlag~
+@1291 = ~Explorer la Tour de Durlag et mettre un terme au Mal qui la hante.~
+
+@1300 = ~Mal Ancestral~
+@1301 = ~Vaincre le démon Aec'Letecà la Barbe d'Ulgoth.~
+
+@1310 = ~Joue-la comme Volo~
+@1311 = ~Finir le jeu en mode Histoire.~
+
+@1320 = ~Seigneur du Meurtre~
+@1321 = ~Finir le jeu en mode Succession de Bhaal.~
+
+@1330 = ~Autosuffisant~
+@1331 = ~Finir le jeu sans recruter de compagnon.~
+
+@1340 = ~On ne Laisse Personne en Arrière !~
+@1341 = ~Finir le jeu sans qu'aucun compagnon ne meure durant la confrontation finale.~
+
+@1350 = ~On ne Fait Pas d'Omelette Divine...~
+@1351 = ~Finir le jeu avec vos cinq compagnons décédés durant la confrontation finale.~
+
+@1360 = ~Poids Lourd~
+@1361 = ~Atteindre 150 Points de Vie.~
+
+@1370 = ~Digne du pantheon~
+@1371 = ~Atteindre 25 dans un score de caractéristique.~
+
+@1380 = ~Intouchable~
+@1381 = ~Atteindre -15 en Classe d'Armure.~
+
+@1390 = ~Savant~
+@1391 = ~Atteindre 100 en score de connaissances.~
+
+@1400 = ~Grand Maître~
+@1401 = ~Atteindre la Grande Maîtrise.~
+
+@1410 = ~Héros~ ~Héroïne~
+@1411 = ~Atteindre une réputation héroïque.~
+
+@1420 = ~Scélérat~
+@1421 = ~Atteindre une réputation méprisée.~
+
+@1430 = ~Incarnation du Meurtre~
+@1431 = ~Tuer 1000 créatures.~
+
+@1440 = ~Les Amis de Brasamical~
+@1441 = ~Parler à Khalid et à Jaheira à l'auberge du Brasamical.~
+
+@1450 = ~Toutes les Options~
+@1451 = ~Avoir Neera, Dorn et Rasaad dans le groupe en même temps.~
+
+@1460 = ~Amusant~
+@1461 = ~Trouver Baeloth l'Amuseur et le persuader de rejoindre votre groupe.~
+
+@1470 = ~Bien Apprendre ses Leçons~
+@1471 = ~Parler à tous les tuteurs de Château-Suif et découvrez ce qu'ils ont à vous apprendre~
+
+@1480 = ~Dur Labeur~
+@1481 = ~Finir toutes vos corvées avant de quitter Château-Suif.~
+
+@1490 = ~Premiers sangs~
+@1491 = ~Vaincre Carbos et Shank pendant le prologue à Château-Suif.~
+
+@1500 = ~C'est Lui qu'a Commencé !~
+@1501 = ~Donner une leçon à Marl à l'auberge de Feldepost.~
+
+@1510 = ~Diplomate~
+@1511 = ~Calmer Marl à l'auberge de Feldepost sans avoir recours à la violence.~
+
+@1520 = ~La Prêtresse de Pierre~
+@1521 = ~Ramener Branwen à la vie, la jeune femme de pierre du carnaval de Nashkel.~
+
+@1530 = ~Indiana Jones~
+@1531 = ~Aider Charleston Nib lors des fouilles archéologiques.~
+
+@1540 = ~Le Complot de Gallor~
+@1541 = ~Aider Gallor lors des fouilles archéologiques.~
+
+@1550 = ~Idole Féérûnienne~
+@1551 = ~Trouver et garder l'artefact lors de fouilles archéologiques.~
+
+@1560 = ~Dé-pétrification~
+@1561 = ~Ramener Tamah à la vie au jardin de Mutamin.~
+
+@1570 = ~Déchéance~
+@1571 = ~Devenir un Paladin ou Rôdeur déchu.~
+
+@1580 = ~Le Plus Beau Jour de ma Vie !~
+@1581 = ~Être affecté en même temps par les effets de Bénédiction, Cantique et Chance.~
+
+@1590 = ~Je hais le lundi...~
+@1591 = ~Subir en même temps la Maladie, le Poison et la Fatigue.~
+
+@1600 = ~Une Vache à Sauver !~
+@1601 = ~Porter secours à Arabelle la vache d'Hulrik.~

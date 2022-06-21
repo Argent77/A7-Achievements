@@ -1,0 +1,283 @@
+// -*- coding: utf-8 -*-
+
+@5000 = ~Digne du pantheon~
+@5001 = ~Atteindre 25 dans un score de caractéristique.~
+
+@5010 = ~Intouchable~
+@5011 = ~Atteindre -15 en Classe d'Armure.~
+
+@5020 = ~Savant~
+@5021 = ~Atteindre 100 en score de connaissances.~
+
+@5030 = ~Grand Maître~
+@5031 = ~Atteindre la Grande Maîtrise~
+
+@5040 = ~Autosuffisant~
+@5041 = ~Finir le jeu sans recruter de compagnon.~
+
+@5050 = ~Seigneur du Meurtre~
+@5051 = ~Finir le jeu en mode Succession de Bhaal.~
+
+@5060 = ~Joue-la comme Volo~
+@5061 = ~Finir le jeu en mode Histoire.~
+
+@5070 = ~On ne Laisse Personne en Arrière !~
+@5071 = ~Finir le jeu sans qu'aucun compagnon ne meure durant la confrontation finale.~
+
+@5080 = ~On ne Fait Pas d'Omelette Divine...~
+@5081 = ~Finir le jeu avec vos cinq compagnons décédés durant la confrontation finale.~
+
+@5090 = ~Poids Lourd~
+@5091 = ~Atteindre 150 Points de Vie.~
+
+@5100 = ~Héros~ ~Héroïne~
+@5101 = ~Atteindre une réputation héroïque.~
+
+@5110 = ~Scélérat~
+@5111 = ~Atteindre une réputation méprisée.~
+
+@5120 = ~Incarnation du Meurtre~
+@5121 = ~Tuer 1000 créatures.~
+
+@5130 = ~Déchéance~
+@5131 = ~Devenir un Paladin ou Rôdeur déchu.~
+
+@5140 = ~Le Plus Beau Jour de ma Vie !~
+@5141 = ~Être affecté en même temps par les effets de Bénédiction, Cantique et Chance.~
+
+@5150 = ~Je hais le lundi...~
+@5151 = ~Subir en même temps la Maladie, le Poison et l'Épuisement.~
+
+@5160 = ~Le Choix des Armes~
+@5161 = ~Récolter suffisamment d'or pour engager de l'aide.~
+
+@5170 = ~Château Fort~
+@5171 = ~Acquérir le bastion du guerrier.~
+
+@5180 = ~Sphère Planante~
+@5181 = ~Acquérir le bastion du magicien.~
+
+@5190 = ~Maître de Guilde~
+@5191 = ~Acquérir le bastion du voleur.~
+
+@5200 = ~Domaine Divin~
+@5201 = ~Acquérir le bastion du clerc.~
+
+@5210 = ~Cœur Radieux~
+@5211 = ~Acquérir le bastion du paladin.~
+
+@5220 = ~La Cabane dans les bois~
+@5221 = ~Acquérir le bastion du rôdeur.~
+
+@5230 = ~Mon Petit Bosquet~
+@5231 = ~Acquérir le bastion du druide.~
+
+@5240 = ~Les Feux de la Rampe~
+@5241 = ~Acquérir le bastion du barde.~
+
+@5250 = ~Magicien Épique~
+@5251 = ~Atteindre le niveau 30 avec un Mage ou un Ensorceleur.~
+
+@5260 = ~Roublard Épique~
+@5261 = ~Atteindre le niveau 30 avec un Voleur ou un Barde.~
+
+@5270 = ~Combattant Épique~
+@5271 = ~Atteindre le niveau 30 avec un Guerrier, un Rôdeur, un Paladin, un Moine ou un Barbare.~
+
+@5280 = ~Prêtre Épique~
+@5281 = ~Atteindre le niveau 30 avec un Clerc, un Druide ou un Chaman.~
+
+@5290 = ~Les Évadés~
+@5291 = ~S'échapper du donjon du magicien.~
+
+@5300 = ~La Croisière ne s'Amuse pas~
+@5301 = ~Mettre les voiles en direction de Spellhold.~
+
+@5310 = ~Vol Au-Dessus d'un Nid de Coucous~
+@5311 = ~Secourir une vieille amie à Spellhold.~
+
+@5320 = ~Retour à la Surface~
+@5321 = ~Survivre aux dangers de l'Ombre-Terre.~
+
+@5330 = ~Buffy Summers~
+@5331 = ~Vaincre Bodhi la reine des vampires.~
+
+@5340 = ~Voyage au Bout de l'Enfer~
+@5341 = ~Vaincre Jon Irenicus et récupérer votre âme.~
+
+@5350 = ~Ami des Ombres~
+@5351 = ~S'allier aux Voleurs de l'Ombre.~
+
+@5360 = ~Crépuscule~
+@5361 = ~S'allier à la guilde des vampires d'Athkatla.~
+
+@5370 = ~Vers l'Inconnu~
+@5371 = ~Se risquer à travers le portail mystérieux de Spellhold.~
+
+@5380 = ~Prise de Risque~
+@5381 = ~Tenter sa chance avec Saemon Havarian.~
+
+@5390 = ~Antichambre~
+@5391 = ~Découvrir l'Antichambre.~
+
+@5400 = ~Pourfendeur de Géant~
+@5401 = ~Vaincre le géant de feu Yaga-Shura, l'enfant de Bhaal.~
+
+@5410 = ~Mort au Dragon~
+@5411 = ~Vaincre le dragon bleu Abazigal, l'enfant de Bhaal.~
+
+@5420 = ~Les Sept Statues~
+@5421 = ~Vaincre l'elfe noir Sendai, l'enfant de Bhaal.~
+
+@5430 = ~Suprématie Solaire~
+@5431 = ~Vaincre le moine Balthazar, l'enfant de Bhaal.~
+
+@5440 = ~Jeu du Trône~
+@5441 = ~Vaincre Amélyssanne au Cœur-Noir et devenir une divinité.~
+
+@5450 = ~Très Peu Pour Moi~
+@5451 = ~Vaincre Amélyssanne au Cœur-Noir et refuser le pouvoir de Bhaal.~
+
+@5460 = ~Première Épreuve~
+@5461 = ~Faire face à la première épreuve de l'Antichambre.~
+
+@5470 = ~Deuxième Épreuve~
+@5471 = ~Rencontrer une version différente de soi-même.~
+
+@5480 = ~Troisième Épreuve~
+@5481 = ~Se confronter à sa propre innocence et vaincre.~
+
+@5490 = ~Quatrième Épreuve~
+@5491 = ~Parler du destin avec Cyric et vaincre ses champions.~
+
+@5500 = ~Cinquième Épreuve~
+@5501 = ~Vaincre le Ravageur.~
+
+@5510 = ~Collectionneur de Baguettes~
+@5511 = ~Désarmer les pièges au niveau inférieur du donjon du magicien.~
+
+@5520 = ~Sherlock Holmes~
+@5521 = ~Résoudre les meurtres du district du Pont.~
+
+@5530 = ~Meilleurs Amis~
+@5531 = ~Rendre à Wellyn son ours en peluche.~
+
+@5540 = ~Restructuration d'Entreprise~
+@5541 = ~Mettre Hendak à la tête de la Couronne de Cuivre.~
+
+@5550 = ~Au Cœur des Abysses~
+@5551 = ~Découvrir les secrets de la sphère planaire.~
+
+@5560 = ~Ne fermez pas les yeux~
+@5561 = ~Détruire le culte de l'Œil Aveugle.~
+
+@5570 = ~Entrave à la Concurrence~
+@5571 = ~Mettre un terme au blocus commercial à Franc-Marché.~
+
+@5580 = ~Nature Sauvage~
+@5581 = ~Mettre un terme aux attaques des animaux à Franc-Marché.~
+
+@5590 = ~Une Lumière Dans les Ténèbres~
+@5591 = ~Découvrir la source du mal dans les ruines du temple près des collines d'Umar.~
+
+@5600 = ~Son Fils, ma Bataille~
+@5601 = ~Porter secours à l'enfant disparu de Garren Lancevent.~
+
+@5610 = ~Libéré, Délivré~
+@5611 = ~Libérer le mage Vithal en Ombre-Terre.~
+
+@5620 = ~Le Combat du Siècle~
+@5621 = ~Vaincre la demi-liche Kangaxx.~
+
+@5630 = ~Une Victoire Tordue~
+@5631 = ~Découvrir et vaincre la Rune Tordue.~
+
+@5640 = ~Tromperie~
+@5641 = ~Duper la Mère Matrone Ardulace à Ust Natha.~
+
+@5650 = ~Entourloupette~
+@5651 = ~Duper Phaere à Ust Natha.~
+
+@5660 = ~Esprits Cachés~
+@5661 = ~Découvrir l'antre secrète des flagelleurs mentaux.~
+
+@5670 = ~Je Souhaite...~
+@5671 = ~Lancer le sort de Souhait Mineur... et en subir les conséquences.~
+
+@5680 = ~Adoubement~
+@5681 = ~Aider Anomen à rejoindre l'Ordre du Cœur Radieux.~
+
+@5690 = ~Réunis~
+@5691 = ~Réunir Cernd avec sa famille perdue.~
+
+@5700 = ~Le Parchemin Néthère~
+@5701 = ~Aider Edwin à retrouver le Parchemin Néthère.~
+
+@5710 = ~Ça Plane Pour Lui~
+@5711 = ~Porter secours à Haer'Dalis et sa troupe.~
+
+@5720 = ~Restauration~
+@5721 = ~Briser la malédiction de Jaheira.~
+
+@5730 = ~Retour Chez Soi~
+@5731 = ~Aider les amis de Jan.~
+
+@5740 = ~Problèmes de Famille~
+@5741 = ~Aider Keldorn avec ses problèmes familiaux.~
+
+@5750 = ~Le Livre de Kaza~
+@5751 = ~Retrouver le Livre de Kaza pour Korgan.~
+
+@5760 = ~Petites Sœurs~
+@5761 = ~Aider Pala la sœur de Mazzy Fentan.~
+
+@5770 = ~Contre-Pouvoir~
+@5771 = ~Aider Nalia à prouver la corruption au sein de la famille Roenal.~
+
+@5780 = ~Faux-Ami~
+@5781 = ~Découvrir un traître dans vos rangs.~
+
+@5790 = ~Repose en Paix~
+@5791 = ~Apaiser l'âme de Yoshimo.~
+
+@5800 = ~Le Retour du Frère Prodigue~
+@5801 = ~Recruter Sarevok.~
+
+@5810 = ~Bonne Sœur~
+@5811 = ~Persuader Imoen de restaurer Sarevok avec sa propre âme.~
+
+@5820 = ~La Furie des Cieux~
+@5821 = ~Acquérir le Furie Céleste.~
+
+@5830 = ~L'Épée Sainte~
+@5831 = ~Retrouver Carsomyr.~
+
+@5840 = ~La Relique Légendaire~
+@5841 = ~Forger Crom Faeyr.~
+
+@5850 = ~Le Pouvoir Ancien~
+@5851 = ~Acquérir la Robe de Vecna.~
+
+@5860 = ~Nouveau Look pour une Nouvelle Vie~
+@5861 = ~Revêtir l'armure, le heaume, le bouclier et l'épée de Baldurien.~
+
+@5870 = ~Le Grand Méchant Écorcheur~
+@5871 = ~Prendre la forme de l'Écorcheur.~
+
+@5880 = ~Tueur de Dragon Rouge~
+@5881 = ~Tuer Firkraag le dragon rouge.~
+
+@5890 = ~Tueur de Dragon d'Ombre~
+@5891 = ~Tuer Thaxll'ssillyia le dragon d'ombre.~
+
+@5900 = ~Tueur de Dragon Noir~
+@5901 = ~Tuer Nizidramanii'yt le dragon noir.~
+
+@5910 = ~Tueur de Dragon d'Argent~
+@5911 = ~Tuer Adalon le dragon d'argent.~
+
+@5920 = ~Sauveur de Dragon Vert~
+@5921 = ~Utiliser un parchemin pour libérer Fil'yissetat le dragon vert.~
+
+@5930 = ~Le Coup est Parti Tout Seul...~
+@5931 = ~Tuer Neeber.~
