@@ -115,6 +115,8 @@ Credits
 
 Coding and testing: Argent77
 
+French translation: 11jo
+
 
 Copyright Notice
 ~~~~~~~~~~~~~~~~
@@ -127,6 +129,7 @@ History
 ~~~~~~~
 
 2.0
+- Added French translation (thanks 11jo)
 - Added component "Achievements reward"
 - Minor text fixes
 
