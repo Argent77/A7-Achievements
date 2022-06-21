@@ -1,7 +1,7 @@
 Achievements! (Réalisations !)
 ~~~~~~~~~~~~~
 
-Version:    1.0
+Version:    2.0
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-Achievements/releases
@@ -69,12 +69,21 @@ Cette option installe le Trophée des Réalisations avec une description qui ne 
 
 Cette option installe le Trophée des Réalisations avec une description qui répertorie toutes les Réalisations, ainsi que leur statut. Choisissez cette option si vous souhaitez disposer de la liste complète des Réalisations disponibles.
 
-
+Remarque :
 Le composant peut être installé à tout moment. Il n'est pas nécessaire de commencer une nouvelle partie. Les réalisations qui ont déjà été débloquées avant l'installation du mod seront détectées et ajoutées au journal.
 
 Cependant, le Trophée des Réalisations pourrait ne pas être disponible dans les magasins que vous avez déjà visité auparavant.
 
 En plus des réalisations officielles de Steam, le mod débloque également un petit nombre de réalisations non utilisées pour SoD qui sont implémentées dans le jeu mais non reconnues par Steam.
+
+
+2. Installer les récompenses pour les Réalisations (nécessite l'installation du composant principal)
+
+Ce composant optionnel vous récompense avec divers bonus après avoir débloqué 25, 50 et 75 % des Réalisations disponibles.
+
+Dans PST:EE, les récompenses sont automatiquement disponibles sous forme de tatouages supplémentaires qui peuvent être achetés au Fell's Tattoo Parlor.
+
+Dans tous les autres jeux, vous pouvez appuyer sur le bouton "Inspecter" disponible sur l'écran de description de du trophée des Réalisations. Cela déclenche un dialogue au cours duquel vous pouvez échanger vos récompenses.
 
 
 Credits
@@ -92,6 +101,10 @@ ShareAlike 4.0 International License" (https://creativecommons.org/licenses/by-n
 
 History
 ~~~~~~~
+
+2.0
+- Added component "Achievements reward"
+- Minor text fixes
 
 1.0
 - Initial release
