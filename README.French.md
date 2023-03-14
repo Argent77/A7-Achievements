@@ -2,7 +2,7 @@
 [![Github downloads (all releases)](https://img.shields.io/github/downloads/Argent77/A7-Achievements/total.svg?color=gold)](https://github.com/Argent77/A7-Achievements/releases)
 [![Platform](https://img.shields.io/static/v1?label=platform&message=Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Project%20Infinity&color=informational)](https://github.com/Argent77/A7-Achievements/releases/latest)
 [![Supported games](https://img.shields.io/static/v1?label=supported%20games&message=BG%3AEE%20%7C%20SoD%20%7C%20BG2%3AEE%20%7C%20EET%20%7C%20IWD%3AEE%20%7C%20PST%3AEE&color=indigo)](https://github.com/Argent77/A7-Achievements)
-[![Language](https://img.shields.io/static/v1?label=language&message=English&color=limegreen)](https://github.com/Argent77/A7-Achievements)
+[![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French&color=limegreen)](https://github.com/Argent77/A7-Achievements)
 
 # Réalisations !
 *Un mod pour BG:EE, SoD, BG2:EE, EET, IWD:EE et PST:EE qui rend les "Achievements" Steam disponibles comme entrées de journal pour tout les jeux.*
