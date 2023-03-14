@@ -76,7 +76,7 @@ Poids : 1~
 
 // Item: Tattoo of Apprenticeship (PST)
 @640 = ~Tatouage du connaisseur~
-@641 = ~TATOUAGE  DU CONNAISSEUR
+@641 = ~TATOUAGE DU CONNAISSEUR
 Spéciale :
    Accorde des points d'expérience lorsqu'il est invoqué
 Poids : 0
