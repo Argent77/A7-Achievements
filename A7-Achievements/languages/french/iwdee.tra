@@ -1,34 +1,34 @@
 // -*- coding: utf-8 -*-
 
 @7000 = ~Grand Maître~
-@7001 = ~Atteindre la Grande Maîtrise.~
+@7001 = ~Le chef du groupe atteint la Grande Maîtrise.~
 
 @7010 = ~Autosuffisant~
 @7011 = ~Finir le jeu sans recruter de compagnon.~
 
-@7020 = ~Master Tactician~
-@7021 = ~Completed the whole game on Heart of Fury difficulty.~
+@7020 = ~Stratège~
+@7021 = ~Terminez le jeu en mode Cœur de Furie.~
 
-@7030 = ~Storyteller~
-@7031 = ~Completed the whole game on Story Mode difficulty.~
+@7030 = ~Conteur~
+@7031 = ~Finir le jeu en mode Histoire.~
 
 @7040 = ~Digne du pantheon~
-@7041 = ~Atteindre 25 dans un score de caractéristique.~
+@7041 = ~Le chef du groupe atteint 25 dans un score de caractéristique.~
 
 @7050 = ~Intouchable~
-@7051 = ~Atteindre -15 en Classe d'Armure.~
+@7051 = ~Le chef du groupe atteint -15 à la Classe d'Armure.~
 
 @7060 = ~Poids Lourd~
 @7061 = ~Le chef du groupe atteint 150 Points de Vie.~
 
-@7070 = ~Destroyer~
-@7071 = ~The party killed at least 1,000 creatures.~
+@7070 = ~Destructeur de l'univers~
+@7071 = ~Tuer 1000 créatures.~
 
-@7080 = ~Savant~
+@7080 = ~Sage~
 @7081 = ~Le chef du groupe atteint 100 en score de connaissances.~
 
 @7090 = ~Déchéance~
-@7091 = ~Devenir un Paladin ou Rôdeur déchu.~
+@7091 = ~Le chef du groupe devient Paladin ou Rôdeur déchu.~
 
 @7100 = ~Magicien Épique~
 @7101 = ~Atteindre le niveau 30 avec un Mage ou un Ensorceleur.~
@@ -42,110 +42,110 @@
 @7130 = ~Prêtre Épique~
 @7131 = ~Atteindre le niveau 30 avec un Clerc, un Druide ou un Chaman.~
 
-@7140 = ~Living Legend~
-@7141 = ~Unlocked upon reaching level 30 in two classes with the same character.~
+@7140 = ~Légende~
+@7141 = ~Atteindre le niveau 30 avec un personnage multiclassé.~
 
-@7150 = ~Ultimate Warrior~
-@7151 = ~Unlocked upon reaching level 30 in three classes with the same character.~
+@7150 = ~Mythe~
+@7151 = ~Atteindre le niveau 30 avec un personnage triclassé~
 
-@7160 = ~Company of Champions~
-@7161 = ~Unlocked upon creating a party of six good-aligned characters.~
+@7160 = ~Compagnie de héros~
+@7161 = ~Avoir six membres d'alignement Bon au sein du groupe.~
 
-@7170 = ~Order of Guardians~
-@7171 = ~Unlocked upon creating a party of six neutral-aligned characters.~
+@7170 = ~Les veilleurs~
+@7171 = ~Avoir six membres d'alignement Neutre au sein du groupe.~
 
-@7180 = ~Band of Villains~
-@7181 = ~Unlocked upon creating a party of six evil-aligned characters.~
+@7180 = ~Bande de malfrats~
+@7181 = ~Avoir six membres d'alignement Mauvais au sein du groupe.~
 
-@7190 = ~The Unseemly Relic~
-@7191 = ~Unlocked upon finding Pale Justice, the Holy Avenger sword.~
+@7190 = ~La pâle relique~
+@7191 = ~Retrouver Pâle justicière, la lame sainte.~
 
-@7200 = ~Infernally Vexed~
-@7201 = ~Unlocked upon acquiring the infernal Vexed Armor.~
+@7200 = ~Frustré~
+@7201 = ~Acquérir l'Armure de Frustralion.~
 
-@7210 = ~Cold Fury~
-@7211 = ~Unlocked upon assisting the dwarven smith Tiernon to forge an ice weapon.~
+@7210 = ~Colère froide~
+@7211 = ~Assister Tiernon le forgeron nain dans la création d'une arme de glace.~
 
-@7220 = ~Black Swan~
-@7221 = ~Unlocked upon acquiring the Black Swan Armor.~
+@7220 = ~Cygne noir~
+@7221 = ~Acquérir l'Armure du cygne noir.~
 
-@7230 = ~The Reborn Blade~
-@7231 = ~Unlocked upon acquiring the Restored Blade of Aihonen.~
+@7230 = ~Renaissance~
+@7231 = ~Acquérir la lame reforgée d'Aihonen.~
 
-@7240 = ~The Singing Blade~
-@7241 = ~Unlocked upon acquiring the Singing Blade of Aihonen.~
+@7240 = ~Lame mélodieuse~
+@7241 = ~Acquérir l'épée chantante d'Aihonen.~
 
-@7250 = ~The Raging Mage~
-@7251 = ~Unlocked upon memorizing the spell Malavon's Rage.~
+@7250 = ~Enragé~
+@7251 = ~Mémoriser le sort « Rage de Malavon ».~
 
-@7260 = ~Song of the Sea~
-@7261 = ~Unlocked upon singing to the Sea Spirit Elisia.~
+@7260 = ~Sous l'océan~
+@7261 = ~Chanter pour Elisia, l'esprit marin.~
 
-@7270 = ~The Secret Garden~
-@7271 = ~Unlocked upon restored the Arboretum of the Severed Hand to its former glory.~
+@7270 = ~Jardin secret~
+@7271 = ~Rendre sa splendeur d'antan à l'Arboretum.~
 
-@7280 = ~Liberator~
-@7281 = ~Unlocked upon freeing all slaves in the Wyrm's Tooth glacier.~
+@7280 = ~Briseur de chaînes~
+@7281 = ~Libérer les esclaves de la Dent du Dragon.~
 
-@7290 = ~Constructed Betrayal~
-@7291 = ~Unlocked upon turning Malavon's Iron Golems against him.~
+@7290 = ~Déloyauté au Créateur~
+@7291 = ~Utiliser ses propres golems de fer contre Malavon.~
 
-@7300 = ~The Lone Wolf~
-@7301 = ~Unlocked upon discovering the true identity of the Lonelywood werewolf.~
+@7300 = ~Loup solitaire~
+@7301 = ~UDécouvrir l'identité du loup-garou rôdant au Bois Isolé.~
 
-@7310 = ~Glacial Efflorescence~
-@7311 = ~Unlocked upon bringing a rose of ice to the bard, Murdaugh.~
+@7310 = ~Floraison glacée~
+@7311 = ~Apporter une rose de glace à Murdaugh, le barde.~
 
-@7320 = ~Soothing Warmth~
-@7321 = ~Unlocked upon visiting Kuldahar.~
+@7320 = ~Le confort d'un foyer~
+@7321 = ~Découvrir Kuldahar.~
 
-@7330 = ~Eye of the Dragon~
-@7331 = ~Unlocked upon visiting Dragon's Eye.~
+@7330 = ~Dans l'Œil du Dragon~
+@7331 = ~Voir l'Œil du Dragon.~
 
-@7340 = ~The Towering Ruin~
-@7341 = ~Unlocked upon visiting the Severed Hand.~
+@7340 = ~Dans le vif~
+@7341 = ~Explorer la Main Tranchée.~
 
-@7350 = ~Echoes from the Deep~
-@7351 = ~Unlocked upon visiting Dorn's Deep.~
+@7350 = ~Dans la vallée~
+@7351 = ~Se rendre à Profondorn.~
 
-@7360 = ~The Glistening Glacier~
-@7361 = ~Unlocked upon visiting Wyrm's Tooth Glacier.~
+@7360 = ~Ébloui par la glace~
+@7361 = ~Arpenter le glacier de la Dent du Dragon.~
 
-@7370 = ~Coldest Winter~
-@7371 = ~Unlocked upon revisiting Easthaven.~
+@7370 = ~Un rude hiver~
+@7371 = ~Retourner à Havredest~
 
-@7380 = ~The Final Resting Place~
-@7381 = ~Unlocked upon visiting the Burial Isle.~
+@7380 = ~La dernière demeure~
+@7381 = ~Visiter l'île aux tertres.~
 
-@7390 = ~The Gloomy Mountain~
-@7391 = ~Unlocked upon visiting Gloomfrost.~
+@7390 = ~La montagne morose~
+@7391 = ~Pénétrer dans Morneglace.~
 
-@7400 = ~The Frozen Sea~
-@7401 = ~Unlocked upon visiting the Sea of Moving Ice.~
+@7400 = ~La mer gelée~
+@7401 = ~Sillonner la mer des Glaces Mouvantes.~
 
-@7410 = ~Allurement~
-@7411 = ~Unlocked upon visiting the ruined castle in the Anauroch desert.~
+@7410 = ~Leurré~
+@7411 = ~Inspecter le château en ruines dans le désert d'Anauroch.~
 
-@7420 = ~Resisted the Lure~
-@7421 = ~Unlocked uping completing Trials of the Luremaster.~
+@7420 = ~Désillusion~
+@7421 = ~Accomplir les Épreuves du Maître des Leurres.~
 
-@7430 = ~Savior of the Ten Towns~
-@7431 = ~Unlocked upon completing Icewind Dale.~
+@7430 = ~Protecteur des Dix-Cités~
+@7431 = ~Terminer la campagne d'Icewind Dale.~
 
-@7440 = ~Hero of the Frozen North~
-@7441 = ~Unlocked upon completing Heart of Winter.~
+@7440 = ~Héros du Grand Nord~
+@7441 = ~Élucider le Cœur de l'hiver.~
 
-@7450 = ~Dragon Slayer~
-@7451 = ~Unlocked upon killing Icasaracht, the White Dragon matriarch.~
+@7450 = ~Pourfendeur de dragon~
+@7451 = ~Pourfendre Icasaracht, le reine des dragons.~
 
-@7460 = ~Fiend Slayer~
-@7461 = ~Unlocked upon killing Belhifet.~
+@7460 = ~Inéluctable~
+@7461 = ~Vaincre Belhifet.~
 
-@7470 = ~Giant Slayer~
-@7471 = ~Unlocked upon killing Joril, the leader of the Frost Giants.~
+@7470 = ~Tueur de géant~
+@7471 = ~Abattre Joril, le lieutenant du glacier.~
 
-@7480 = ~Lich Slayer~
-@7481 = ~Unlocked upon killing Terikan, the Lich.~
+@7480 = ~Meurtrier de la non-vie~
+@7481 = ~Terrasser Terikan, la Liche.~
 
-@7490 = ~Demon Slayer~
-@7491 = ~Unlocked upon killing Yxunomei, the Marilith demoness.~
+@7490 = ~Exorciste~
+@7491 = ~Envoyer en enfer Yxunomei, la Marilith.~
