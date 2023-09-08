@@ -1,7 +1,7 @@
 Achievements! (Réalisations !)
 ~~~~~~~~~~~~~
 
-Version:    2.0
+Version:    2.1
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-Achievements/releases
@@ -91,7 +91,7 @@ Credits
 
 Coding and testing: Argent77
 
-French translation: 11jo
+French translation: JohnBob
 
 
 Copyright Notice
@@ -104,8 +104,11 @@ ShareAlike 4.0 International License" (https://creativecommons.org/licenses/by-n
 History
 ~~~~~~~
 
+2.1
+- Updated French translation 
+
 2.0
-- Added French translation (thanks 11jo)
+- Added French translation (thanks JohnBob)
 - Added component "Achievements reward"
 - Minor text fixes
 
