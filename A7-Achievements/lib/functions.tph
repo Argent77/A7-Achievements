@@ -382,11 +382,7 @@ BEGIN
         WRITE_ASCII 0x58 ~~ (8)
       END
 
-    ACTION_IF (GAME_IS ~bgee~ && GAME_INCLUDES ~sod~) BEGIN
-      COPY ~%MOD_FOLDER%/items/sod/a7cachtr.bam~ ~override~
-    END ELSE ACTION_IF (NOT GAME_IS ~iwdee pstee~) BEGIN
-      COPY ~%MOD_FOLDER%/items/a7cachtr.bam~ ~override~
-    END
+    COPY ~%MOD_FOLDER%/items/a7cachtr.bam~ ~override~
 
     ACTION_IF (GAME_INCLUDES ~pst~) BEGIN
       COPY ~%MOD_FOLDER%/items/pstee/a7iachtr.bam~ ~override~
@@ -607,13 +603,8 @@ END
       SAY NAME2 @631  // Cornucopia
       SAY UNIDENTIFIED_DESC @634  // This is a small horn...
 
-    ACTION_IF (GAME_INCLUDES ~sod~ && NOT GAME_IS ~eet~) BEGIN
-      COPY ~%MOD_FOLDER%/items/sod/a7cachl1.bam~ ~override~
-    END ELSE BEGIN
-      COPY ~%MOD_FOLDER%/items/a7cachl1.bam~ ~override~
-    END
-
-    COPY ~%MOD_FOLDER%/items/a7iachl1.bam~ ~override~
+    COPY ~%MOD_FOLDER%/items/a7cachl1.bam~ ~override~
+         ~%MOD_FOLDER%/items/a7iachl1.bam~ ~override~
          ~%MOD_FOLDER%/items/a7ach01.wav~ ~override~
 
     // Installing bonus effects
