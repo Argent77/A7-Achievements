@@ -75,3 +75,73 @@ LABEL ~A7-ACHIEVEMENTS-REWARDS~
 LOAD_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/dialogs.tra~
 LAF GET_GAME_LIST INT_VAR load_tra = 1 RET games END
 LAF INSTALL_ITEM_REWARDS STR_VAR games END
+
+
+BEGIN @21 // Fighter bonuses only
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~A7-Achievements.tp2~ 10) @103 // Requires the subcomponent "Achievements reward" to be installed.
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~JackOfAllPlanes.tp2~ 0)  @104 // Requires the mod "Jack Of All Planes" to be installed.
+SUBCOMPONENT @20  // Crossmod compatibility with "Jack Of All Planes"
+DESIGNATED 21
+LABEL ~A7-ACHIEVEMENTS-CROSSMOD-JACK-FIGHTER~
+
+LAF PATCH_ITEM_REWARD STR_VAR type = ~fighter~ END
+
+
+BEGIN @22 // Mage bonuses only
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~A7-Achievements.tp2~ 10) @103 // Requires the subcomponent "Achievements reward" to be installed.
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~JackOfAllPlanes.tp2~ 0)  @104 // Requires the mod "Jack Of All Planes" to be installed.
+SUBCOMPONENT @20  // Crossmod compatibility with "Jack Of All Planes"
+DESIGNATED 22
+LABEL ~A7-ACHIEVEMENTS-CROSSMOD-JACK-MAGE~
+
+LAF PATCH_ITEM_REWARD STR_VAR type = ~mage~ END
+
+
+BEGIN @23 // Thief bonuses only
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~A7-Achievements.tp2~ 10) @103 // Requires the subcomponent "Achievements reward" to be installed.
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~JackOfAllPlanes.tp2~ 0)  @104 // Requires the mod "Jack Of All Planes" to be installed.
+SUBCOMPONENT @20  // Crossmod compatibility with "Jack Of All Planes"
+DESIGNATED 23
+LABEL ~A7-ACHIEVEMENTS-CROSSMOD-JACK-THIEF~
+
+LAF PATCH_ITEM_REWARD STR_VAR type = ~thief~ END
+
+
+BEGIN @24 // Fighter and mage bonuses
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~A7-Achievements.tp2~ 10) @103 // Requires the subcomponent "Achievements reward" to be installed.
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~JackOfAllPlanes.tp2~ 0)  @104 // Requires the mod "Jack Of All Planes" to be installed.
+SUBCOMPONENT @20  // Crossmod compatibility with "Jack Of All Planes"
+DESIGNATED 24
+LABEL ~A7-ACHIEVEMENTS-CROSSMOD-JACK-FIGHTER-MAGE~
+
+LAF PATCH_ITEM_REWARD STR_VAR type = ~fighter mage~ END
+
+
+BEGIN @25 // Fighter and thief bonuses
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~A7-Achievements.tp2~ 10) @103 // Requires the subcomponent "Achievements reward" to be installed.
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~JackOfAllPlanes.tp2~ 0)  @104 // Requires the mod "Jack Of All Planes" to be installed.
+SUBCOMPONENT @20  // Crossmod compatibility with "Jack Of All Planes"
+DESIGNATED 25
+LABEL ~A7-ACHIEVEMENTS-CROSSMOD-JACK-FIGHTER-THIEF~
+
+LAF PATCH_ITEM_REWARD STR_VAR type = ~fighter thief~ END
+
+
+BEGIN @26 // Mage and thief bonuses
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~A7-Achievements.tp2~ 10) @103 // Requires the subcomponent "Achievements reward" to be installed.
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~JackOfAllPlanes.tp2~ 0)  @104 // Requires the mod "Jack Of All Planes" to be installed.
+SUBCOMPONENT @20  // Crossmod compatibility with "Jack Of All Planes"
+DESIGNATED 26
+LABEL ~A7-ACHIEVEMENTS-CROSSMOD-JACK-MAGE-THIEF~
+
+LAF PATCH_ITEM_REWARD STR_VAR type = ~mage thief~ END
+
+
+BEGIN @27 // All bonuses at once
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~A7-Achievements.tp2~ 10) @103 // Requires the subcomponent "Achievements reward" to be installed.
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~JackOfAllPlanes.tp2~ 0)  @104 // Requires the mod "Jack Of All Planes" to be installed.
+SUBCOMPONENT @20  // Crossmod compatibility with "Jack Of All Planes"
+DESIGNATED 27
+LABEL ~A7-ACHIEVEMENTS-CROSSMOD-JACK-ALL~
+
+LAF PATCH_ITEM_REWARD STR_VAR type = ~fighter mage thief~ END
