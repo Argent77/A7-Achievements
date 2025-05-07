@@ -2,7 +2,7 @@
 [![Github downloads (all releases)](https://img.shields.io/github/downloads/Argent77/A7-Achievements/total.svg?color=gold)](https://github.com/Argent77/A7-Achievements/releases)
 [![Platform](https://img.shields.io/static/v1?label=platform&message=Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Project%20Infinity&color=informational)](https://github.com/Argent77/A7-Achievements/releases/latest)
 [![Supported games](https://img.shields.io/static/v1?label=supported%20games&message=BG%3AEE%20%7C%20SoD%20%7C%20BG2%3AEE%20%7C%20EET%20%7C%20IWD%3AEE%20%7C%20PST%3AEE&color=indigo)](https://github.com/Argent77/A7-Achievements)
-[![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French&color=limegreen)](https://github.com/Argent77/A7-Achievements)
+[![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French%20%7C%20Simplified%20Chinese&color=limegreen)](https://github.com/Argent77/A7-Achievements)
 
 # Achievements!
 *A mod for BG:EE, SoD, BG2:EE, EET, IWD:EE and PST:EE that makes Steam Achievements available as regular journal entries for everyone.*
@@ -47,3 +47,16 @@ This optional component rewards you with various bonuses after unlocking 25, 50 
 In PST:EE the rewards are automatically available as additional tattoos which can be purchased in Fell's Tattoo Parlor.
 
 In all other games you can press the "Inspect" button available on the item description screen of the Achievements Trophy. It triggers a conversation where you can redeem your rewards.
+
+### Install crossmod compatibility with "Jack Of All Planes" *(for PST:EE; requires mod "Jack Of All Planes" and subcomponent "Achievements reward" to be installed)*
+
+This component is only available on PST:EE, if aquadrizzt's mod "Jack Of All Planes" is detected, and the subcomponent "Achievements reward" is installed. It patches one of the rewards to properly detect TNO as a Fighter/Mage/Thief multiclass and applies bonuses accordingly.
+
+The component provides several options:
+- **Fighter bonuses only:** Applies only bonuses for the fighter aspect of the class.
+- **Mage bonuses only:** Applies only bonuses for the mage aspect of the class.
+- **Thief bonuses only:** Applies only bonuses for the thief aspect of the class.
+- **Fighter and mage bonuses:** Applies bonuses for the fighter and mage aspects of the class.
+- **Fighter and thief bonuses:** Applies bonuses for the fighter and thief aspects of the class.
+- **Mage and thief bonuses:** Applies bonuses for the mage and thief aspects of the class.
+- **All bonuses at once:** Applies all bonuses of the reward at once.
