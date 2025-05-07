@@ -138,6 +138,7 @@ Credits
 Coding and testing: Argent77
 
 French translation: JohnBob
+Simplified Chinese: MephistoSatanDevil
 
 
 Copyright Notice
@@ -151,6 +152,7 @@ History
 ~~~~~~~
 
 3.0
+- Added Simplified Chinese translation (thanks MephistoSatanDevil)
 - Added a crossmod compatibility component for aquadrizzt's mod "Jack Of All Planes"
 
 2.1
