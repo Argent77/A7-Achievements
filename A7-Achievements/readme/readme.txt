@@ -44,7 +44,12 @@ It can be downloaded from here: https://github.com/Argent77/A7-DlcMerger/release
 Installation order & mod compatibility
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The mod can be installed in any order. There are no known compatibility issues with other mods.
+On PST:EE the mod should be installed after aquadrizzt's mod "Jack Of All Planes". For all other
+games the mod can be installed in any order.
+
+There is a non-critical issue on PST:EE if aquadrizzt's mod "Jack Of All Planes" is installed,
+which unlocks several achievements right from the start.
+
 It is recommended but not necessary to start a new game after installing the mod.
 
 
@@ -110,6 +115,23 @@ In all other games you can press the "Inspect" button available on the item desc
 the Achievements Trophy. It triggers a conversation where you can redeem your rewards.
 
 
+3. Install Crossmod compatibility with "Jack Of All Planes"
+   (for PST:EE; requires mod "Jack Of All Planes" and subcomponent "Achievements reward" to be installed)
+
+This component is only available on PST:EE, if aquadrizzt's mod "Jack Of All Planes" is detected,
+and the subcomponent "Achievements reward" is installed. It patches one of the rewards to properly
+detect TNO as a Fighter/Mage/Thief multiclass and applies bonuses accordingly.
+
+The component provides several options:
+- Fighter bonuses only: Applies only bonuses for the fighter aspect of the class.
+- Mage bonuses only: Applies only bonuses for the mage aspect of the class.
+- Thief bonuses only: Applies only bonuses for the thief aspect of the class.
+- Fighter and mage bonuses: Applies bonuses for the fighter and mage aspects of the class.
+- Fighter and thief bonuses: Applies bonuses for the fighter and thief aspects of the class.
+- Mage and thief bonuses: Applies bonuses for the mage and thief aspects of the class.
+- All bonuses at once: Applies all bonuses of the reward at once.
+
+
 Credits
 ~~~~~~~
 
@@ -127,6 +149,9 @@ ShareAlike 4.0 International License" (https://creativecommons.org/licenses/by-n
 
 History
 ~~~~~~~
+
+3.0
+- Added a crossmod compatibility component for aquadrizzt's mod "Jack Of All Planes"
 
 2.1
 - Updated French translation 

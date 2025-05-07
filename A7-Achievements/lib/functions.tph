@@ -646,6 +646,38 @@ END
   END
 END
 
+
+// Patches "Tattoo of Accomplishment" to support any of the given class aspects of the
+// FIGHTER_MAGE_THIEF multiclass.
+DEFINE_ACTION_FUNCTION PATCH_ITEM_REWARD
+STR_VAR
+  type = ~fighter mage thief~  // Supported types: fighter, mage, thief (one or in combination)
+BEGIN
+  OUTER_SET $item_types(~FIGHTER~) = (~%type%~ STRING_CONTAINS_REGEXP ~fighter~ = 0)
+  OUTER_SET $item_types(~MAGE~) = (~%type%~ STRING_CONTAINS_REGEXP ~mage~ = 0)
+  OUTER_SET $item_types(~THIEF~) = (~%type%~ STRING_CONTAINS_REGEXP ~thief~ = 0)
+
+  COPY_EXISTING ~a7achl3.itm~ ~override~
+    SET new_class_id = IDS_OF_SYMBOL(~class~ ~FIGHTER_MAGE_THIEF~)
+    PHP_EACH item_types AS class_name => value BEGIN
+      PATCH_IF (value) BEGIN
+        SET class_id = IDS_OF_SYMBOL(~class~ ~%class_name%~)
+        LPF CLONE_EFFECT
+          INT_VAR
+            check_globals = 1
+            check_headers = 0
+            match_opcode = 177  // Use EFF
+            match_parameter1 = class_id
+            parameter1 = new_class_id
+          STR_VAR
+            insert = ~below~
+        END
+      END
+    END
+  BUT_ONLY
+END
+
+
 // Main routine for installing achievement journal entries
 DEFINE_ACTION_FUNCTION INSTALL_ACHIEVEMENTS
 INT_VAR
