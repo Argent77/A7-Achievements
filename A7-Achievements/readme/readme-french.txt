@@ -1,7 +1,7 @@
 Achievements! (Réalisations !)
 ~~~~~~~~~~~~~
 
-Version:    2.1
+Version:    3.0
 Author:     Argent77
 
 Download:   https://github.com/Argent77/A7-Achievements/releases
@@ -108,6 +108,7 @@ History
 3.0
 - Added Simplified Chinese translation (thanks MephistoSatanDevil)
 - Added a crossmod compatibility component for aquadrizzt's mod "Jack Of All Planes"
+- Improved description image of the Achievements Trophy
 
 2.1
 - Updated French translation 

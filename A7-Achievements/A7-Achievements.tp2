@@ -1,6 +1,6 @@
 BACKUP ~weidu_external/backup/A7-Achievements~
 SUPPORT ~https://www.gibberlings3.net/forums/topic/33035-achievements-for-everyone/~
-VERSION ~2.1~
+VERSION ~3.0~
 
 ALWAYS
   // required because of non-standard BACKUP path
