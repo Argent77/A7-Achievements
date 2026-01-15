@@ -3,8 +3,6 @@ SUPPORT ~https://www.gibberlings3.net/forums/topic/33035-achievements-for-everyo
 VERSION ~3.0~
 
 ALWAYS
-  // required because of non-standard BACKUP path
-  OUTER_TEXT_SPRINT MOD_FOLDER ~A7-Achievements~
   // root folder for mutable data
   OUTER_TEXT_SPRINT WORK_FOLDER ~weidu_external~
 
