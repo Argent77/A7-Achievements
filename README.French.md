@@ -47,3 +47,16 @@ Ce composant optionnel vous récompense avec divers bonus après avoir débloqu�
 Dans PST:EE, les récompenses sont automatiquement disponibles sous forme de tatouages supplémentaires qui peuvent être achetés au Fell's Tattoo Parlor.
 
 Dans tous les autres jeux, vous pouvez appuyer sur le bouton "Inspecter" disponible sur l'écran de description de du trophée des Réalisations. Cela déclenche un dialogue au cours duquel vous pouvez échanger vos récompenses.
+
+### Installe la compatibilité avec le mod « Jack Of All Planes » (pour PST:EE ; nécessite l'installation du mod « Jack Of All Planes » et du sous-composant « Récompenses pour les Réalisations »)
+
+Ce composant n'est disponible que sur PST:EE, si le mod « Jack Of All Planes » d'aquadrizzt est détecté, et si le sous-composant « Récompenses pour les Réalisations » est installé. Il modifie l’une des récompenses afin de détecter correctement Sans-Nom en tant que multiclassé Combattant/Mage/Voleur et applique les bonus en conséquence.
+
+Le composant propose plusieurs options :
+- **Bonus de combattant uniquement :** applique uniquement les bonus liés à l’aspect « combattant » de la classe.
+- **Bonus de mage uniquement :** applique uniquement les bonus liés à l’aspect « mage » de la classe.
+- **Bonus de voleur uniquement :** applique uniquement les bonus liés à l’aspect « voleur » de la classe.
+- **Bonus de guerrier et de mage :** applique les bonus liés aux aspects « guerrier » et « mage » de la classe.
+- **Bonus de guerrier et de voleur :** applique les bonus liés aux aspects « guerrier » et « voleur » de la classe.
+- **Bonus de mage et de voleur :** applique les bonus liés aux aspects « mage » et « voleur » de la classe.
+- **Tous les bonus à la fois :** applique tous les bonus de la récompense en même temps.

@@ -137,7 +137,7 @@ Credits
 
 Coding and testing: Argent77
 
-French translation: JohnBob
+French translation: JohnBob, Deratiseur
 Simplified Chinese: MephistoSatanDevil
 
 

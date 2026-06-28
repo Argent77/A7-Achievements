@@ -1,16 +1,16 @@
 Achievements! (Réalisations !)
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Version:    3.0
-Author:     Argent77
+Version :       3.0
+Auteur :        Argent77
 
-Download:   https://github.com/Argent77/A7-Achievements/releases
-Discussion: https://www.gibberlings3.net/forums/topic/33035-achievements-for-everyone/
-            https://forums.beamdog.com/discussion/82630/mod-achievements-for-everyone
+Téléchargent :  https://github.com/Argent77/A7-Achievements/releases
+Discussion :    https://www.gibberlings3.net/forums/topic/33035-achievements-for-everyone/
+                https://forums.beamdog.com/discussion/82630/mod-achievements-for-everyone
 
 
 Introduction
-~~~~~~~~
+~~~~~~~~~~~~
 
 Les jeux Enhanced Edition offrent la possibilité de débloquer de nombreuses réalisations en faisant progresser l'intrigue, en trouvant des objets puissants ou en relevant des défis spécifiques. Cependant, cette fonctionnalité n'est disponible que via le client Steam.
 
@@ -38,7 +38,7 @@ A7-Achievements peut être installé dans n'importe quel ordre et n'a pas de pro
 Il est recommandé, mais pas nécessaire, de commencer une nouvelle partie après l'installation.
 
 
-Components
+Composants
 ~~~~~~~~~~
 
 1. Installer les "Achievements" Steam disponibles comme entrées de journal (pour BG:EE, SoD, BG2:EE, EET, IWD:EE et PST:EE)
@@ -57,7 +57,7 @@ BG2 : (SoA) Vendu au marché de l'aventurier sur la Promenade de Waukeen à Athk
             et la Forêt de Mir.
 IWD : Vendu dans la boutique d'équipement de Gerth à Kuldahar.
       Vendu par Kiéran Nye au Bois Isolé (campagne HoW uniquement).
-PST : Vendu au Fell's Tattoo Parlor dans la Ruche.
+PST : Vendu au Salon de Tatouage de Fell dans la Ruche.
 
 Le composant dispose de deux options :
 
@@ -85,25 +85,41 @@ Dans PST:EE, les récompenses sont automatiquement disponibles sous forme de tat
 
 Dans tous les autres jeux, vous pouvez appuyer sur le bouton "Inspecter" disponible sur l'écran de description de du trophée des Réalisations. Cela déclenche un dialogue au cours duquel vous pouvez échanger vos récompenses.
 
+3. Installe la compatibilité avec le mod « Jack Of All Planes »
+   (pour PST:EE ; nécessite l'installation du mod « Jack Of All Planes » et du sous-composant « Récompenses pour les Réalisations »)
 
-Credits
-~~~~~~~
+Ce composant n'est disponible que sur PST:EE, si le mod « Jack Of All Planes » d'aquadrizzt est détecté,
+et si le sous-composant « Récompenses pour les Réalisations » est installé. Il modifie l’une des récompenses afin de détecter correctement
+Sans-Nom en tant que multiclassé Combattant/Mage/Voleur et applique les bonus en conséquence.
+
+Le composant propose plusieurs options :
+- Bonus de combattant uniquement : applique uniquement les bonus liés à l’aspect « combattant » de la classe.
+- Bonus de mage uniquement : applique uniquement les bonus liés à l’aspect « mage » de la classe.
+- Bonus de voleur uniquement : applique uniquement les bonus liés à l’aspect « voleur » de la classe.
+- Bonus de guerrier et de mage : applique les bonus liés aux aspects « guerrier » et « mage » de la classe.
+- Bonus de guerrier et de voleur : applique les bonus liés aux aspects « guerrier » et « voleur » de la classe.
+- Bonus de mage et de voleur : applique les bonus liés aux aspects « mage » et « voleur » de la classe.
+- Tous les bonus à la fois : applique tous les bonus de la récompense en même temps.
+
+
+Remerciements
+~~~~~~~~~~~~~
 
 Coding and testing: Argent77
 
-French translation: JohnBob
+French translation: JohnBob, Deratiseur
 Simplified Chinese: MephistoSatanDevil
 
 
-Copyright Notice
-~~~~~~~~~~~~~~~~
+Avis de droits d'auteur
+~~~~~~~~~~~~~~~~~~~~~~~
 
-The mod "Achievements!" is licensed under the "Creative Commons Attribution-NonCommercial-
+Le mod « Achievements ! » est distribué sous la licence "Creative Commons Attribution-NonCommercial-
 ShareAlike 4.0 International License" (https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 
-History
-~~~~~~~
+Historique
+~~~~~~~~~~
 
 3.0
 - Added Simplified Chinese translation (thanks MephistoSatanDevil)
