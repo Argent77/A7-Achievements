@@ -1,0 +1,137 @@
+// Adjustments for Tutu and BGT to detect some of the achievements
+
+// Achievement: ACH_FLYING_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_FLYING-global.baf
+IF
+  Global("BD_ACH_PARTY","GLOBAL",1)
+  NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("BD_ACH_PARTY","GLOBAL",-1)
+    Continue()
+END
+>>>>>>>>
+EXTEND_TOP ~baldur.bcs~ ~.../inlined/A7-Achievements/bg1fixes/ACH_FLYING-global.baf~ // UNLESS ~SetGlobal("BD_ACH_PARTY","GLOBAL",-1)~
+
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_FLYING.baf
+IF
+  Global("BD_ACH_PARTY","GLOBAL",0)
+  NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("BD_ACH_PARTY","GLOBAL",-1)
+END
+
+IF
+  Global("BD_ACH_PARTY","GLOBAL",0)
+  !NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("BD_ACH_PARTY","GLOBAL",1)
+END
+>>>>>>>>
+EXTEND_BOTTOM ~%CoastWay_BCS%.bcs~ ~.../inlined/A7-Achievements/bg1fixes/ACH_FLYING.baf~ // UNLESS ~SetGlobal("BD_ACH_PARTY","GLOBAL",-1)~
+EXTEND_BOTTOM ~%HighHedge_BCS%.bcs~ ~.../inlined/A7-Achievements/bg1fixes/ACH_FLYING.baf~ // UNLESS ~SetGlobal("BD_ACH_PARTY","GLOBAL",-1)~
+
+// Achievement: ACH_HE_STARTED_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_USE_YOUR.d
+ADD_TRANS_ACTION ~%tutu_var%Marl~ BEGIN 13 END BEGIN 0 END ~SetGlobal("ACH_USE_YOUR","GLOBAL",1)~ UNLESS ~"ACH_USE_YOUR"~
+>>>>>>>>
+COMPILE EVAL ~.../inlined/A7-Achievements/bg1fixes/ACH_USE_YOUR.d~
+
+// Achievement: ACH_A_WORK_OF_ART_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_A_WORK_OF_ART.d
+ADD_TRANS_ACTION ~%tutu_var%Prism~ BEGIN 7 END BEGIN 0 END ~SetGlobal("prism_work_is_complete","GLOBAL",1)~ UNLESS ~"prism_work_is_complete"~
+>>>>>>>>
+COMPILE EVAL ~.../inlined/A7-Achievements/bg1fixes/ACH_A_WORK_OF_ART.d~
+
+// Achievement: ACH_FISHERMENS_FRIEND_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_FISHERMENS_FRIEND.d
+ADD_TRANS_ACTION ~%tutu_var%Sonner~ BEGIN 18 END BEGIN 0 END ~SetGlobal("killed_tenya_fishermen","GLOBAL",1)~ UNLESS ~"killed_tenya_fishermen"~
+>>>>>>>>
+COMPILE EVAL ~.../inlined/A7-Achievements/bg1fixes/ACH_FISHERMENS_FRIEND.d~
+
+// Achievement: ACH_UNPETRIFIED_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_UNPETRIFIED.baf
+IF
+  InMyArea("Tamah")
+  Global("Sprite_Is_DeadTamah","GLOBAL",0)
+  !StateCheck("Tamah",STATE_STONE_DEATH)
+  Global("Tamah_Freed","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("Tamah_Freed","GLOBAL",2)
+END
+
+IF
+  InMyArea("Tamah")
+  StateCheck("Tamah",STATE_STONE_DEATH)
+  Global("Tamah_Freed","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Tamah_Freed","GLOBAL",1)
+    SetGlobal("Sprite_Is_DeadTamah","GLOBAL",1)
+END
+>>>>>>>>
+EXTEND_BOTTOM ~%MutaminsGarden_BCS%.bcs~ ~.../inlined/A7-Achievements/bg1fixes/ACH_UNPETRIFIED.baf~ // UNLESS ~SetGlobal("Tamah_Freed","GLOBAL",2)~
+
+// Achievement: ACH_THE_STONE_CLERIC_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_THE_STONE_CLERIC.baf
+IF
+  InMyArea("Branwen")
+  Global("Sprite_Is_DeadBranwen","GLOBAL",0)
+  !StateCheck("Branwen",STATE_STONE_DEATH)
+  Global("Branwen_Freed","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("Branwen_Freed","GLOBAL",2)
+END
+
+IF
+  InMyArea("Branwen")
+  StateCheck("Branwen",STATE_STONE_DEATH)
+  Global("Branwen_Freed","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Branwen_Freed","GLOBAL",1)
+    SetGlobal("Sprite_Is_DeadBranwen","GLOBAL",1)
+END
+>>>>>>>>
+EXTEND_BOTTOM ~%NashkelCarnival_BCS%.bcs~ ~.../inlined/A7-Achievements/bg1fixes/ACH_THE_STONE_CLERIC.baf~ // UNLESS ~SetGlobal("Branwen_Freed","GLOBAL",2)~
+
+// Achievement: ACH_BACK_TO_BASICS_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_BACK_TO_BASICS.d
+EXTEND_BOTTOM ~%tutu_var%monktu1~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_var%monktu2~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_var%monktu3~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_var%monktu4~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_var%monktu5~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+// EXTEND_BOTTOM ~%tutu_var%monktu6~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_var%monktu7~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_var%monktu8~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_var%monktu9~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_scriptm%onktu10~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_scriptm%onktu11~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_scriptm%onktu12~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_scriptm%onktu13~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+EXTEND_BOTTOM ~%tutu_scriptm%onktu14~ 0 IF ~Global("increment_all_the_things","LOCALS",0)~ DO ~SetGlobal("increment_all_the_things","LOCALS",1) IncrementGlobal("learn_all_the_things","GLOBAL",1)~ EXIT END
+>>>>>>>>
+COMPILE EVAL ~.../inlined/A7-Achievements/bg1fixes/ACH_BACK_TO_BASICS.d~
+
+// Achievement: ACH_WITCH_SLAYER_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_WITCH_SLAYER.d
+ADD_TRANS_ACTION ~%tutu_var%Dynahe~ BEGIN 10 END BEGIN 0 END ~SetGlobal("edwin_killing_dynaheir","GLOBAL",1)~ UNLESS ~"edwin_killing_dynaheir"~
+>>>>>>>>
+COMPILE EVAL ~.../inlined/A7-Achievements/bg1fixes/ACH_WITCH_SLAYER.d~
+
+// Achievement: ACH_DAMSEL_OUT_OF_DISTRESS_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_DAMSEL_OUT_OF_DISTRESS.d
+ADD_TRANS_ACTION ~%tutu_var%Abela~ BEGIN 4 7 12 13 END BEGIN 0 END ~SetGlobal("AbelaNotExists","GLOBAL",1)~ UNLESS ~"AbelaNotExists"~
+>>>>>>>>
+COMPILE EVAL ~.../inlined/A7-Achievements/bg1fixes/ACH_DAMSEL_OUT_OF_DISTRESS.d~
+
+// Achievement: ACH_SCENT_OF_A_KOBOLD_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg1fixes/ACH_SCENT_OF_A_KOBOLD.d
+ADD_TRANS_ACTION ~%tutu_var%Jenkal~ BEGIN 3 END BEGIN 0 END ~SetGlobal("jenkal_letting_in_kobolds","GLOBAL",1)~ UNLESS ~"jenkal_letting_in_kobolds"~
+>>>>>>>>
+COMPILE EVAL ~.../inlined/A7-Achievements/bg1fixes/ACH_SCENT_OF_A_KOBOLD.d~

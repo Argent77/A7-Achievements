@@ -2,9 +2,14 @@
 
 // Journal title
 @500 = ~成就~
+// Journal title prompt for oBG2 entries
+@501 = ~成就：~
 
 // Colored log message
 @510 = ~^D已解锁成就：<A7_ACH>项（共%ach_count_total%项）^-~
+
+// A single en dash
+@520 = ~–~
 
 // Item name
 @600 = ~成就奖杯~
@@ -44,6 +49,7 @@
 @613 = ~: ^0xFF000080未解锁^-~    // achievement state "locked", dark red color (BG1/BG2/IWD)
 @614 = ~: ^0xFF00AF00已解锁^-~  // achievement state "unlocked", bright green color (PST)
 @615 = ~: ^0xFF0000FF未解锁^-~    // achievement state "locked", bright red color (PST)
+@616 = ~未解锁~ // achievement state "locked"
 
 @620 = ~检视~  // button label for item
 

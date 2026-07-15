@@ -5,6 +5,7 @@
 @3 = ~Statistiques detaillees~
 
 @10 = ~Recompenses pour les Realisations~
+
 @20 = ~Compatibilite avec le mod Jack Of All Planes~
 @21 = ~Bonus de combattant uniquement~
 @22 = ~Bonus de mage uniquement~
@@ -14,7 +15,7 @@
 @26 = ~Bonus de mage et de voleur~
 @27 = ~Tous les bonus a la fois~
 
-@100 = ~Enhanced Edition requise.~
+@100 = ~Ce composant n'est pas disponible pour votre jeu.~
 @101 = ~DLC Merger est necessaire avant que des mods puissent etre installes sur ce jeu. Consultez le readme pour plus d'informations et le lien pour telecharger DLC Merger.~
 @102 = ~Necessite l'installation du composant principal.~
 @103 = ~Necessite l'installation du sous-composant Recompenses pour les Realisations.~

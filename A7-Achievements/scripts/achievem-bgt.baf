@@ -1,0 +1,438 @@
+// oBG achievements for BGT
+
+IF
+  Global("ACH_FLYING_BG1","GLOBAL",0)
+  AreaCheck("%Undercity_TempleofBhaal%")
+  Dead("Sarevok")
+  Global("BD_ACH_PARTY","GLOBAL",1)
+  !NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FLYING_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SACRIFICES_MUST_BG1","GLOBAL",0)
+  AreaCheck("%Undercity_TempleofBhaal%")
+  Dead("Sarevok")
+  StateCheck(Player2,STATE_REALLY_DEAD)
+  StateCheck(Player3,STATE_REALLY_DEAD)
+  StateCheck(Player4,STATE_REALLY_DEAD)
+  StateCheck(Player5,STATE_REALLY_DEAD)
+  StateCheck(Player6,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SACRIFICES_MUST_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_LEAVE_NO_BG1","GLOBAL",0)
+  AreaCheck("%Undercity_TempleofBhaal%")
+  Dead("Sarevok")
+  NumInPartyAlive(6)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LEAVE_NO_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FOREST_FRIEND_BG1","GLOBAL",0)
+  Global("SeniyadXP","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FOREST_FRIEND_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_NOBLE_ASSISTANT_BG1","GLOBAL",0)
+  Global("AldethMove","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_NOBLE_ASSISTANT_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_HE_STARTED_BG1","GLOBAL",0)
+  !Global("ACH_USE_YOUR_BG1","GLOBAL",1)
+  Dead("Marl")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HE_STARTED_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_REUNION_BG1","GLOBAL",0)
+  OR(2)
+    Global("TremainMove","GLOBAL",3)
+    Global("TremainMove","GLOBAL",4)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_REUNION_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_PHILISTINE_BG1","GLOBAL",0)
+  Dead("Prism")
+  Global("OublekBounty2","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_PHILISTINE_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_A_WORK_OF_ART_BG1","GLOBAL",0)
+  Global("prism_work_is_complete","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_A_WORK_OF_ART_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FISHERMENS_FRIEND_BG1","GLOBAL",0)
+  Dead("Tenya")
+  Global("killed_tenya_fishermen","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FISHERMENS_FRIEND_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SAVE_THE_COW_BG1","GLOBAL",0)
+  !Dead("HulriksCow")
+  Global("XvartsDead","GLOBAL",8)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SAVE_THE_COW_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_UNPETRIFIED_BG1","GLOBAL",0)
+  Global("Tamah_Freed","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_UNPETRIFIED_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_ONLY_MOSTLY_DEAD_BG1","GLOBAL",0)
+  Global("HelpDrienne","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ONLY_MOSTLY_DEAD_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_LEGEND_BG1","GLOBAL",0)
+  Dead("DeathK")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_LEGEND_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_STONE_CLERIC_BG1","GLOBAL",0)
+  Global("Branwen_Freed","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_STONE_CLERIC_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_AN_ANCIENT_EVIL_BG1","GLOBAL",0)
+  Dead("TANAR")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_AN_ANCIENT_EVIL_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_BACK_TO_BASICS_BG1","GLOBAL",0)
+  Global("learn_all_the_things","GLOBAL",13)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_BACK_TO_BASICS_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SAFE_FOR_NOW_BG1","GLOBAL",0)
+  Dead("carbos")
+  Dead("shank")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SAFE_FOR_NOW_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FORESHADOWING_BG1","GLOBAL",0)
+  Global("FirebeadDone","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FORESHADOWING_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_COMPLETIONIST_BG1","GLOBAL",0)
+  Global("HelpFirebead","GLOBAL",2)
+  Global("HelpHull","GLOBAL",1)
+  Global("HelpPhlydia","GLOBAL",1)
+  Global("HelpFuller","GLOBAL",1)
+  Global("SPRITE_IS_DEADREVRAT","GLOBAL",6)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_COMPLETIONIST_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_MASTER_THIEF_BG1","GLOBAL",0)
+  PartyHasItem("misc64")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_MASTER_THIEF_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  AreaCheck("%LionsWay%")
+  %BGT_VAR%
+  Global("CHAPTER","GLOBAL",1)
+  Global("ACH_ON_MY_OWN_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ON_MY_OWN_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("SpokeToKhalid","GLOBAL",1)
+  Global("ACH_FRIENDLY_FACES_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FRIENDLY_FACES_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  %BGT_VAR%
+  Global("CHAPTER","GLOBAL",3)
+  Global("ACH_VICTORY_IS_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_VICTORY_IS_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  %BGT_VAR%
+  Global("CHAPTER","GLOBAL",4)
+  Global("ACH_BANDITS_BANISHED_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_BANDITS_BANISHED_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  %BGT_VAR%
+  Global("CHAPTER","GLOBAL",5)
+  GlobalGT("FLOODED","GLOBAL",0)
+  Global("ACH_WATER_WATER_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WATER_WATER_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  %BGT_VAR%
+  Global("CHAPTER","GLOBAL",6)
+  Global("ACH_ON_THE_TRAIL_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ON_THE_TRAIL_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  %BGT_VAR%
+  Global("CHAPTER","GLOBAL",7)
+  AreaCheck("%Candlekeep_Ch6%")
+  Global("ACH_ON_MY_OWN_AGAIN_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ON_MY_OWN_AGAIN_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Dead("Sarevok")
+  Global("ACH_HERO_OF_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HERO_OF_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("AttackedSilke","GLOBAL",0)
+  Dead("Merchant1")
+  Dead("Merchant2")
+  Dead("Merchant3")
+  Global("ACH_MERCENARY_OF_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_MERCENARY_OF_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("AttackedSilke","GLOBAL",1)
+  Dead("Silke")
+  Global("ACH_WORST_BODYGUARD_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WORST_BODYGUARD_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("TamokoMove","GLOBAL",4)
+  Global("ACH_LOVERS_REDEMPTION_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LOVERS_REDEMPTION_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Dead("Tamoko")
+  !Global("TamokoMove","GLOBAL",4)
+  Global("ACH_LOVERS_SACRIFICE_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LOVERS_SACRIFICE_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("HelpMinsc","GLOBAL",2)
+  Global("ACH_WITCH_SAVIOUR_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WITCH_SAVIOUR_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Dead("dynaheir")
+  Global("edwin_killing_dynaheir","GLOBAL",1)
+  Global("ACH_WITCH_SLAYER_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WITCH_SLAYER_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("AbelaNotExists","GLOBAL",1)
+  Global("ACH_DAMSEL_OUT_OF_DISTRESS_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DAMSEL_OUT_OF_DISTRESS_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Dead("Brage")
+  !Global("BrageRiddle","GLOBAL",2)
+  Global("ACH_JUDGE_JURY_EXECUTIONER_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_JUDGE_JURY_EXECUTIONER_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("BrageRiddle","GLOBAL",2)
+  Global("ACH_SECOND_CHANCE_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SECOND_CHANCE_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("HelpTenya","GLOBAL",2)
+  Global("ACH_FISHERMENS_FOE_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FISHERMENS_FOE_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("HelpGallor","GLOBAL",2)
+  Global("ACH_GALLORS_PLOT_BG1","GLOBAL",0)
+  !Global("ACH_FAERUNIAN_IDOL_BG1","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GALLORS_PLOT_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("TalkedToCharleston","GLOBAL",2)
+  Global("ACH_THIS_BELONGS_IN_A_MUSEUM_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THIS_BELONGS_IN_A_MUSEUM_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  !Global("HelpGallor","GLOBAL",2)
+  PartyHasItem("MISC48")
+  Dead("Doomsayer")
+  Global("ACH_FAERUNIAN_IDOL_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FAERUNIAN_IDOL_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("HelpNashkellWoman","GLOBAL",3)
+  Global("ACH_SOBERING_NEWS_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SOBERING_NEWS_BG1","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("jenkal_letting_in_kobolds","GLOBAL",1)
+  Global("ACH_SCENT_OF_A_KOBOLD_BG1","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SCENT_OF_A_KOBOLD_BG1","GLOBAL",1)
+    Continue()
+END

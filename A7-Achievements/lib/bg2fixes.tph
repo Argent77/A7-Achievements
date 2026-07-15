@@ -1,0 +1,130 @@
+// Adjustments for BG2 and BGT to detect some of the achievements
+
+// Achievement: ACH_FLYING_BG1
+<<<<<<<< .../inlined/A7-Achievements/bg2fixes/ACH_FLYING-global.baf
+IF
+  Global("BD_ACH_PARTY","GLOBAL",1)
+  NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("BD_ACH_PARTY","GLOBAL",-1)
+    Continue()
+END
+>>>>>>>>
+EXTEND_TOP ~baldur.bcs~ ~.../inlined/A7-Achievements/bg2fixes/ACH_FLYING-global.baf~ // UNLESS ~SetGlobal("BD_ACH_PARTY","GLOBAL",-1)~
+
+<<<<<<<< .../inlined/A7-Achievements/bg2fixes/ACH_FLYING.baf
+IF
+  Global("BD_ACH_PARTY","GLOBAL",0)
+  NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("BD_ACH_PARTY","GLOBAL",-1)
+END
+
+IF
+  Global("BD_ACH_PARTY","GLOBAL",0)
+  !NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("BD_ACH_PARTY","GLOBAL",1)
+END
+>>>>>>>>
+EXTEND_BOTTOM ~ar0603.bcs~ ~.../inlined/A7-Achievements/bg2fixes/ACH_FLYING.baf~ // UNLESS ~SetGlobal("BD_ACH_PARTY","GLOBAL",-1)~
+
+// Achievement: ACH_PLANEHOPPER
+<<<<<<<< .../inlined/A7-Achievements/bg2fixes/ACH_PLANEHOPPER.d
+ADD_TRANS_ACTION ~haerda~ BEGIN 106 108 END BEGIN 0 END ~SetGlobal("bd_rescued_haer","global",1)~ UNLESS ~"bd_rescued_haer"~
+>>>>>>>>
+COMPILE ~.../inlined/A7-Achievements/bg2fixes/ACH_PLANEHOPPER.d~
+
+// Achievement: ACH_GREEN_DRAGON_SAVIOUR
+<<<<<<<< .../inlined/A7-Achievements/bg2fixes/ACH_GREEN_DRAGON_SAVIOUR.d
+ADD_TRANS_ACTION ~bazdra03~ BEGIN 8 END BEGIN 0 END ~SetGlobal("use_reversal_scroll","GLOBAL",1)~ UNLESS ~"use_reversal_scroll"~
+>>>>>>>>
+COMPILE ~.../inlined/A7-Achievements/bg2fixes/ACH_GREEN_DRAGON_SAVIOUR.d~
+
+// Achievement: ACH_PEACE_AT_LAST
+<<<<<<<< .../inlined/A7-Achievements/bg2fixes/ACH_PEACE_AT_LAST.d
+ADD_TRANS_ACTION ~slilmat~ BEGIN 13 END BEGIN 0 END ~SetGlobal("yoshimos_heart","GLOBAL",1)~ UNLESS ~"yoshimos_heart"~
+ADD_TRANS_ACTION ~wilmat~ BEGIN 7 END BEGIN 0 END ~SetGlobal("yoshimos_heart","GLOBAL",1)~ UNLESS ~"yoshimos_heart"~
+>>>>>>>>
+COMPILE ~.../inlined/A7-Achievements/bg2fixes/ACH_PEACE_AT_LAST.d~
+
+// Achievement: ACH_FRIENDS_LIKE_THESE
+<<<<<<<< .../inlined/A7-Achievements/bg2fixes/ACH_FRIENDS_LIKE_THESE.baf
+IF
+  Die()
+THEN
+  RESPONSE #100
+    SetGlobal("yoshimo_killed_spellhold","GLOBAL",1)
+    Continue()
+END
+>>>>>>>>
+EXTEND_TOP ~yoshimox.bcs~ ~.../inlined/A7-Achievements/bg2fixes/ACH_FRIENDS_LIKE_THESE.baf~ // UNLESS ~SetGlobal("yoshimo_killed_spellhold","GLOBAL",1)~
+
+// Achievement: ACH_RESTORED
+COPY_EXISTING ~spin919.spl~ ~override~
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 265  // Modify global variable
+      target = 2  // Preset target
+      timing = 9  // Instant/Permanent
+    STR_VAR
+      resource = ~j_noweak~
+  END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 265  // Modify global variable
+      target = 2  // Preset target
+      parameter1 = 1
+      timing = 4  // Delay/Permanent
+      duration = 7200
+    STR_VAR
+      resource = ~j_noweak~
+  END
+BUT_ONLY
+
+// Achievements: ACH_SIEZE_THE_THRONE, ACH_HEAVY_IS_THE_HEAD
+<<<<<<<< .../inlined/A7-Achievements/bg2fixes/ACH_ACH_MELISSAN.d
+ADD_TRANS_ACTION ~finsol01~ BEGIN 33 END BEGIN 0 1 2 END ~SetGlobal("bd_ach_melissan","global",1)~ UNLESS ~"bd_ach_melissan"~
+>>>>>>>>
+COMPILE ~.../inlined/A7-Achievements/bg2fixes/ACH_ACH_MELISSAN.d~
+
+// Achievement: ACH_A_DARING_ESCAPE
+COPY_EXISTING ~cut01g.bcs~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    PATCH_IF (INDEX_BUFFER(~"bd_ach_daring_escape"~) < 0) BEGIN
+      REPLACE_TEXTUALLY ~SetGlobal("CutScene01","AR0700",5)~ ~\0 SetGlobal("bd_ach_daring_escape","global",1)~
+    END
+  END
+BUT_ONLY
+
+// Achievement: ACH_TOOK_A_CHANCE
+<<<<<<<< .../inlined/A7-Achievements/bg2fixes/ACH_TOOK_A_CHANCE.d
+ADD_TRANS_ACTION ~ppsaem3~ BEGIN 70 END BEGIN 0 END ~SetGlobal("boat_out_of_spellhold","GLOBAL",1)~ UNLESS ~"boat_out_of_spellhold"~
+>>>>>>>>
+COMPILE ~.../inlined/A7-Achievements/bg2fixes/ACH_TOOK_A_CHANCE.d~
+
+// Achievement: ACH_TO_HELL_AND_BACK
+<<<<<<<< .../inlined/A7-Achievements/bg2fixes/ACH_TO_HELL_AND_BACK.d
+ADD_TRANS_ACTION ~suelle2~ BEGIN 18 END BEGIN 0 1 END ~SetGlobal("soa_complete","GLOBAL",1)~ UNLESS ~"soa_complete"~
+>>>>>>>>
+COMPILE ~.../inlined/A7-Achievements/bg2fixes/ACH_TO_HELL_AND_BACK.d~
+
+// Achievement: ACH_UNKNOWN_RISKS
+COPY_EXISTING ~movie04.bcs~ ~override~
+  DECOMPILE_AND_PATCH BEGIN
+    PATCH_IF (INDEX_BUFFER(~"portal_out_of_spellhold"~) < 0) BEGIN
+      SET pos = INDEX_BUFFER(~Entered(~)
+      PATCH_IF (pos >= 0) BEGIN
+        SET pos = INDEX_BUFFER(~RESPONSE #[0-9]+~ pos)
+        SET pos = INDEX_BUFFER(~[%WNL%]~ pos)
+        SPRINT line ~%LNL%SetGlobal("portal_out_of_spellhold","GLOBAL",1)~
+        SET len = STRING_LENGTH ~%line%~
+        INSERT_BYTES pos len
+        WRITE_ASCIIE pos ~%line%~ (len)
+      END
+    END
+  END
+BUT_ONLY

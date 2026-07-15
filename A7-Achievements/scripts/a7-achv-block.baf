@@ -14,12 +14,17 @@ END
 
 // Update token
 IF
-  Switch("%ach_var_guard%","GLOBAL")
+  Global("%ach_var_guard%","GLOBAL",0)
 THEN
-  RESPONSE #0
+  RESPONSE #100
     SetToken("%ach_token_name%",%ach_token_off_strref%)
     Continue()
-  RESPONSE #1
+END
+
+IF
+  !Global("%ach_var_guard%","GLOBAL",0)
+THEN
+  RESPONSE #100
     SetToken("%ach_token_name%",%ach_token_on_strref%)
     Continue()
 END

@@ -41,7 +41,7 @@ Il est recommandé, mais pas nécessaire, de commencer une nouvelle partie aprè
 Composants
 ~~~~~~~~~~
 
-1. Installer les "Achievements" Steam disponibles comme entrées de journal (pour BG:EE, SoD, BG2:EE, EET, IWD:EE et PST:EE)
+1. Installer les "Achievements" Steam disponibles comme entrées de journal (pour BG:EE, SoD, BG2:EE, EET, IWD:EE, PST:EE, BG2, BGT et Tutu)
 
 Ce composant présente les réalisations accomplies sous forme d'entrées de journal de quête dans la catégorie "Réalisations". En outre, le nombre total de réalisations débloquées sera affiché dans la fenêtre log du jeu chaque fois qu'une nouvelle réalisation sera ajoutée.
 
@@ -120,6 +120,10 @@ ShareAlike 4.0 International License" (https://creativecommons.org/licenses/by-n
 
 Historique
 ~~~~~~~~~~
+
+4.0
+- Added support for original BG2, BGT, and Tutu
+- Updated French translation 
 
 3.0
 - Added Simplified Chinese translation (thanks MephistoSatanDevil)

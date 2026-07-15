@@ -1,11 +1,11 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Argent77/A7-Achievements?color=darkred&include_prereleases&label=latest%20release)](https://github.com/Argent77/A7-Achievements/releases/latest)
 [![Github downloads (all releases)](https://img.shields.io/github/downloads/Argent77/A7-Achievements/total.svg?color=gold)](https://github.com/Argent77/A7-Achievements/releases)
 [![Platform](https://img.shields.io/static/v1?label=platform&message=Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Project%20Infinity&color=informational)](https://github.com/Argent77/A7-Achievements/releases/latest)
-[![Supported games](https://img.shields.io/static/v1?label=supported%20games&message=BG%3AEE%20%7C%20SoD%20%7C%20BG2%3AEE%20%7C%20EET%20%7C%20IWD%3AEE%20%7C%20PST%3AEE&color=indigo)](https://github.com/Argent77/A7-Achievements)
+[![Supported games](https://img.shields.io/static/v1?label=supported%20games&message=BG%3AEE%20%7C%20SoD%20%7C%20BG2%3AEE%20%7C%20EET%20%7C%20IWD%3AEE%20%7C%20PST%3AEE%20%7C%20BG2%20%7C%20BGT%20%7C%20Tutu&color=indigo)](https://github.com/Argent77/A7-Achievements)
 [![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French%20%7C%20Simplified%20Chinese&color=limegreen)](https://github.com/Argent77/A7-Achievements)
 
 # Achievements!
-*A mod for BG:EE, SoD, BG2:EE, EET, IWD:EE and PST:EE that makes Steam Achievements available as regular journal entries for everyone.*
+*A mod for BG:EE, SoD, BG2:EE, EET, IWD:EE, PST:EE, BG2, BGT, and Tutu that makes Steam Achievements available as regular journal entries for everyone.*
 
 [![Beamdog Forums](https://img.shields.io/static/v1?label=Discussion&message=Beamdog%20Forums&color=444&labelColor=eee&style=for-the-badge)](https://forums.beamdog.com/discussion/82630/mod-achievements-for-everyone "Beamdog Forums")
 &nbsp;&nbsp;
@@ -17,11 +17,11 @@ Enhanced Edition games provide a feature to unlock numerous achievements in the 
 
 This mod detects unlocked achievements and makes them available as regular journal entries for anyone playing the game without the need to use the Steam client.
 
-The mod supports all available Enhanced Edition games patched to version 2.0 or later, which includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE and PST:EE. Project Infinity is supported as well.
+The mod supports all available Enhanced Edition games patched to version 2.0 or later, which includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE, and PST:EE, as well as original BG2, BGT, and Tutu.
 
 ## Components
 
-### Install Steam Achievements as Journal Entries *(for BG:EE, SoD, BG2:EE, EET, IWD:EE and PST:EE)*
+### Install Steam Achievements as Journal Entries *(for BG:EE, SoD, BG2:EE, EET, IWD:EE, PST:EE, BG2, BGT, and Tutu)*
 
 This component provides unlocked achievements are quest journal entries under the "Achievements" category. Additionally it is possible to purchase an Achievements Trophy which tracks the state of unlocked achievements.
 
@@ -32,7 +32,7 @@ The component provides two install options:
 
 Both options refer to the presentation of achievements statistics provided by the Achievements Trophy.
 
-In EET the mod will also track BG:EE and SoD achievements in addition to the BG2:EE achievements.
+In EET the mod will also track BG:EE and SoD achievements in addition to the BG2:EE achievements. In BGT the mod will also track BG1 achievements in addition to the BG2 achievements.
 
 In PST:EE journal entries are added as "completed quests" to avoid cluttering the list of active quests.
 

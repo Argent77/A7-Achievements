@@ -20,8 +20,8 @@ This mod detects unlocked achievements and makes them available as regular journ
 anyone playing the game without the need to use the Steam client.
 
 The mod support all available Enhanced Edition games patched to version 2.0 or later, which
-includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE and PST:EE. Project Infinity is supported
-as well.
+includes BG:EE (with or without SoD), BG2:EE, EET, IWD:EE, and PST:EE, as well as original BG2,
+BGT, and Tutu.
 
 
 Installation
@@ -50,19 +50,25 @@ games the mod can be installed in any order.
 There is a non-critical issue on PST:EE if aquadrizzt's mod "Jack Of All Planes" is installed,
 which unlocks several achievements right from the start.
 
-It is recommended but not necessary to start a new game after installing the mod.
+For BG2, BGT, and Tutu it is required to start a new game to be able to unlock all available
+achievements.
+
+For Enhanced Edition games it is recommended but not necessary to start a new game after installing
+the mod.
 
 
 Components
 ~~~~~~~~~~
 
-1. Install Steam Achievements as Journal Entries (for BG:EE, SoD, BG2:EE, EET, IWD:EE and PST:EE)
+1. Install Steam Achievements as Journal Entries (for BG:EE, SoD, BG2:EE, EET, IWD:EE, PST:EE,
+                                                  BG2, BGT, and Tutu)
 
 This component provides unlocked achievements are quest journal entries under the "Achievements"
 category. Additionally, the total number of unlocked achievements will be printed to the game log
 window whenever a new achievement is added.
 
 In EET the mod will also track BG:EE and SoD achievements in addition to the BG2:EE achievements.
+In BGT the mod will also track BG1 achievements in addition to the BG2 achievements.
 
 In PST:EE journal entries are added as "completed quests" to avoid cluttering the list of active
 quests. The total number of unlocked achievements is shown as overhead message for the protagonist.
@@ -84,8 +90,11 @@ The component comes in two flavors:
 1) Compact Statistics
 
 This option installs the Achievements Trophy with an item description that lists only the currently
-unlocked achievements. Choose this if you prefer a quick overview and don't want to be spoiled by
-the titles of not-yet-unlocked achievements.
+unlocked achievements. For technical reasons, in BG2, BGT, and Tutu it will also add placeholders
+for achievements that are still locked. Choose this if you prefer a quick overview and don't want
+to be spoiled by the titles of not-yet-unlocked achievements.
+
+This is the recommended option for original BG2, BGT, and Tutu.
 
 2) Detailed Statistics
 
@@ -150,6 +159,10 @@ ShareAlike 4.0 International License" (https://creativecommons.org/licenses/by-n
 
 History
 ~~~~~~~
+
+4.0
+- Added support for original BG2, BGT, and Tutu
+- Updated French translation 
 
 3.0
 - Added Simplified Chinese translation (thanks MephistoSatanDevil)

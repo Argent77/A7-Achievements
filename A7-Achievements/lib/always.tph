@@ -1,0 +1,21 @@
+OUTER_SET game_includes_bg1 = GAME_INCLUDES ~bg1~
+OUTER_SET game_includes_totsc = GAME_INCLUDES ~totsc~
+OUTER_SET game_includes_bg2 = GAME_INCLUDES ~bg2~
+OUTER_SET game_includes_tob = GAME_INCLUDES ~tob~
+OUTER_SET game_includes_sod = GAME_INCLUDES ~sod~
+OUTER_SET game_includes_iwd = GAME_INCLUDES ~iwd~
+OUTER_SET game_includes_how = GAME_INCLUDES ~how~
+OUTER_SET game_includes_totlm = GAME_INCLUDES ~totlm~
+OUTER_SET game_includes_pst = GAME_INCLUDES ~pst~
+
+OUTER_SET game_is_bgee = GAME_IS ~bgee~
+OUTER_SET game_is_sod = game_is_bgee && game_includes_sod
+OUTER_SET game_is_bg2ee = GAME_IS ~bg2ee~
+OUTER_SET game_is_iwdee = GAME_IS ~iwdee~
+OUTER_SET game_is_pstee = GAME_IS ~pstee~
+OUTER_SET game_is_eet = GAME_IS ~eet~
+OUTER_SET game_is_bgt = GAME_IS ~bgt~
+OUTER_SET game_is_bg2 = GAME_IS ~tob~ && NOT game_is_bgt
+OUTER_SET game_is_tutu = GAME_IS ~tutu_totsc~
+
+OUTER_SET engine_is_bg2 = (game_is_bg2 || game_is_bgt || game_is_tutu)

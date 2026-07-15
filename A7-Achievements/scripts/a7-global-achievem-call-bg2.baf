@@ -1,0 +1,30 @@
+// Added to global game scripts (oBG2 engine)
+
+IF
+  OnCreation()
+THEN
+  RESPONSE #100
+    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",30)
+    ChangeAIScript("ACHIEVEM",SPECIFICS)
+    Continue()
+END
+
+IF
+  !ActuallyInCombat()
+  GlobalTimerExpired("A7-ACHIEVEMENTS-TIMER","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",30)
+    ChangeAIScript("ACHIEVEM",SPECIFICS)
+    Continue()
+END
+
+IF
+  !Global("A7_ACH_UNLOCKED","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("A7_ACH_UNLOCKED","GLOBAL",0)
+    SetGlobalTimer("A7-ACHIEVEMENTS-TIMER","GLOBAL",3)
+    %display_string%
+    Continue()
+END

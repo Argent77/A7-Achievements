@@ -2,6 +2,9 @@
 <<<<<<<< .../inlined/A7-Achievements/blank
 >>>>>>>>
 
+// en dash symbol
+OUTER_SPRINT ndash @520
+
 // Returns the list of games
 DEFINE_ACTION_FUNCTION GET_GAME_LIST
 INT_VAR
@@ -9,44 +12,63 @@ INT_VAR
 RET
   games
 BEGIN
-  OUTER_TEXT_SPRINT games ~~
-  ACTION_IF (GAME_IS ~eet~) BEGIN
+  OUTER_SPRINT games ~~
+  ACTION_IF (game_is_eet) BEGIN
     // EET
-    OUTER_TEXT_SPRINT games ~bgee sod bg2ee~
+    OUTER_SPRINT games ~bgee sod bg2ee~
     ACTION_IF (load_tra) BEGIN
-      LOAD_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/bgee.tra~
-               ~%MOD_FOLDER%/languages/%LANGUAGE%/sod.tra~
-               ~%MOD_FOLDER%/languages/%LANGUAGE%/bg2ee.tra~
+      LOAD_TRA ~%LANG_FOLDER%/bgee.tra~
+               ~%LANG_FOLDER%/sod.tra~
+               ~%LANG_FOLDER%/bg2ee.tra~
     END
-  END ELSE ACTION_IF (GAME_IS ~bgee~) BEGIN
+  END ELSE ACTION_IF (game_is_bgee) BEGIN
     // BGEE (with or without SoD)
-    OUTER_TEXT_SPRINT games ~bgee~
+    OUTER_SPRINT games ~bgee~
     ACTION_IF (load_tra) BEGIN
-      LOAD_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/bgee.tra~
+      LOAD_TRA ~%LANG_FOLDER%/bgee.tra~
     END
-    ACTION_IF (GAME_INCLUDES ~sod~) BEGIN
-      OUTER_TEXT_SPRINT games ~%games% sod~
+    ACTION_IF (game_is_sod) BEGIN
+      OUTER_SPRINT games ~%games% sod~
       ACTION_IF (load_tra) BEGIN
-        LOAD_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/sod.tra~
+        LOAD_TRA ~%LANG_FOLDER%/sod.tra~
       END
     END
-  END ELSE ACTION_IF (GAME_IS ~bg2ee~) BEGIN
+  END ELSE ACTION_IF (game_is_bg2ee) BEGIN
     // BG2EE
-    OUTER_TEXT_SPRINT games ~bg2ee~
+    OUTER_SPRINT games ~bg2ee~
     ACTION_IF (load_tra) BEGIN
-      LOAD_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/bg2ee.tra~
+      LOAD_TRA ~%LANG_FOLDER%/bg2ee.tra~
     END
-  END ELSE ACTION_IF (GAME_IS ~iwdee~) BEGIN
+  END ELSE ACTION_IF (game_is_iwdee) BEGIN
     // IWDEE
-    OUTER_TEXT_SPRINT games ~iwdee~
+    OUTER_SPRINT games ~iwdee~
     ACTION_IF (load_tra) BEGIN
-      LOAD_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/iwdee.tra~
+      LOAD_TRA ~%LANG_FOLDER%/iwdee.tra~
     END
-  END ELSE ACTION_IF (GAME_IS ~pstee~) BEGIN
+  END ELSE ACTION_IF (game_is_pstee) BEGIN
     // PSTEE
-    OUTER_TEXT_SPRINT games ~pstee~
+    OUTER_SPRINT games ~pstee~
     ACTION_IF (load_tra) BEGIN
-      LOAD_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/pstee.tra~
+      LOAD_TRA ~%LANG_FOLDER%/pstee.tra~
+    END
+  END ELSE ACTION_IF (game_is_bg2) BEGIN
+    // oBG2
+    OUTER_SPRINT games ~bg2~
+    ACTION_IF (load_tra) BEGIN
+      LOAD_TRA ~%LANG_FOLDER%/bg2ee.tra~
+    END
+  END ELSE ACTION_IF (game_is_bgt) BEGIN
+    // BGT
+    OUTER_SPRINT games ~bg1 bg2~
+    ACTION_IF (load_tra) BEGIN
+      LOAD_TRA ~%LANG_FOLDER%/bgee.tra~
+               ~%LANG_FOLDER%/bg2ee.tra~
+    END
+  END ELSE ACTION_IF (game_is_tutu) BEGIN
+    // Tutu
+    OUTER_SPRINT games ~bg1~
+    ACTION_IF (load_tra) BEGIN
+      LOAD_TRA ~%LANG_FOLDER%/bgee.tra~
     END
   END
 END
@@ -65,7 +87,7 @@ BEGIN
     REPLACE_EVALUATE
       ~\([^ %TAB%%WNL%]+\)~
       BEGIN
-        TEXT_SPRINT $game_list(~%game_list%~) ~%MATCH1%~
+        SPRINT $game_list(~%game_list%~) ~%MATCH1%~
         SET game_list += 1
       END
       ~~
@@ -82,16 +104,18 @@ RET
   global  // resulting variable name, or empty if not available
 BEGIN
   ACTION_IF (NOT ~%global%~ STR_EQ ~~) BEGIN
-    ACTION_IF (GAME_IS ~eet~) BEGIN
+    ACTION_IF (game_is_eet) BEGIN
       ACTION_TO_LOWER ~game~
       ACTION_MATCH ~%game%~ WITH
-        ~bgee~  BEGIN OUTER_TEXT_SPRINT suffix ~_BG1~ END
-        ~sod~   BEGIN OUTER_TEXT_SPRINT suffix ~_SOD~ END
-        ~iwdee~ BEGIN OUTER_TEXT_SPRINT suffix ~_IWD~ END
-        DEFAULT       OUTER_TEXT_SPRINT suffix ~~
+        ~bgee~  BEGIN OUTER_SPRINT suffix ~_BG1~ END
+        ~sod~   BEGIN OUTER_SPRINT suffix ~_SOD~ END
+        ~iwdee~ BEGIN OUTER_SPRINT suffix ~_IWD~ END
+        DEFAULT       OUTER_SPRINT suffix ~~
       END
+    END ELSE ACTION_IF (game_is_bgt && ~%game%~ STR_EQ ~bg1~) BEGIN
+      OUTER_SPRINT suffix ~_BG1~
     END ELSE BEGIN
-      OUTER_TEXT_SPRINT suffix ~~
+      OUTER_SPRINT suffix ~~
     END
 
     OUTER_SET len_diff = (STRING_LENGTH ~%global%%suffix%~) - 32
@@ -106,11 +130,11 @@ BEGIN
           global = substring
       END
     END
-    OUTER_TEXT_SPRINT global ~%global%%suffix%~
+    OUTER_SPRINT global ~%global%%suffix%~
 
     ACTION_IF (NOT ~%suffix%~ STR_EQ ~~ &&
                NOT FILE_CONTAINS_EVALUATED(~%MOD_FOLDER%/scripts/achievem-eet.baf~ ~"%global%"~)) BEGIN
-      OUTER_TEXT_SPRINT global ~~
+      OUTER_SPRINT global ~~
     END
   END
 END
@@ -136,15 +160,19 @@ BEGIN
     SPRINT title_text @500
     SPRINT heading_text (AT ~heading_ref~)
     SPRINT body_text (AT ~body_ref~)
-    PATCH_IF (GAME_IS ~bg2ee eet iwdee~) BEGIN
+    PATCH_IF (game_is_bg2ee || game_is_eet || game_is_iwdee || engine_is_bg2) BEGIN
       SET title_strref = RESOLVE_STR_REF(~%title_text%~)
-      TEXT_SPRINT entry_text ~%heading_text%%LNL%%LNL%%body_text%~
-    END ELSE PATCH_IF (GAME_IS ~pstee~) BEGIN
+      SPRINT entry_text ~%heading_text%%LNL%%LNL%%body_text%~
+      PATCH_IF (engine_is_bg2) BEGIN
+        SPRINT prompt @501
+        SPRINT entry_text ~%prompt%%entry_text%~
+      END
+    END ELSE PATCH_IF (game_is_pstee) BEGIN
       SET title_strref = RESOLVE_STR_REF(~%title_text% (%heading_text%)~)
-      TEXT_SPRINT entry_text ~%body_text%~
+      SPRINT entry_text ~%body_text%~
     END ELSE BEGIN
       SET title_strref = RESOLVE_STR_REF(~%title_text%~)
-      TEXT_SPRINT entry_text ~%title_text%%LNL%%LNL%%heading_text%%LNL%%LNL%%body_text%~
+      SPRINT entry_text ~%title_text%%LNL%%LNL%%heading_text%%LNL%%LNL%%body_text%~
     END
     SET heading_strref = RESOLVE_STR_REF(~%heading_text%~)
 
@@ -181,11 +209,11 @@ BEGIN
     READ_2DA_ENTRY_FORMER table 1 0 def_value
 
     // Wildcards are supported
-    TEXT_SPRINT $game_list(~%game_list%~) ~%def_value%~
+    SPRINT $game_list(~%game_list%~) ~%def_value%~
     SET game_list += 1
 
     FOR (i = 0; i < game_list; ++i) BEGIN
-      TEXT_SPRINT game $game_list(~%i%~)
+      SPRINT game $game_list(~%i%~)
       FOR (row = 3; row < table; ++row) BEGIN
         READ_2DA_ENTRY_FORMER table row 1 col_game
         PATCH_IF (~%col_game%~ STR_EQ ~%game%~) BEGIN
@@ -227,11 +255,11 @@ BEGIN
     READ_2DA_ENTRY_FORMER table 1 0 def_value
 
     // Wildcards are supported
-    TEXT_SPRINT $game_list(~%game_list%~) ~%def_value%~
+    SPRINT $game_list(~%game_list%~) ~%def_value%~
     SET game_list += 1
 
     FOR (i = 0; i < game_list; ++i) BEGIN
-      TEXT_SPRINT game $game_list(~%i%~)
+      SPRINT game $game_list(~%i%~)
       FOR (row = 3; row < table; ++row) BEGIN
         READ_2DA_ENTRY_FORMER table row 1 col_game
         PATCH_IF (~%col_game%~ STR_EQ ~%game%~) BEGIN
@@ -258,11 +286,11 @@ INT_VAR
 BEGIN
   // Preparations
   OUTER_SET ach_count_total = ach_count
-  OUTER_SET strref = RESOLVE_STR_REF(@510)
-  ACTION_IF (GAME_IS ~pstee~) BEGIN
-    OUTER_TEXT_SPRINT display_string ~DisplayStringNoNameHead(Player1,%strref%)~
+  LAF get_tra_string INT_VAR tra_ref = 510 RET strref END
+  ACTION_IF (game_is_pstee) BEGIN
+    OUTER_SPRINT display_string ~DisplayStringNoNameHead(Player1,%strref%)~
   END ELSE BEGIN
-    OUTER_TEXT_SPRINT display_string ~DisplayStringNoName(Myself,%strref%)~
+    OUTER_SPRINT display_string ~DisplayStringNoName(Myself,%strref%)~
   END
 
   // Collecting available global game scripts
@@ -297,12 +325,18 @@ BEGIN
   ACTION_PHP_EACH scripts AS resref => _ BEGIN
     ACTION_IF (FILE_EXISTS_IN_GAME ~%resref%.BCS~ &&
                NOT FILE_CONTAINS_EVALUATED (~%resref%.BCS~ ~A7-ACHIEVEMENTS-TIMER~)) BEGIN
-      ACTION_IF (GAME_IS ~pstee~) BEGIN
+      ACTION_IF (game_is_pstee) BEGIN
         EXTEND_TOP ~%resref%.BCS~ ~%MOD_FOLDER%/scripts/a7-global-achv-call-pstee.baf~ EVAL
+      END ELSE ACTION_IF (engine_is_bg2) BEGIN
+        EXTEND_TOP ~%resref%.BCS~ ~%MOD_FOLDER%/scripts/a7-global-achievem-call-bg2.baf~ EVAL
       END ELSE BEGIN
         EXTEND_TOP ~%resref%.BCS~ ~%MOD_FOLDER%/scripts/a7-global-achv-call.baf~ EVAL
       END
     END
+  END
+
+  ACTION_IF (engine_is_bg2) BEGIN
+    EXTEND_BOTTOM ~achievem.bcs~ ~%MOD_FOLDER%/scripts/a7-global-achv-call-bg2.baf~
   END
 END
 
@@ -315,15 +349,15 @@ INT_VAR
 STR_VAR
   global  = ~~    // name of global to check for nonzero
 BEGIN
-  PATCH_IF (GAME_IS ~pstee~ && strref >= 0 && NOT ~%global%~ STR_EQ ~~) BEGIN
+  PATCH_IF (game_is_pstee && strref >= 0 && NOT ~%global%~ STR_EQ ~~) BEGIN
     PATCH_IF (done) BEGIN
-      TEXT_SPRINT journal ~setEntryDone~
+      SPRINT journal ~setEntryDone~
     END ELSE BEGIN
-      TEXT_SPRINT journal ~setEntryActive~
+      SPRINT journal ~setEntryActive~
     END
-    TEXT_SPRINT ws ~ %TAB%~
-    TEXT_SPRINT op "~=<>"
-    TEXT_SPRINT num ~-?[0-9]+~
+    SPRINT ws ~ %TAB%~
+    SPRINT op "~=<>"
+    SPRINT num ~-?[0-9]+~
     // finding last existing journal trigger
     SET pos = RINDEX_BUFFER(~if[%ws%]*([%ws%]*sv[%ws%]*([%ws%]*"[^"]*"[%ws%]*)[%ws%]*[%op%]+[%ws%]*%num%~ BUFFER_LENGTH)
     PATCH_IF (pos >= 0) BEGIN
@@ -331,7 +365,7 @@ BEGIN
       PATCH_IF (pos >= 0) BEGIN
         // adding new journal trigger
         SET pos += 1
-        TEXT_SPRINT line ~%TAB%if( sv("%global%") > 0 ) then %journal%(%strref%) end%WNL%~
+        SPRINT line ~%TAB%if( sv("%global%") > 0 ) then %journal%(%strref%) end%WNL%~
         SET strlen = STRING_LENGTH ~%line%~
         INSERT_BYTES pos strlen
         WRITE_ASCIIE pos ~%line%~ (strlen)
@@ -351,20 +385,24 @@ BEGIN
     COPY ~%MOD_FOLDER%/items/a7achtr1.itm~ ~override~
       // generating item description
       PATCH_IF (show_compact) BEGIN
-        TEXT_SPRINT ach_string ~– ~
-        TEXT_SPRINT nl ~~
+        SPRINT ach_string ~%ndash% ~
+        PATCH_IF (engine_is_bg2) BEGIN
+          SPRINT nl ~ ~
+        END ELSE BEGIN
+          SPRINT nl ~~
+        END
       END ELSE BEGIN
-        TEXT_SPRINT ach_string ~~
-        TEXT_SPRINT nl ~%LNL%~
+        SPRINT ach_string ~~
+        SPRINT nl ~%LNL%~
       END
       FOR (i = 0; i < ach_count; ++i) BEGIN
-        TEXT_SPRINT ach_string ~%ach_string%<A7_ACH_%i%>%nl%~
+        SPRINT ach_string ~%ach_string%<A7_ACH_%i%>%nl%~
       END
       PATCH_IF (show_compact) BEGIN
-        TEXT_SPRINT ach_string ~%ach_string%%LNL%~
+        SPRINT ach_string ~%ach_string%%LNL%~
       END
       SET ach_count_total = ach_count
-      PATCH_IF (GAME_IS ~pstee~) BEGIN
+      PATCH_IF (game_is_pstee) BEGIN
         SET strref1 = RESOLVE_STR_REF(@604)
         SET strref2 = RESOLVE_STR_REF(@605)
       END ELSE BEGIN
@@ -377,22 +415,28 @@ BEGIN
       WRITE_LONG UNIDENTIFIED_DESC strref1
       WRITE_LONG IDENTIFIED_DESC strref2
 
-      PATCH_IF (GAME_IS ~iwdee pstee~) BEGIN
+      PATCH_IF (game_is_iwdee || game_is_pstee) BEGIN
         // description image not needed
         WRITE_ASCII 0x58 ~~ (8)
       END
 
-    COPY ~%MOD_FOLDER%/items/a7cachtr.bam~ ~override~
+    ACTION_IF (engine_is_bg2) BEGIN
+      COPY ~%MOD_FOLDER%/items/bg2/a7cachtr.bam~ ~override~
+    END ELSE BEGIN
+      COPY ~%MOD_FOLDER%/items/a7cachtr.bam~ ~override~
+    END
 
-    ACTION_IF (GAME_INCLUDES ~pst~) BEGIN
+    ACTION_IF (engine_is_bg2) BEGIN
+      COPY ~%MOD_FOLDER%/items/bg2/a7iachtr.bam~ ~override~
+    END ELSE ACTION_IF (game_includes_pst) BEGIN
       COPY ~%MOD_FOLDER%/items/pstee/a7iachtr.bam~ ~override~
     END ELSE BEGIN
       COPY ~%MOD_FOLDER%/items/a7iachtr.bam~ ~override~
     END
 
     // Adding trophy to stores
-    ACTION_IF (GAME_INCLUDES ~bg1~) BEGIN
-      COPY_EXISTING ~friend.sto~ ~override~
+    ACTION_IF (game_includes_bg1) BEGIN
+      COPY_EXISTING ~%tutu_var%friend.sto~ ~override~
         LPF ADD_STORE_ITEM_EX
           STR_VAR
             item_name = ~a7achtr1~
@@ -401,7 +445,7 @@ BEGIN
       BUT_ONLY IF_EXISTS
     END
 
-    ACTION_IF (GAME_INCLUDES ~sod~) BEGIN
+    ACTION_IF (game_includes_sod) BEGIN
       COPY_EXISTING ~bdbeleg4.sto~ ~override~
         LPF ADD_STORE_ITEM_EX
           STR_VAR
@@ -411,7 +455,7 @@ BEGIN
       BUT_ONLY IF_EXISTS
     END
 
-    ACTION_IF (GAME_INCLUDES ~bg2~) BEGIN
+    ACTION_IF (game_includes_bg2) BEGIN
       COPY_EXISTING ~ribald.sto~ ~override~
         LPF ADD_STORE_ITEM_EX
           STR_VAR
@@ -421,7 +465,7 @@ BEGIN
       BUT_ONLY IF_EXISTS
     END
 
-    ACTION_IF (GAME_INCLUDES ~tob~) BEGIN
+    ACTION_IF (game_includes_tob) BEGIN
       COPY_EXISTING ~hgkar01.sto~ ~override~
         LPF ADD_STORE_ITEM_EX
           STR_VAR
@@ -431,7 +475,7 @@ BEGIN
       BUT_ONLY IF_EXISTS
     END
 
-    ACTION_IF (GAME_INCLUDES ~iwd~) BEGIN
+    ACTION_IF (game_includes_iwd) BEGIN
       COPY_EXISTING ~kugerth.sto~ ~override~
         LPF ADD_STORE_ITEM_EX
           STR_VAR
@@ -441,7 +485,7 @@ BEGIN
       BUT_ONLY IF_EXISTS
     END
 
-    ACTION_IF (GAME_INCLUDES ~how~) BEGIN
+    ACTION_IF (game_includes_how) BEGIN
 <<<<<<<< .../inlined/A7-Achievements/iwdhow_store.baf
 IF
   GlobalGT("Chapter","GLOBAL",6)
@@ -456,7 +500,7 @@ END
       EXTEND_TOP ~AR9101.BCS~ ~.../inlined/A7-Achievements/iwdhow_store.baf~
     END
 
-    ACTION_IF (GAME_INCLUDES ~pst~) BEGIN
+    ACTION_IF (game_includes_pst) BEGIN
       COPY_EXISTING ~fell.sto~ ~override~
         LPF ADD_STORE_ITEM_EX
           STR_VAR
@@ -492,7 +536,7 @@ BEGIN
   END
   OUTER_SET ach_count_total = ach_count
 
-  ACTION_IF (GAME_IS ~pstee~) BEGIN
+  ACTION_IF (game_is_pstee) BEGIN
     COPY ~%MOD_FOLDER%/items/pstee/a7achl1.itm~ ~override~
       SAY NAME2 @640  // Tattoo of Apprenticeship
       SAY IDENTIFIED_DESC @641  // TATTOO OF APPRENTICESHIP...
@@ -578,10 +622,14 @@ END
     BUT_ONLY
 
     // Item dialog
-    COMPILE ~%MOD_FOLDER%/dialogs/a7achtr1.d~ EVAL
+    ACTION_IF (engine_is_bg2) BEGIN
+      COMPILE EVAL ~%MOD_FOLDER%/dialogs/a7achtr1-bg2.d~
+    END ELSE BEGIN
+      COMPILE EVAL ~%MOD_FOLDER%/dialogs/a7achtr1.d~
+    END
 
     OUTER_SET inspect_strref = RESOLVE_STR_REF(@620)  // inspect
-    OUTER_TEXT_SPRINT itemdial ~A7ACHTR1  %inspect_strref%  A7ACHTR1~
+    OUTER_SPRINT itemdial ~A7ACHTR1  %inspect_strref%  A7ACHTR1~
     APPEND ~itemdial.2da~ ~%itemdial%~ UNLESS ~A7ACHTR1~
     COPY_EXISTING ~itemdial.2da~ ~override~ PRETTY_PRINT_2DA BUT_ONLY
 
@@ -603,9 +651,15 @@ END
       SAY NAME2 @631  // Cornucopia
       SAY UNIDENTIFIED_DESC @634  // This is a small horn...
 
-    COPY ~%MOD_FOLDER%/items/a7cachl1.bam~ ~override~
-         ~%MOD_FOLDER%/items/a7iachl1.bam~ ~override~
-         ~%MOD_FOLDER%/items/a7ach01.wav~ ~override~
+    ACTION_IF (engine_is_bg2) BEGIN
+      COPY ~%MOD_FOLDER%/items/bg2/a7cachl1.bam~ ~override~
+           ~%MOD_FOLDER%/items/bg2/a7iachl1.bam~ ~override~
+           ~%MOD_FOLDER%/items/bg2/a7ach01.wav~ ~override~
+    END ELSE BEGIN
+      COPY ~%MOD_FOLDER%/items/a7cachl1.bam~ ~override~
+           ~%MOD_FOLDER%/items/a7iachl1.bam~ ~override~
+           ~%MOD_FOLDER%/items/a7ach01.wav~ ~override~
+    END
 
     // Installing bonus effects
     ACTION_DEFINE_ASSOCIATIVE_ARRAY bonuses BEGIN
@@ -634,12 +688,12 @@ END
 
     // Grandmaster reward: XP
     COPY_EXISTING ~xplist.2da~ ~override~ COUNT_2DA_COLS num_cols BUT_ONLY
-    OUTER_TEXT_SPRINT xplist_reward ~A7ACH_GM  Grandmaster_Bonus~
+    OUTER_SPRINT xplist_reward ~A7ACH_GM  Grandmaster_Bonus~
     OUTER_SET value = 1000 * (num_cols - 3) // default value
-    OUTER_TEXT_SPRINT xplist_reward ~%xplist_reward%  %value%~
+    OUTER_SPRINT xplist_reward ~%xplist_reward%  %value%~
     OUTER_FOR (col = 1; col < num_cols - 2; ++col) BEGIN
       OUTER_SET value = col * 1000  // level-specific value
-      OUTER_TEXT_SPRINT xplist_reward ~%xplist_reward%  %value%~
+      OUTER_SPRINT xplist_reward ~%xplist_reward%  %value%~
     END
     APPEND ~xplist.2da~ ~%xplist_reward%~ UNLESS ~A7ACH_GM~
     COPY_EXISTING ~xplist.2da~ ~override~ PRETTY_PRINT_2DA BUT_ONLY
@@ -694,12 +748,13 @@ BEGIN
     OUTER_SET journal = 0
     OUTER_SPRINT quot_open @610
     OUTER_SPRINT quot_close @611
-    ACTION_IF (GAME_IS ~pstee~) BEGIN
-      OUTER_SPRINT ach_unlocked @614
-      OUTER_SPRINT ach_locked @615
+    ACTION_IF (game_is_pstee) BEGIN
+      LAF get_tra_string INT_VAR tra_ref = 614 resolve = 0 RET ach_unlocked = string END
+      LAF get_tra_string INT_VAR tra_ref = 615 resolve = 0 RET ach_locked = string END
     END ELSE BEGIN
-      OUTER_SPRINT ach_unlocked @612
-      OUTER_SPRINT ach_locked @613
+      LAF get_tra_string INT_VAR tra_ref = 612 resolve = 0 RET ach_unlocked = string END
+      LAF get_tra_string INT_VAR tra_ref = 613 resolve = 0 RET ach_locked = string END
+      LAF get_tra_string INT_VAR tra_ref = 616 resolve = 0 RET ach_locked_bg2 = string END
     END
 
     // Installing achievements script
@@ -712,17 +767,22 @@ BEGIN
       LAF FORMAT_GLOBAL STR_VAR global = EVAL ~A7-%ach_var%~ game = ~~ RET ach_var_guard = global END
 
       // handling tokens
-      OUTER_TEXT_SPRINT ach_token_name ~A7_ACH_%journal%~
+      OUTER_SPRINT ach_token_name ~A7_ACH_%journal%~
       ACTION_GET_STRREF $achievement_labels(~%ach_var%~) label
       ACTION_IF (show_compact) BEGIN
-        OUTER_SET ach_token_on_strref = RESOLVE_STR_REF(~%quot_open%%label%%quot_close% – ~)
-        OUTER_SET ach_token_off_strref = "-1"
+        ACTION_IF (engine_is_bg2) BEGIN
+          OUTER_SET ach_token_on_strref = RESOLVE_STR_REF(~%quot_open%%label%%quot_close% %ndash%~)
+          OUTER_SET ach_token_off_strref = RESOLVE_STR_REF(~%ach_locked_bg2% %ndash%~)
+        END ELSE BEGIN
+          OUTER_SET ach_token_on_strref = RESOLVE_STR_REF(~%quot_open%%label%%quot_close% %ndash% ~)
+          OUTER_SET ach_token_off_strref = RESOLVE_STR_REF(~~)  // "-1"
+        END
       END ELSE BEGIN
         OUTER_SET ach_token_on_strref = RESOLVE_STR_REF(~%label%%ach_unlocked%~)
         OUTER_SET ach_token_off_strref = RESOLVE_STR_REF(~%label%%ach_locked%~)
       END
 
-      ACTION_IF (GAME_IS ~pstee~) BEGIN
+      ACTION_IF (game_is_pstee) BEGIN
         EXTEND_TOP ~a7-achv.bcs~ ~%MOD_FOLDER%/scripts/a7-achv-block-pstee.baf~ EVAL
       END ELSE BEGIN
         EXTEND_TOP ~a7-achv.bcs~ ~%MOD_FOLDER%/scripts/a7-achv-block.baf~ EVAL
@@ -736,9 +796,9 @@ BEGIN
     END
 
     // registering journal entries
-    ACTION_IF (journal > 0) BEGIN
+    ACTION_IF (journal > 0 && (game_is_bgee || game_is_bg2ee || game_is_eet || game_is_iwdee || game_is_pstee)) BEGIN
       OUTER_SET title_old = "-1"
-      OUTER_TEXT_SPRINT command ~~
+      OUTER_SPRINT command ~~
       
       OUTER_FOR (i = 0; i < journal; ++i) BEGIN
         OUTER_SET title_strref = $journal_title(~%i%~)
@@ -748,18 +808,18 @@ BEGIN
             COPY - ~.../inlined/A7-Achievements/blank~ ~.../inlined/A7-Achievements/journal.tph~
             APPEND_OUTER - ~.../inlined/A7-Achievements/journal.tph~ ~%command%~
             REINCLUDE ~.../inlined/A7-Achievements/journal.tph~
-            OUTER_TEXT_SPRINT command ~~
+            OUTER_SPRINT command ~~
           END
 
           // starting new journal entry
           OUTER_SET title_old = title_strref
-          OUTER_TEXT_SPRINT command ~ADD_JOURNAL TITLE (#%title_strref%)~
+          OUTER_SPRINT command ~ADD_JOURNAL TITLE (#%title_strref%)~
         END
 
         OUTER_SET strref = $journal(~%i%~)
         ACTION_IF (NOT VARIABLE_IS_SET $cache(~%title_strref%~ ~%strref%~)) BEGIN
           OUTER_SET $cache(~%title_strref%~ ~%strref%~) = 1
-          OUTER_TEXT_SPRINT command ~%command% #%strref%~
+          OUTER_SPRINT command ~%command% #%strref%~
         END
       END
 
@@ -775,11 +835,11 @@ BEGIN
     LAF PATCH_GAME_SCRIPTS
       INT_VAR
         ach_count = journal
-        prefer_achievements = GAME_IS ~pstee~
+        prefer_achievements = game_is_pstee
     END
 
     // adding journal triggers (PSTEE only)
-    ACTION_IF (GAME_IS ~pstee~) BEGIN
+    ACTION_IF (game_is_pstee) BEGIN
       COPY_EXISTING ~bgee.lua~ ~override~
         PHP_EACH achievements AS ach_var => ach_strref BEGIN
           LPF FORMAT_GLOBAL STR_VAR global = EVAL ~A7-%ach_var%~ game = ~~ RET global END
@@ -797,5 +857,29 @@ BEGIN
         ach_count = journal
         show_compact
     END
+  END
+END
+
+// Returns a cleaned-up tra string. Color tags are removed for oBG2 engine games.
+DEFINE_DIMORPHIC_FUNCTION get_tra_string
+INT_VAR
+  tra_ref = "-1"  // tra reference to load
+  resolve = 1     // whether to the string should be returned as a string reference
+RET
+  string          // the cleaned-up string
+  strref          // string reference of the text if "resolve == 1", -1 otherwise
+BEGIN
+  OUTER_SPRINT string (AT ~tra_ref~)
+  OUTER_SET strref = "-1"
+
+  ACTION_IF (game_is_bg2 || game_is_bgt || game_is_tutu) BEGIN
+    OUTER_PATCH_SAVE string ~%string%~ BEGIN
+      SPRINT hex ~0-9a-fA-F~
+      REPLACE_TEXTUALLY ~\^0[xX][%hex%][%hex%][%hex%][%hex%][%hex%][%hex%][%hex%][%hex%]\|\^[^0 %TAB%%WNL%]~ ~~
+    END
+  END
+
+  ACTION_IF (resolve) BEGIN
+    OUTER_SET strref = RESOLVE_STR_REF(~%string%~)
   END
 END

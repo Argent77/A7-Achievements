@@ -1,0 +1,8 @@
+// Added to ACHIEVEM.BCS (oBG2 engine)
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    ChangeAIScript("A7-ACHV",SPECIFICS)
+END

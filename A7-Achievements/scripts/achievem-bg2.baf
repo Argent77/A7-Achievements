@@ -1,0 +1,1005 @@
+// oBG2 achievements
+
+IF
+  Global("ACH_FRIEND_OF_DARKNESS","GLOBAL",0)
+  Global("BodhiJob","GLOBAL",5)
+  GlobalGT("AsylumPlot","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FRIEND_OF_DARKNESS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SHADOW_ALLY","GLOBAL",0)
+  Global("AranJob","GLOBAL",3)
+  GlobalGT("AsylumPlot","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SHADOW_ALLY","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_GRANDMASTER","GLOBAL",0)
+  OR(21)
+    CheckStat(Player1,5,PROFICIENCYBASTARDSWORD)
+    CheckStat(Player1,5,PROFICIENCYLONGSWORD)
+    CheckStat(Player1,5,PROFICIENCYSHORTSWORD)
+    CheckStat(Player1,5,PROFICIENCYAXE)
+    CheckStat(Player1,5,PROFICIENCYTWOHANDEDSWORD)
+    CheckStat(Player1,5,PROFICIENCYKATANA)
+    CheckStat(Player1,5,PROFICIENCYSCIMITARWAKISASHININJATO)
+    CheckStat(Player1,5,PROFICIENCYDAGGER)
+    CheckStat(Player1,5,PROFICIENCYWARHAMMER)
+    CheckStat(Player1,5,PROFICIENCYSPEAR)
+    CheckStat(Player1,5,PROFICIENCYHALBERD)
+    CheckStat(Player1,5,PROFICIENCYFLAILMORNINGSTAR)
+    CheckStat(Player1,5,PROFICIENCYMACE)
+    CheckStat(Player1,5,PROFICIENCYQUARTERSTAFF)
+    CheckStat(Player1,5,PROFICIENCYCROSSBOW)
+    CheckStat(Player1,5,PROFICIENCYLONGBOW)
+    CheckStat(Player1,5,PROFICIENCYSHORTBOW)
+    CheckStat(Player1,5,PROFICIENCYDART)
+    CheckStat(Player1,5,PROFICIENCYSLING)
+    CheckStat(Player1,5,PROFICIENCYBLACKJACK)
+    CheckStat(Player1,5,EXTRAPROFICIENCY1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GRANDMASTER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_GODLIKE","GLOBAL",0)
+  OR(6)
+    CheckStatGT(Player1,24,STR)
+    CheckStatGT(Player1,24,INT)
+    CheckStatGT(Player1,24,WIS)
+    CheckStatGT(Player1,24,DEX)
+    CheckStatGT(Player1,24,CON)
+    CheckStatGT(Player1,24,CHR)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GODLIKE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_UNTOUCHABLE","GLOBAL",0)
+  CheckStatLT(Player1,-14,ARMORCLASS)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_UNTOUCHABLE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_HOMECOMING","GLOBAL",0)
+  Global("JanLissaPlot","GLOBAL",21)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HOMECOMING","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FAMILY_MATTERS","GLOBAL",0)
+  OR(2)
+    Global("LadyMaria","GLOBAL",4)
+    Global("LadyMaria","GLOBAL",5)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FAMILY_MATTERS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_BOOK","GLOBAL",0)
+  Global("KorganNoKillShag","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_BOOK","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SISTERS","GLOBAL",0)
+  Global("palacured","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SISTERS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_ABSOLUTE_POWER","GLOBAL",0)
+  Global("KishNaliaThankedPC","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ABSOLUTE_POWER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_FIRST_CHALLENGE","GLOBAL",0)
+  Global("BeginChallenge1","GLOBAL",12)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_FIRST_CHALLENGE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_SECOND_CHALLENGE","GLOBAL",0)
+  Global("BeginChallenge2","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_SECOND_CHALLENGE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_THIRD_CHALLENGE","GLOBAL",0)
+  Global("BeginChallenge3","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_THIRD_CHALLENGE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_FORTH_CHALLENGE","GLOBAL",0)
+  Global("BeginChallenge4","GLOBAL",6)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_FORTH_CHALLENGE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_FIFTH_CHALLENGE","GLOBAL",0)
+  Global("BeginChallenge5","GLOBAL",4)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_FIFTH_CHALLENGE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_ILL_KEEP","GLOBAL",0)
+  Global("PCKeepOwner","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ILL_KEEP","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SPHERICAL_STRONGHOLD","GLOBAL",0)
+  Global("PCSphere","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SPHERICAL_STRONGHOLD","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_GUILD_TIMES","GLOBAL",0)
+  Global("PlayerThiefGuild","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GUILD_TIMES","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_DIVINE_DOMAIN","GLOBAL",0)
+  OR(3)
+    Global("JoinLathander","GLOBAL",1)
+    Global("JoinTalos","GLOBAL",1)
+    Global("JoinHelm","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DIVINE_DOMAIN","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_ORDERLY_SURROUNDINGS","GLOBAL",0)
+  Global("PaladinOrder","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ORDERLY_SURROUNDINGS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_CABIN_IN","GLOBAL",0)
+  Global("RangerProtector","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_CABIN_IN","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_HOME_GROVE","GLOBAL",0)
+  Global("DruidStronghold","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HOME_GROVE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_PLAYS","GLOBAL",0)
+  Global("Playhouse","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_PLAYS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  %BGT_VAR2%
+  Global("ACH_WELCOME_BROTHER","GLOBAL",0)
+  GlobalGT("SarevokAlive","GLOBAL",0)
+  InParty("Sarevok")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WELCOME_BROTHER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_A_SISTERS","GLOBAL",0)
+  Global("ImoenGiveSoul","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_A_SISTERS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_CLOSE_THE_EYE","GLOBAL",0)
+  Global("BeholderPlot","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_CLOSE_THE_EYE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_TRADE_MUST_FLOW","GLOBAL",0)
+  Global("geniesgone","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_TRADE_MUST_FLOW","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FANG_AND_CLAW","GLOBAL",0)
+  OR(2)
+    Global("unlock2009","GLOBAL",1)
+    Global("loganjob1","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FANG_AND_CLAW","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_LIGHT_IN_DARKNESS","GLOBAL",0)
+  Global("VillageSaved","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LIGHT_IN_DARKNESS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_HERO","GLOBAL",0)
+  Reputation(Player1,20)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HERO","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_VILLAIN","GLOBAL",0)
+  Reputation(Player1,1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_VILLAIN","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_JUGGERNAUT","GLOBAL",0)
+  CheckStatGT(Player1,149,MAXHITPOINTS)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_JUGGERNAUT","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_NO_CHILD_LEFT_BEHIND","GLOBAL",0)
+  Global("Kidnap","GLOBAL",4)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_NO_CHILD_LEFT_BEHIND","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_OATHBREAKER","GLOBAL",0)
+  OR(2)
+    FallenRanger(Player1)
+    FallenPaladin(Player1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_OATHBREAKER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_LOREMASTER","GLOBAL",0)
+  CheckStatGT(Player1,99,LORE)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LOREMASTER","GLOBAL",1)
+    Continue()
+END
+
+// TODO: find a way to detect "Diseased" state
+IF
+  Global("ACH_WORST_DAY","GLOBAL",0)
+  StateCheck(Player1,STATE_POISONED)
+  // CheckSpellState(Player1,DISEASED) // not supported by oBG2 engine
+  CheckStatGT(Player1,0,EXTRAPROFICIENCY20) // from Detectable Spells?
+  CheckStatGT(Player1,5,FATIGUE)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WORST_DAY","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_BEST_DAY","GLOBAL",0)
+  StateCheck(Player1,STATE_BLESS)
+  StateCheck(Player1,STATE_CHANT)
+  StateCheck(Player1,STATE_LUCK)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_BEST_DAY","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_ANCIENT_POWER","GLOBAL",0)
+  PartyHasItemIdentified("WA2ROBE")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ANCIENT_POWER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_LEGENDARY_RELIC","GLOBAL",0)
+  PartyHasItemIdentified("HAMM09")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LEGENDARY_RELIC","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_HOLY","GLOBAL",0)
+  OR(2)
+    PartyHasItemIdentified("SW2H10")
+    PartyHasItemIdentified("SW2H19")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_HOLY","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FURY_OF","GLOBAL",0)
+  PartyHasItemIdentified("SW1H51")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FURY_OF","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_IN_BALDURANS","GLOBAL",0)
+  HasItemEquipedReal("WA2S1H",Player1)
+  HasItemEquiped("WA2SHIEL",Player1)
+  HasItemEquiped("HELM07",Player1)
+  HasItemEquiped("WA2PLAT",Player1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_IN_BALDURANS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FLYING","GLOBAL",0)
+  AreaCheck("AR2900")
+  GlobalGT("DefeatedJon","GLOBAL",1)
+  Global("BD_ACH_PARTY","GLOBAL",1)
+  !NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FLYING","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_PLANEHOPPER","GLOBAL",0)
+  Global("bd_rescued_haer","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_PLANEHOPPER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_GREEN_DRAGON_SAVIOUR","GLOBAL",0)
+  Global("use_reversal_scroll","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_GREEN_DRAGON_SAVIOUR","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SILVER_DRAGON_SLAYER","GLOBAL",0)
+  Dead("udsilver")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SILVER_DRAGON_SLAYER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_BLACK_DRAGON_SLAYER","GLOBAL",0)
+  Dead("dragblac")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_BLACK_DRAGON_SLAYER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SHADOW_DRAGON_SLAYER","GLOBAL",0)
+  Dead("shadra01")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SHADOW_DRAGON_SLAYER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_RED_DRAGON_SLAYER","GLOBAL",0)
+  Dead("firkra02")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_RED_DRAGON_SLAYER","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_TIME_TO_SLAY","GLOBAL",0)
+  Global("AsylumPlot","GLOBAL",43)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_TIME_TO_SLAY","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_PEACE_AT_LAST","GLOBAL",0)
+  Global("yoshimos_heart","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_PEACE_AT_LAST","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FRIENDS_LIKE_THESE","GLOBAL",0)
+  Global("yoshimo_killed_spellhold","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FRIENDS_LIKE_THESE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_RESTORED","GLOBAL",0)
+  Global("JaheiraCursed","GLOBAL",10)
+  Global("j_noweak","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_RESTORED","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FELLING_THE_GIANT","GLOBAL",0)
+  Dead("Yaga01")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FELLING_THE_GIANT","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_DRAGONS_DEMISE","GLOBAL",0)
+  Dead("Abazigal")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DRAGONS_DEMISE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_SEVEN_STATUES","GLOBAL",0)
+  Dead("Sendai")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_SEVEN_STATUES","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SOLAR_SUPREMACY","GLOBAL",0)
+  Dead("balth")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SOLAR_SUPREMACY","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_HELLS_POCKET","GLOBAL",0)
+  GlobalGT("TalkedToSolar","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HELLS_POCKET","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SIEZE_THE_THRONE","GLOBAL",0)
+  Global("bd_ach_melissan","global",1)
+  Global("PlayerChoseEssence","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SIEZE_THE_THRONE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_HEAVY_IS_THE_HEAD","GLOBAL",0)
+  Global("bd_ach_melissan","global",1)
+  Global("PlayerChoseEssence","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HEAVY_IS_THE_HEAD","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_A_DARING_ESCAPE","GLOBAL",0)
+  Global("bd_ach_daring_escape","global",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_A_DARING_ESCAPE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_PICKING_SIDES","GLOBAL",0)
+  %BGT_VAR2%
+  Global("chapter","global",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_PICKING_SIDES","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_ACROSS_THE_SEA","GLOBAL",0)
+  %BGT_VAR2%
+  Global("chapter","global",4)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_ACROSS_THE_SEA","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_RETURN_TO_THE_SURFACE","GLOBAL",0)
+  %BGT_VAR2%
+  Global("chapter","global",6)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_RETURN_TO_THE_SURFACE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_SACRIFICES_MUST","GLOBAL",0)
+  GlobalGT("DefeatedJon","GLOBAL",1)
+  StateCheck(Player2,STATE_REALLY_DEAD)
+  StateCheck(Player3,STATE_REALLY_DEAD)
+  StateCheck(Player4,STATE_REALLY_DEAD)
+  StateCheck(Player5,STATE_REALLY_DEAD)
+  StateCheck(Player6,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_SACRIFICES_MUST","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_LEAVE_NO","GLOBAL",0)
+  GlobalGT("DefeatedJon","GLOBAL",1)
+  NumInPartyAlive(6)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_LEAVE_NO","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_WAND_COLLECTOR","GLOBAL",0)
+  AreaCheck("AR0603")
+  PartyHasItem("WAND03")
+  PartyHasItem("WAND06")
+  PartyHasItem("WAND05")
+  PartyHasItem("WAND10")
+  PartyHasItem("WAND07")
+  PartyHasItem("WAND13")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_WAND_COLLECTOR","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_THE_GREAT","GLOBAL",0)
+  AreaCheck("AR0503")
+  !Exists("TanWiz1")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_THE_GREAT","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_FREEDOM","GLOBAL",0)
+  Global("TalkedToVithal","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_FREEDOM","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_A_BATTLE","GLOBAL",0)
+  Dead("hldemi")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_A_BATTLE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_DOUBLE_CROSS","GLOBAL",0)
+  Dead("ardulace")
+  Global("udDrowPlot","GLOBAL",36)
+  Global("udDemonHasDoneTheKill","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DOUBLE_CROSS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_TRIPLE_CROSS","GLOBAL",0)
+  Dead("phaere")
+  Global("udDrowPlot","GLOBAL",44)
+  Global("udDemonHasDoneTheKill","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_TRIPLE_CROSS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_DONT_MIND","GLOBAL",0)
+  AreaCheck("AR0711")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_DONT_MIND","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_I_DUB","GLOBAL",0)
+  Global("AnomenIsKnight","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_I_DUB","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_REUNITED","GLOBAL",0)
+  Global("CerndBaby","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_REUNITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_BEST_FRIENDS","GLOBAL",0)
+  Global("WellynPeace","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_BEST_FRIENDS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_HEART_OF","GLOBAL",0)
+  Global("LavokOutside","GLOBAL",1)
+  Dead("lavok02")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_HEART_OF","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_NEW_OWNERSHIP","GLOBAL",0)
+  Global("HendakReleased","AR0406",4)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_NEW_OWNERSHIP","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_URGE_TO_KILL","GLOBAL",0)
+  Dead("neeber")
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_URGE_TO_KILL","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_TOOK_A_CHANCE","GLOBAL",0)
+  Global("boat_out_of_spellhold","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_TOOK_A_CHANCE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_INMATES_RUNNING_THE_ASYLUM","GLOBAL",0)
+  %BGT_VAR2%
+  Global("chapter","global",5)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_INMATES_RUNNING_THE_ASYLUM","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_STAKED","GLOBAL",0)
+  %BGT_VAR2%
+  Global("chapter","global",7)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_STAKED","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_TO_HELL_AND_BACK","GLOBAL",0)
+  Global("soa_complete","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_TO_HELL_AND_BACK","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_UNKNOWN_RISKS","GLOBAL",0)
+  Global("portal_out_of_spellhold","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_UNKNOWN_RISKS","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_MAGE","GLOBAL",0)
+  OR(2)
+    Class(Player1,MAGE)
+    Class(Player1,SORCERER)
+  LevelGT(Player1,29)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_MAGE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_MAGE","GLOBAL",0)
+  OR(3)
+    Class(Player1,FIGHTER_MAGE)
+    Class(Player1,MAGE_THIEF)
+    Class(Player1,CLERIC_MAGE)
+  XPGT(Player1,14999999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_MAGE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_MAGE","GLOBAL",0)
+  OR(3)
+    Class(Player1,FIGHTER_MAGE_THIEF)
+    Class(Player1,FIGHTER_MAGE_CLERIC)
+  XPGT(Player1,22499999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_MAGE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_PRIEST","GLOBAL",0)
+  OR(2)
+    Class(Player1,CLERIC)
+    Class(Player1,DRUID)
+  LevelGT(Player1,29)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_PRIEST","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_PRIEST","GLOBAL",0)
+  OR(4)
+    Class(Player1,FIGHTER_CLERIC)
+    Class(Player1,CLERIC_MAGE)
+    Class(Player1,CLERIC_THIEF)
+    Class(Player1,CLERIC_RANGER)
+  XPGT(Player1,9899999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_PRIEST","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_PRIEST","GLOBAL",0)
+  Class(Player1,FIGHTER_DRUID)
+  XPGT(Player1,14999999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_PRIEST","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_PRIEST","GLOBAL",0)
+  Class(Player1,FIGHTER_MAGE_CLERIC)
+  XPGT(Player1,14849999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_PRIEST","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_WARRIOR","GLOBAL",0)
+  OR(4)
+    Class(Player1,FIGHTER)
+    Class(Player1,PALADIN)
+    Class(Player1,RANGER)
+    Class(Player1,MONK)
+  LevelGT(Player1,29)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_WARRIOR","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_WARRIOR","GLOBAL",0)
+  OR(4)
+    Class(Player1,FIGHTER_MAGE)
+    Class(Player1,FIGHTER_CLERIC)
+    Class(Player1,FIGHTER_THIEF)
+    Class(Player1,FIGHTER_DRUID)
+  XPGT(Player1,10999999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_WARRIOR","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_WARRIOR","GLOBAL",0)
+  Class(Player1,CLERIC_RANGER)
+  XPGT(Player1,13199999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_WARRIOR","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_WARRIOR","GLOBAL",0)
+  OR(2)
+    Class(Player1,FIGHTER_MAGE_THIEF)
+    Class(Player1,FIGHTER_MAGE_CLERIC)
+  XPGT(Player1,16499999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_WARRIOR","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_ROGUE","GLOBAL",0)
+  OR(2)
+    Class(Player1,THIEF)
+    Class(Player1,BARD)
+  LevelGT(Player1,29)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_ROGUE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_ROGUE","GLOBAL",0)
+  OR(3)
+    Class(Player1,FIGHTER_THIEF)
+    Class(Player1,MAGE_THIEF)
+    Class(Player1,CLERIC_THIEF)
+  XPGT(Player1,8799999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_ROGUE","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("ACH_EPIC_ROGUE","GLOBAL",0)
+  Class(Player1,FIGHTER_MAGE_THIEF)
+  XPGT(Player1,13199999)
+THEN
+  RESPONSE #100
+    SetGlobal("ACH_EPIC_ROGUE","GLOBAL",1)
+    Continue()
+END

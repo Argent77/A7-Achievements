@@ -2,9 +2,14 @@
 
 // Journal title
 @500 = ~Réalisations~
+// Journal title prompt for oBG2 entries
+@501 = ~Réalisations : ~
 
 // Colored log message
 @510 = ~^DRéalisations accomplies : <A7_ACH> sur %ach_count_total%^-~
+
+// A single en dash
+@520 = ~–~
 
 // Item name
 @600 = ~Le Trophée des Réalisations~
@@ -44,6 +49,7 @@ Réalisations accomplies : <A7_ACH> sur %ach_count_total%
 @613 = ~: ^0xFF000080incomplet^-~    // achievement state "locked", dark red color (BG1/BG2/IWD)
 @614 = ~: ^0xFF00AF00accomplie^-~  // achievement state "unlocked", bright green color (PST)
 @615 = ~: ^0xFF0000FFincomplet^-~    // achievement state "locked", bright red color (PST)
+@616 = ~incomplet~ // achievement state "locked"
 
 @620 = ~inspecter~  // button label for item
 

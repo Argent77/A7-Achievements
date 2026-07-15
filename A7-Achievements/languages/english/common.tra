@@ -2,9 +2,14 @@
 
 // Journal title
 @500 = ~Achievements~
+// Journal title prompt for oBG2 entries
+@501 = ~Achievements: ~
 
 // Colored log message
 @510 = ~^DAchievements unlocked: <A7_ACH> of %ach_count_total%^-~
+
+// A single en dash
+@520 = ~–~
 
 // Item name
 @600 = ~Achievements Trophy~
@@ -44,6 +49,7 @@ Unlocked achievements: <A7_ACH> of %ach_count_total%
 @613 = ~: ^0xFF000080locked^-~    // achievement state "locked", dark red color (BG1/BG2/IWD)
 @614 = ~: ^0xFF00AF00unlocked^-~  // achievement state "unlocked", bright green color (PST)
 @615 = ~: ^0xFF0000FFlocked^-~    // achievement state "locked", bright red color (PST)
+@616 = ~locked~ // achievement state "locked"
 
 @620 = ~inspect~  // button label for item
 

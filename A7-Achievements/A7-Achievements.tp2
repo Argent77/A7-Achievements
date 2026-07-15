@@ -4,10 +4,52 @@ VERSION ~3.0~
 
 ALWAYS
   // root folder for mutable data
-  OUTER_TEXT_SPRINT WORK_FOLDER ~weidu_external~
+  OUTER_SPRINT WORK_FOLDER ~weidu_external~
+  OUTER_SPRINT LANG_FOLDER_BASE ~%WORK_FOLDER%/lang/%MOD_FOLDER%~
+  OUTER_SPRINT LANG_FOLDER ~%LANG_FOLDER_BASE%/%LANGUAGE%~
 
   ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
     FAIL @101 // DLC Merger is required before mods can be installed on this game. Check the readme for more information and a link to download DLC Merger.
+  END
+
+  ACTION_DEFINE_ARRAY noconvert_array BEGIN ~setup~ END
+  ACTION_DEFINE_ARRAY reload_array BEGIN ~common~ ~dialogs~ ~bgee~ ~bg2ee~ ~iwdee~ ~pstee~ ~sod~  END
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      from_utf8 = 1
+      infer_charset = 1
+    STR_VAR
+      default_language = ~english~
+      tra_path = EVAL ~%MOD_FOLDER%/languages~
+      out_path = EVAL ~%LANG_FOLDER_BASE%~
+      noconvert_array = ~noconvert_array~
+      reload_array = ~reload_array~
+  END
+
+  // workaround for EE games
+  MKDIR ~%LANG_FOLDER%~
+  ACTION_PHP_EACH reload_array AS _ => tra_name BEGIN
+    ACTION_IF (NOT FILE_EXISTS ~%LANG_FOLDER%/%tra_name%.tra~) BEGIN
+      COPY ~%MOD_FOLDER%/languages/%LANGUAGE%/%tra_name%.tra~ ~%LANG_FOLDER%~ IF_EXISTS
+    END
+  END
+
+  INCLUDE ~%MOD_FOLDER%/lib/always.tph~
+
+  ACTION_IF (game_is_bgt) BEGIN
+    INCLUDE ~%MOD_FOLDER%/lib/g3_bgt_cpmvars.tpa~
+  END ELSE ACTION_IF (game_is_tutu) BEGIN
+    INCLUDE ~%MOD_FOLDER%/lib/g3_tutu_cpmvars.tpa~
+  END ELSE ACTION_IF (game_is_eet) BEGIN
+    INCLUDE ~%MOD_FOLDER%/lib/eet_cpmvars.tpa~
+  END ELSE BEGIN
+    INCLUDE ~%MOD_FOLDER%/lib/g3_bgee_cpmvars.tpa~
+  END
+
+  ACTION_IF (game_is_bgt) BEGIN
+    OUTER_SPRINT ~BGT_VAR2~ ~Global("endofbg1","GLOBAL",2)~
+  END ELSE BEGIN
+    OUTER_SPRINT ~BGT_VAR2~ ~~
   END
 
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -16,9 +58,22 @@ ALWAYS
   DEFINE_ACTION_FUNCTION INSTALL_MAIN
   INT_VAR show_compact = 1
   BEGIN
-    // adding BGEE and SoD achievements in EET installation
-    ACTION_IF (GAME_IS ~eet~) BEGIN
-      EXTEND_BOTTOM ~achievem.bcs~ ~%MOD_FOLDER%/scripts/achievem-eet.baf~
+    ACTION_IF (game_is_eet) BEGIN
+      EXTEND_BOTTOM ~achievem.bcs~ ~%MOD_FOLDER%/scripts/achievem-eet.baf~ EVAL
+    END ELSE ACTION_IF (game_is_bg2) BEGIN
+      INCLUDE ~%MOD_FOLDER%/lib/bg2fixes.tph~
+      COMPILE EVAL ~%MOD_FOLDER%/scripts/achievem-bg2.baf~
+      MOVE ~override/achievem-bg2.bcs~ ~override/achievem.bcs~
+    END ELSE ACTION_IF (game_is_bgt) BEGIN
+      INCLUDE ~%MOD_FOLDER%/lib/bg1fixes.tph~
+      INCLUDE ~%MOD_FOLDER%/lib/bg2fixes.tph~
+      COMPILE EVAL  ~%MOD_FOLDER%/scripts/achievem-bg2.baf~
+      MOVE ~override/achievem-bg2.bcs~ ~override/achievem.bcs~
+      EXTEND_BOTTOM ~achievem.bcs~ ~%MOD_FOLDER%/scripts/achievem-bgt.baf~ EVAL
+    END ELSE ACTION_IF (game_is_tutu) BEGIN
+      INCLUDE ~%MOD_FOLDER%/lib/bg1fixes.tph~
+      COMPILE EVAL  ~%MOD_FOLDER%/scripts/achievem-tutu.baf~
+      MOVE ~override/achievem-tutu.bcs~ ~override/achievem.bcs~
     END
 
     LAF GET_GAME_LIST INT_VAR load_tra = 1 RET games END
@@ -48,9 +103,9 @@ LANGUAGE ~Simplified Chinese~
          ~A7-Achievements/languages/schinese/common.tra~
 
 BEGIN @2  // Compact summary
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee pstee~ &&
-                   FILE_EXISTS_IN_GAME ~ACHIEVEM.2DA~ &&
-                   VALID_SCRIPT_ACTIONS ~ChangeAIScript("",0)~) @100 // Enhanced Edition game required.
+REQUIRE_PREDICATE ((GAME_IS ~tob bgt tutu_totsc~) ||
+                   (GAME_IS ~bgee bg2ee eet iwdee pstee~ && FILE_EXISTS_IN_GAME ~ACHIEVEM.2DA~)) &&
+                  VALID_SCRIPT_ACTIONS ~ChangeAIScript("",0)~ @100 // This component is not available for your game.
 DESIGNATED 0
 SUBCOMPONENT @1 // Steam Achievements as Journal Entries
 LABEL ~A7-ACHIEVEMENTS-COMPACT~
@@ -59,9 +114,9 @@ LAF INSTALL_MAIN INT_VAR show_compact = 1 END
 
 
 BEGIN @3  // Detailed summary
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee pstee~ &&
-                   FILE_EXISTS_IN_GAME ~ACHIEVEM.2DA~ &&
-                   VALID_SCRIPT_ACTIONS ~ChangeAIScript("",0)~) @100 // Enhanced Edition game required.
+REQUIRE_PREDICATE ((GAME_IS ~tob bgt tutu_totsc~) ||
+                   (GAME_IS ~bgee bg2ee eet iwdee pstee~ && FILE_EXISTS_IN_GAME ~ACHIEVEM.2DA~)) &&
+                  VALID_SCRIPT_ACTIONS ~ChangeAIScript("",0)~ @100 // This component is not available for your game.
 DESIGNATED 1
 SUBCOMPONENT @1 // Steam Achievements as Journal Entries
 LABEL ~A7-ACHIEVEMENTS-DETAILED~
@@ -75,7 +130,7 @@ REQUIRE_PREDICATE (MOD_IS_INSTALLED ~A7-Achievements.tp2~ 0) ||
 DESIGNATED 10
 LABEL ~A7-ACHIEVEMENTS-REWARDS~
 
-LOAD_TRA ~%MOD_FOLDER%/languages/%LANGUAGE%/dialogs.tra~
+LOAD_TRA ~%LANG_FOLDER%/dialogs.tra~
 LAF GET_GAME_LIST INT_VAR load_tra = 1 RET games END
 LAF INSTALL_ITEM_REWARDS STR_VAR games END
 
